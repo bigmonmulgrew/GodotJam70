@@ -1,15 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://bs1eddaicb0iy"]
+[gd_scene load_steps=6 format=3 uid="uid://bs1eddaicb0iy"]
 
 [ext_resource type="Script" path="res://Scripts/Character/Character.gd" id="1_dxghx"]
+[ext_resource type="Texture2D" uid="uid://bsoah8gdmv5su" path="res://icon.svg" id="2_f665s"]
 [ext_resource type="PackedScene" uid="uid://cid0vv4el0hjd" path="res://Scenes/Components/health_component.tscn" id="2_jiiqt"]
+[ext_resource type="PackedScene" uid="uid://c74bwndkx5s18" path="res://Scenes/Components/user_movement_component.tscn" id="3_i4ace"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4cjkn"]
+size = Vector2(130, 130)
 
 [node name="Character" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_dxghx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_f665s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4cjkn")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_jiiqt")]
-health = 100
+health = 50
+
+[node name="UserMovementComponent" parent="." node_paths=PackedStringArray("parent_to_move") instance=ExtResource("3_i4ace")]
+parent_to_move = NodePath("..")
+speed = 100.0

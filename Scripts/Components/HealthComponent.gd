@@ -6,13 +6,12 @@ extends Node
 @export var health: int  = 0
 ## Max health value as an integer
 @export var max_health: int = 100
-## Timer for immunity in seconds
+## Timer for immunity in seconds as a float
 @export var immunity_timer_value: float = 1.0
 
 var is_immune: bool =  false
 
-func _init():
-	i_frame_timer.wait_time = immunity_timer_value
+
 
 func add_health(amount: int) -> void:
 	health += amount
@@ -23,7 +22,7 @@ func add_health(amount: int) -> void:
 func remove_health(amount: int) -> void:
 	if not is_immune:
 		health -= amount
-		i_frame_timer.start()
+		i_frame_timer.start(immunity_timer_value)
 		is_immune = true
 
 func _on_i_frames_timer_timeout():
