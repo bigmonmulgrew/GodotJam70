@@ -23,4 +23,3 @@ health = 50
 
 [node name="UserMovementComponent" parent="." node_paths=PackedStringArray("parent_to_move") instance=ExtResource("3_i4ace")]
 parent_to_move = NodePath("..")
-speed = 100.0
