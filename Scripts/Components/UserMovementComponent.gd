@@ -1,10 +1,15 @@
 extends Node
 
-@export var parent_to_move: CharacterBody2D
+
 ## Movement speed as a float
 @export var speed: float = 10
 ## Max movement speed as a float
 @export var max_speed: float = 500
+
+var parent_to_move: CharacterBody2D
+
+func _ready():
+	parent_to_move = get_parent()
 
 func _physics_process(delta):
 	var horizontal = Input.get_axis("move_left","move_right")

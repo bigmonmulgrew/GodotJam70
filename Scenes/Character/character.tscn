@@ -21,5 +21,4 @@ shape = SubResource("RectangleShape2D_4cjkn")
 [node name="HealthComponent" parent="." instance=ExtResource("2_jiiqt")]
 health = 50
 
-[node name="UserMovementComponent" parent="." node_paths=PackedStringArray("parent_to_move") instance=ExtResource("3_i4ace")]
-parent_to_move = NodePath("..")
+[node name="UserMovementComponent" parent="." instance=ExtResource("3_i4ace")]
