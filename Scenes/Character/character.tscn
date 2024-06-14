@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs1eddaicb0iy"]
+
+[ext_resource type="Script" path="res://Scripts/Character/Character.gd" id="1_dxghx"]
+[ext_resource type="PackedScene" uid="uid://cid0vv4el0hjd" path="res://Scenes/Components/health_component.tscn" id="2_jiiqt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4cjkn"]
+
+[node name="Character" type="CharacterBody2D"]
+script = ExtResource("1_dxghx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4cjkn")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_jiiqt")]
+health = 100

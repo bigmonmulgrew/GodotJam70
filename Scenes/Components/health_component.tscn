@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cid0vv4el0hjd"]
+
+[ext_resource type="Script" path="res://Scripts/Components/HealthComponent.gd" id="1_y73is"]
+
+[node name="HealthComponent" type="Node"]
+script = ExtResource("1_y73is")
+
+[node name="IFramesTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="IFramesTimer" to="." method="_on_i_frames_timer_timeout"]
