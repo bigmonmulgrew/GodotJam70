@@ -13,3 +13,7 @@ config_version=5
 config/name="Godot Jam 70"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="Godot Jam 70"
