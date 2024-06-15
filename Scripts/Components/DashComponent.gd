@@ -40,7 +40,8 @@ func _dash() -> void:
 			health_component.add_immunity(immune_time)
 			# Stop the player from moving
 			movement_component.set_can_move(false)
-			parent_component.velocity = parent_component.velocity.normalized() * dash_amount
+			var dash_direction = Vector2(movement_component.horizontal, movement_component.vertical)
+			parent_component.velocity = dash_direction.normalized() * dash_amount
 			
 			
 			# No more dashing ;-;
