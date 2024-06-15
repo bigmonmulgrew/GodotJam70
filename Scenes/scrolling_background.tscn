@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk3ae6a5v0fon"]
+
+[ext_resource type="Script" path="res://Scripts/scrolling_background.gd" id="1_alt2i"]
+[ext_resource type="Texture2D" uid="uid://bsoah8gdmv5su" path="res://icon.svg" id="1_rmphl"]
+
+[node name="ScrollingBackground" type="ParallaxBackground"]
+script = ExtResource("1_alt2i")
+scroll_speed = 50.0
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(10, 10)
+motion_mirroring = Vector2(128, 128)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture_repeat = 2
+texture = ExtResource("1_rmphl")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1152, 648)
