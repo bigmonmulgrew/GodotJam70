@@ -34,6 +34,8 @@ size = Vector2(46.125, 160)
 size = Vector2(45.75, 192)
 
 [node name="EmptyArena" type="Area2D"]
+collision_layer = 4
+collision_mask = 3
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(0, 0, 1152, 0, 1152, 192, 960, 192, 960, 448, 1152, 448, 1152, 648, 0, 648, 0, 448, 192, 448, 192, 192, 0, 192)

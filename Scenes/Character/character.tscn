@@ -12,6 +12,7 @@
 size = Vector2(130, 130)
 
 [node name="Character" type="CharacterBody2D"]
+collision_mask = 14
 motion_mode = 1
 script = ExtResource("1_dxghx")
 health = 20

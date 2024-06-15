@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://d22mivc3fy6ts"]
+
+[ext_resource type="Script" path="res://Scripts/Components/damage_element.gd" id="1_ono53"]
+[ext_resource type="Texture2D" uid="uid://bsoah8gdmv5su" path="res://icon.svg" id="1_vu1so"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0s45n"]
+size = Vector2(112, 112)
+
+[node name="DamageElement" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_ono53")
+damage_amount = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 100, 0, 1)
+texture = ExtResource("1_vu1so")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0s45n")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
