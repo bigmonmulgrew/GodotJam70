@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/Components/static_damage_element.gd" id="1_tsi31"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8fkes"]
-size = Vector2(24, 16)
+size = Vector2(126, 126)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wcaj7"]
 size = Vector2(128, 128)
@@ -27,3 +27,4 @@ collision_layer = 8
 shape = SubResource("RectangleShape2D_wcaj7")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
