@@ -1,7 +1,7 @@
 extends Node
 
 ## Dash speed as a float
-@export var dash_speed: float = 10;
+@export var dash_speed: float = 5000;
 ## Dash immunity time as a float
 @export var immune_time: float = 0.1
 ## Dash cooldown time as a float
@@ -31,7 +31,7 @@ func _dash() -> void:
 			var prev_max_vel = movement_component.max_speed
 			movement_component.max_speed = 100000
 			health_component.add_immunity(immune_time)
-			parent_component.velocity = parent_component.velocity * dash_speed
+			parent_component.velocity = parent_component.velocity.normalized() * dash_speed
 			movement_component.max_speed = prev_max_vel
 			
 			# No more dashing ;-;
