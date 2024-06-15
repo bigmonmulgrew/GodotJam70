@@ -4,3 +4,9 @@
 
 [node name="ResourceComponent" type="Node"]
 script = ExtResource("1_470f4")
+
+[node name="RegenTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="RegenTimer" to="." method="_on_regen_timer_timeout"]
