@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bs1eddaicb0iy"]
+[gd_scene load_steps=9 format=3 uid="uid://bs1eddaicb0iy"]
 
 [ext_resource type="Script" path="res://Scripts/Character/Character.gd" id="1_dxghx"]
 [ext_resource type="Texture2D" uid="uid://bsoah8gdmv5su" path="res://icon.svg" id="2_f665s"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c74bwndkx5s18" path="res://Scenes/Components/user_movement_component.tscn" id="3_i4ace"]
 [ext_resource type="PackedScene" uid="uid://cjafnq2r4f08n" path="res://Scenes/Components/dash_component.tscn" id="5_36v8t"]
 [ext_resource type="PackedScene" uid="uid://b22mbah3esni7" path="res://Scenes/Components/Attacks/sword_swipe.tscn" id="6_iqirn"]
+[ext_resource type="PackedScene" uid="uid://b1jwlvk5nun41" path="res://Scenes/Components/resource_component.tscn" id="7_47ilm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4cjkn"]
 size = Vector2(130, 130)
@@ -13,6 +14,7 @@ size = Vector2(130, 130)
 [node name="Character" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_dxghx")
+health = 20
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
@@ -31,8 +33,10 @@ max_speed = 200.0
 
 [node name="DashComponent" parent="." instance=ExtResource("5_36v8t")]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+[node name="ResourceComponent" parent="." instance=ExtResource("7_47ilm")]
 
 [node name="SwordSwipe" parent="." instance=ExtResource("6_iqirn")]
 rotation = 1.5708
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
