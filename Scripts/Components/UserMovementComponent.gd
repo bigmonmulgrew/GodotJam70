@@ -1,8 +1,8 @@
 extends Node
 
 
-## Movement speed as a float
-@export var speed: float = 10
+## Movement acceleration as a float
+@export var acceleration: float = 10
 ## Max movement speed as a float
 @export var max_speed: float = 500
 
@@ -24,10 +24,10 @@ func _physics_process(delta):
 			if vertical == 0:
 				parent_to_move.velocity.y = 0
 			# Add horizontal velocity and keep it in bounds
-			parent_to_move.velocity.x += horizontal * speed
+			parent_to_move.velocity.x += horizontal * acceleration
 			parent_to_move.velocity.x = clamp(parent_to_move.velocity.x, -max_speed, max_speed)
 			
-			parent_to_move.velocity.y += vertical * speed
+			parent_to_move.velocity.y += vertical * acceleration
 			parent_to_move.velocity.y = clamp(parent_to_move.velocity.y, -max_speed, max_speed)
 			
 			print(parent_to_move.velocity)
