@@ -25,5 +25,9 @@ func remove_health(amount: int) -> void:
 		i_frame_timer.start(immunity_timer_value)
 		is_immune = true
 
+func add_immunity(immune_time: float):
+	is_immune = true
+	i_frame_timer.start(immune_time)
+
 func _on_i_frames_timer_timeout():
 	is_immune = false

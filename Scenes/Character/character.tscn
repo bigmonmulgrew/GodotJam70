@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bs1eddaicb0iy"]
+[gd_scene load_steps=7 format=3 uid="uid://bs1eddaicb0iy"]
 
 [ext_resource type="Script" path="res://Scripts/Character/Character.gd" id="1_dxghx"]
 [ext_resource type="Texture2D" uid="uid://bsoah8gdmv5su" path="res://icon.svg" id="2_f665s"]
 [ext_resource type="PackedScene" uid="uid://cid0vv4el0hjd" path="res://Scenes/Components/health_component.tscn" id="2_jiiqt"]
 [ext_resource type="PackedScene" uid="uid://c74bwndkx5s18" path="res://Scenes/Components/user_movement_component.tscn" id="3_i4ace"]
+[ext_resource type="PackedScene" uid="uid://cjafnq2r4f08n" path="res://Scenes/Components/dash_component.tscn" id="5_36v8t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4cjkn"]
 size = Vector2(130, 130)
@@ -22,3 +23,5 @@ shape = SubResource("RectangleShape2D_4cjkn")
 health = 50
 
 [node name="UserMovementComponent" parent="." instance=ExtResource("3_i4ace")]
+
+[node name="DashComponent" parent="." instance=ExtResource("5_36v8t")]

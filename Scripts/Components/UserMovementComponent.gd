@@ -15,6 +15,7 @@ func _physics_process(delta):
 	var horizontal = Input.get_axis("move_left","move_right")
 	var vertical = Input.get_axis("move_up", "move_down")
 	
+	# Check if the parent is not null
 	if parent_to_move:
 		if horizontal == 0:
 			parent_to_move.velocity.x = 0
