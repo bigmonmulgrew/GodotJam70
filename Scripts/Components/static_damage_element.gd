@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends StaticBody2D
 
 @export var damage_amount: int = 2
 @onready var health_component
@@ -13,7 +13,7 @@ func _process(delta):
 	pass
 
 func _on_body_entered(body):
-	print(str(body))
+	print(body.name)
 	health_component = body.get_node("HealthComponent")
 	health_component.remove_health(damage_amount)
 	var direction = body.velocity.normalized()
