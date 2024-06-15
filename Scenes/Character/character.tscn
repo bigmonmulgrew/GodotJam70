@@ -15,6 +15,7 @@ motion_mode = 1
 script = ExtResource("1_dxghx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_f665s")
 
@@ -26,10 +27,13 @@ shape = SubResource("RectangleShape2D_4cjkn")
 health = 50
 
 [node name="UserMovementComponent" parent="." instance=ExtResource("3_i4ace")]
+max_speed = 200.0
 
 [node name="DashComponent" parent="." instance=ExtResource("5_36v8t")]
+dash_amount = 3000.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
 [node name="SwordSwipe" parent="." instance=ExtResource("6_iqirn")]
+rotation = 1.5708

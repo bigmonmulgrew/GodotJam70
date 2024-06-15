@@ -10,3 +10,7 @@ func _process(delta):
 	
 func _attack():
 	anim_player.play("sword_attack")
+
+
+func _on_area_2d_body_entered(body):
+	pass #TODO: Add enemy collision logic
