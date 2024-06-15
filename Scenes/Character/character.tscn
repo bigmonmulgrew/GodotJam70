@@ -30,7 +30,6 @@ health = 50
 max_speed = 200.0
 
 [node name="DashComponent" parent="." instance=ExtResource("5_36v8t")]
-dash_amount = 3000.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
