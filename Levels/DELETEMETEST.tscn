@@ -1,16 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbmv5ka3j4o3s"]
+[gd_scene load_steps=5 format=3 uid="uid://bbmv5ka3j4o3s"]
 
 [ext_resource type="Texture2D" uid="uid://bsoah8gdmv5su" path="res://icon.svg" id="1_3p44r"]
 [ext_resource type="Script" path="res://Scripts/DELETEMETEST.gd" id="1_vmmgu"]
 [ext_resource type="PackedScene" uid="uid://bs1eddaicb0iy" path="res://Scenes/Character/character.tscn" id="2_xnnp0"]
+[ext_resource type="PackedScene" uid="uid://7tmputkdxmuf" path="res://Scenes/empty_arena.tscn" id="4_x8guw"]
 
 [node name="TEMPTEST" type="Node2D"]
 script = ExtResource("1_vmmgu")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(156, 6)
-scale = Vector2(7.96875, 4.71875)
-texture = ExtResource("1_3p44r")
+[node name="EmptyArena" parent="." instance=ExtResource("4_x8guw")]
 
 [node name="Character" parent="." instance=ExtResource("2_xnnp0")]
 
