@@ -4,7 +4,7 @@ extends ParallaxBackground
 ## Background texture for scrolling as a CompressedTexture2D
 @export var bg_texture: CompressedTexture2D = preload("res://icon.svg")
 ## Height of the sprite in pixels as an int
-@export var bg_height: int = 128
+@export var bg_height: int = 0
 
 @export_group("Scrolling")
 ## Scrolling speed of the background as a float
@@ -17,6 +17,7 @@ extends ParallaxBackground
 
 func _ready():
 	sprite.texture = bg_texture
+	bg_height = bg_texture.get_height()
 	
 func _process(delta):
 	# Scroll the background by speed
