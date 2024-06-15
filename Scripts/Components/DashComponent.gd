@@ -33,13 +33,15 @@ func _dash() -> void:
 	if health_component:
 		if parent_component:
 			is_dashing = true
+			# Start the timer for how long you will be dashing
 			dash_timer.start(immune_time)
-			#var prev_max_vel = movement_component.max_speed
-			#movement_component.max_speed = 100000
+			
+			# Start the i frames on the health component
 			health_component.add_immunity(immune_time)
+			# Stop the player from moving
 			movement_component.set_can_move(false)
 			parent_component.velocity = parent_component.velocity.normalized() * dash_amount
-			#movement_component.max_speed = prev_max_vel
+			
 			
 			# No more dashing ;-;
 			can_dash = false

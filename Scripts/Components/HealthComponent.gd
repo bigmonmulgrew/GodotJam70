@@ -1,5 +1,7 @@
 extends Node
 
+signal died_signal
+
 @onready var i_frame_timer: Timer = $IFramesTimer
 
 ## Current health value as an integer
@@ -24,6 +26,8 @@ func remove_health(amount: int) -> void:
 		health -= amount
 		i_frame_timer.start(immunity_timer_value)
 		is_immune = true
+	if health <= 0:
+		died_signal.emit()
 
 func add_immunity(immune_time: float):
 	is_immune = true
