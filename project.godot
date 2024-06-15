@@ -14,6 +14,14 @@ config/name="Godot Jam 70"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [dotnet]
 
 project/assembly_name="Godot Jam 70"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
