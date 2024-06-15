@@ -34,6 +34,8 @@ size = Vector2(46.125, 160)
 size = Vector2(45.75, 192)
 
 [node name="EmptyArena" type="Area2D"]
+collision_layer = 4
+collision_mask = 3
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(0, 0, 1152, 0, 1152, 192, 960, 192, 960, 448, 1152, 448, 1152, 648, 0, 648, 0, 448, 192, 448, 192, 192, 0, 192)
@@ -41,6 +43,7 @@ polygon = PackedVector2Array(0, 0, 1152, 0, 1152, 192, 960, 192, 960, 448, 1152,
 [node name="Walls" type="Node" parent="."]
 
 [node name="Wall" type="StaticBody2D" parent="Walls"]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall"]
 position = Vector2(-20, 96)
@@ -48,6 +51,7 @@ shape = SubResource("RectangleShape2D_cfjlt")
 
 [node name="Wall2" type="StaticBody2D" parent="Walls"]
 position = Vector2(0, 456)
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall2"]
 position = Vector2(-20, 92)
@@ -55,6 +59,7 @@ shape = SubResource("RectangleShape2D_00c5u")
 
 [node name="Wall3" type="StaticBody2D" parent="Walls"]
 position = Vector2(1192, 456)
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall3"]
 position = Vector2(-20, 92)
@@ -62,6 +67,7 @@ shape = SubResource("RectangleShape2D_5y3wa")
 
 [node name="Wall4" type="StaticBody2D" parent="Walls"]
 position = Vector2(1192, 0)
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall4"]
 position = Vector2(-20, 96)
@@ -70,6 +76,7 @@ shape = SubResource("RectangleShape2D_cfjlt")
 [node name="Wall5" type="StaticBody2D" parent="Walls"]
 position = Vector2(192, 0)
 rotation = 1.5708
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall5"]
 position = Vector2(-20.5, -386)
@@ -77,6 +84,7 @@ shape = SubResource("RectangleShape2D_3sba2")
 
 [node name="Wall6" type="StaticBody2D" parent="Walls"]
 position = Vector2(1000, 200)
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall6"]
 position = Vector2(-20, 120)
@@ -85,6 +93,7 @@ shape = SubResource("RectangleShape2D_b5v8y")
 [node name="Wall7" type="StaticBody2D" parent="Walls"]
 position = Vector2(192, 688)
 rotation = 1.5708
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall7"]
 position = Vector2(-19, -384)
@@ -92,6 +101,7 @@ shape = SubResource("RectangleShape2D_pmhik")
 
 [node name="Wall8" type="StaticBody2D" parent="Walls"]
 position = Vector2(192, 200)
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall8"]
 position = Vector2(-20, 143)
@@ -100,6 +110,7 @@ shape = SubResource("RectangleShape2D_rm1fs")
 [node name="Wall9" type="StaticBody2D" parent="Walls"]
 position = Vector2(96, 216)
 rotation = 1.5708
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall9"]
 position = Vector2(-0.5625, 0)
@@ -108,6 +119,7 @@ shape = SubResource("RectangleShape2D_7s5p3")
 [node name="Wall10" type="StaticBody2D" parent="Walls"]
 position = Vector2(1056, 216)
 rotation = 1.5708
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall10"]
 position = Vector2(-0.5625, 0)
@@ -116,6 +128,7 @@ shape = SubResource("RectangleShape2D_qn75h")
 [node name="Wall11" type="StaticBody2D" parent="Walls"]
 position = Vector2(1064, 424)
 rotation = 1.5708
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall11"]
 position = Vector2(0.9375, -16)
@@ -124,6 +137,7 @@ shape = SubResource("RectangleShape2D_m5riq")
 [node name="Wall12" type="StaticBody2D" parent="Walls"]
 position = Vector2(64, 424)
 rotation = 1.5708
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall12"]
 position = Vector2(1.125, 7.99999)

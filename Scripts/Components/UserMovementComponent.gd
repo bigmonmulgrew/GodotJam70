@@ -32,7 +32,7 @@ func _physics_process(delta):
 			parent_to_move.velocity.y += vertical * acceleration
 			parent_to_move.velocity.y = clamp(parent_to_move.velocity.y, -max_speed, max_speed)
 			
-			print(parent_to_move.velocity)
+			#print(parent_to_move.velocity)
 		
 	else:
 		print("Parent not found for movement component")
