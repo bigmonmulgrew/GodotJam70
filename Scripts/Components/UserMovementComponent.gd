@@ -8,13 +8,15 @@ extends Node
 
 var parent_to_move: CharacterBody2D
 var _can_move: bool = true
+var horizontal
+var vertical
 
 func _ready():
 	parent_to_move = get_parent()
 
 func _physics_process(delta):
-	var horizontal = Input.get_axis("move_left","move_right")
-	var vertical = Input.get_axis("move_up", "move_down")
+	horizontal = Input.get_axis("move_left","move_right")
+	vertical = Input.get_axis("move_up", "move_down")
 	
 	# Check if the parent is not null
 	if parent_to_move:
