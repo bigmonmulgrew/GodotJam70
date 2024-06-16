@@ -14,6 +14,10 @@ config/name="Godot Jam 70"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*res://Scenes/game_manager.tscn"
+
 [display]
 
 window/stretch/mode="canvas_items"
