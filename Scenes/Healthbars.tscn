@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dktnlhjatfngg"]
+[gd_scene load_steps=7 format=3 uid="uid://dktnlhjatfngg"]
 
 [ext_resource type="Texture2D" uid="uid://ckfjq04cf0kpf" path="res://Textures/HealthBear.png" id="1_pcnfk"]
 [ext_resource type="Texture2D" uid="uid://btts7iyuo22v4" path="res://Textures/SmallHealthBear.png" id="2_i6mdl"]
@@ -6,13 +6,22 @@
 [ext_resource type="Texture2D" uid="uid://cqhalbj0v60j2" path="res://Textures/Face Icon Beeg.png" id="4_fe3t6"]
 [ext_resource type="Texture2D" uid="uid://bvhohbcemwp0y" path="res://Textures/VS icon.png" id="5_knct6"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_rqjmi"]
+line_spacing = 4.0
+font_size = 24
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_color = Color(0.207843, 0.207843, 0.207843, 1)
+shadow_offset = Vector2(3, 3)
+
 [node name="CanvasLayer" type="CanvasLayer"]
 
-[node name="PlayerHealthBear" type="TextureProgressBar" parent="."]
-offset_left = 632.0
-offset_top = 46.0
-offset_right = 1020.0
-offset_bottom = 77.0
+[node name="PlayerHealthBar" type="TextureProgressBar" parent="."]
+offset_left = 644.0
+offset_top = 35.0
+offset_right = 1032.0
+offset_bottom = 66.0
 value = 100.0
 fill_mode = 1
 texture_under = ExtResource("1_pcnfk")
@@ -20,11 +29,11 @@ texture_progress = ExtResource("1_pcnfk")
 tint_under = Color(0, 0, 0, 1)
 tint_progress = Color(0, 1, 0, 1)
 
-[node name="AllyHealthBear1" type="TextureProgressBar" parent="PlayerHealthBear"]
-offset_left = 202.0
-offset_top = 56.0
-offset_right = 329.0
-offset_bottom = 69.0
+[node name="AllyHealthBar1" type="TextureProgressBar" parent="PlayerHealthBar"]
+offset_left = 230.0
+offset_top = 50.0
+offset_right = 357.0
+offset_bottom = 63.0
 value = 100.0
 fill_mode = 1
 texture_under = ExtResource("2_i6mdl")
@@ -32,15 +41,15 @@ texture_progress = ExtResource("2_i6mdl")
 tint_under = Color(0, 0, 0, 1)
 tint_progress = Color(0, 1, 1, 1)
 
-[node name="AllyIcon1" type="Sprite2D" parent="PlayerHealthBear/AllyHealthBear1"]
+[node name="AllyIcon1" type="Sprite2D" parent="PlayerHealthBar/AllyHealthBar1"]
 position = Vector2(162, 6)
 texture = ExtResource("3_vmncw")
 
-[node name="AllyHealthBear2" type="TextureProgressBar" parent="PlayerHealthBear"]
-offset_left = 202.0
-offset_top = 100.0
-offset_right = 329.0
-offset_bottom = 113.0
+[node name="AllyHealthBar2" type="TextureProgressBar" parent="PlayerHealthBar"]
+offset_left = 183.0
+offset_top = 83.0
+offset_right = 310.0
+offset_bottom = 96.0
 value = 100.0
 fill_mode = 1
 texture_under = ExtResource("2_i6mdl")
@@ -48,53 +57,47 @@ texture_progress = ExtResource("2_i6mdl")
 tint_under = Color(0, 0, 0, 1)
 tint_progress = Color(0, 1, 1, 1)
 
-[node name="AllyIcon2" type="Sprite2D" parent="PlayerHealthBear/AllyHealthBear2"]
+[node name="AllyIcon2" type="Sprite2D" parent="PlayerHealthBar/AllyHealthBar2"]
 position = Vector2(162, 6)
 texture = ExtResource("3_vmncw")
 
-[node name="PlayerIcon" type="Sprite2D" parent="PlayerHealthBear"]
+[node name="PlayerIcon" type="Sprite2D" parent="PlayerHealthBar"]
 position = Vector2(454, 17)
 texture = ExtResource("4_fe3t6")
 
-[node name="BossHealthBear" type="TextureProgressBar" parent="."]
-offset_left = 118.0
-offset_top = 45.0
-offset_right = 506.0
-offset_bottom = 76.0
+[node name="PlayerName" type="Label" parent="PlayerHealthBar"]
+offset_left = 3.0
+offset_top = 33.0
+offset_right = 226.0
+offset_bottom = 64.0
+text = "Robin Hood"
+label_settings = SubResource("LabelSettings_rqjmi")
+horizontal_alignment = 1
+
+[node name="BossHealthBar" type="TextureProgressBar" parent="."]
+offset_left = 104.0
+offset_top = 33.0
+offset_right = 492.0
+offset_bottom = 64.0
 value = 100.0
 texture_under = ExtResource("1_pcnfk")
 texture_progress = ExtResource("1_pcnfk")
 tint_under = Color(0, 0, 0, 1)
 tint_progress = Color(1, 0, 0, 1)
 
-[node name="BossIcon" type="Sprite2D" parent="BossHealthBear"]
+[node name="BossIcon" type="Sprite2D" parent="BossHealthBar"]
 position = Vector2(-53, 16)
 texture = ExtResource("4_fe3t6")
 
-[node name="VSIcon" type="Sprite2D" parent="."]
-position = Vector2(574, 64)
-texture = ExtResource("5_knct6")
-
-[node name="PlayerName" type="RichTextLabel" parent="."]
-offset_left = 637.0
-offset_top = 87.0
-offset_right = 828.0
-offset_bottom = 130.0
-theme_override_font_sizes/normal_font_size = 16
-text = "Character Name"
-tab_size = 1
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-text_direction = 1
-
-[node name="BossName" type="RichTextLabel" parent="."]
-offset_left = 125.0
-offset_top = 89.0
-offset_right = 495.0
-offset_bottom = 132.0
-theme_override_font_sizes/normal_font_size = 20
+[node name="PlayerName" type="Label" parent="BossHealthBar"]
+offset_left = 2.0
+offset_top = 32.0
+offset_right = 387.0
+offset_bottom = 63.0
 text = "The Three Wise Men Of Gotham"
-tab_size = 1
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-text_direction = 1
+label_settings = SubResource("LabelSettings_rqjmi")
+horizontal_alignment = 1
+
+[node name="VSIcon" type="Sprite2D" parent="."]
+position = Vector2(571, 52)
+texture = ExtResource("5_knct6")
