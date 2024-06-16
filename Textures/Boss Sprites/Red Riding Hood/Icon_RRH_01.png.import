@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8b3sno3rbbdi"
-path="res://.godot/imported/Icon_Merlin_00.png-b0bd19b5b0f965792ad6ae4a3099cd94.ctex"
+uid="uid://v43q55uab8hr"
+path="res://.godot/imported/Icon_RRH_01.png-b804bc1be6c26487f014a9e68da6b533.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Boss Sprites/Merlin/Icon_Merlin_00.png"
-dest_files=["res://.godot/imported/Icon_Merlin_00.png-b0bd19b5b0f965792ad6ae4a3099cd94.ctex"]
+source_file="res://Textures/Boss Sprites/Red Riding Hood/Icon_RRH_01.png"
+dest_files=["res://.godot/imported/Icon_RRH_01.png-b804bc1be6c26487f014a9e68da6b533.ctex"]
 
 [params]
 
