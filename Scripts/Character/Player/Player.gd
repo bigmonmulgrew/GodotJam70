@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 # Gets the child of PrimaryAction node with index 0
-@onready var primary_action: Node2D = $PrimaryAction.get_child(0)
+@onready var primary_action: Node = $PrimaryAction.get_child(0)
 # Gets the child of SecondaryAction node with index 0
-@onready var secondary_action: Node2D = $SecondaryAction.get_child(0)
+@onready var secondary_action: Node = $SecondaryAction.get_child(0)
 # Gets the child of DefensiveAction node with index 0
 @onready var defensive_action: Node = $DefensiveAction.get_child(0)
 
