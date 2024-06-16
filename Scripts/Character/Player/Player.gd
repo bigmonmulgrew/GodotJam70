@@ -14,10 +14,10 @@ func _physics_process(delta):
 
 func _check_input():
 	# Check if primary action is null
-	if not primary_action:
-		return
+	if primary_action:
+		if Input.is_action_just_pressed("primary_action"): primary_action.use()
 	# Check if secondary action is null
-	if not secondary_action:
-		return
-	if Input.is_action_just_pressed("primary_action"): primary_action.use()
-	if Input.is_action_just_pressed("secondary_action"): secondary_action.use()
+	if secondary_action:
+		if Input.is_action_just_pressed("secondary_action"): secondary_action.use()
+	
+	
