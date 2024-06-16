@@ -11,6 +11,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_5pih8"]
 
 [node name="KingArthur" type="CharacterBody2D"]
+collision_mask = 14
 script = ExtResource("1_goc7c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -32,6 +33,7 @@ shape = SubResource("CircleShape2D_5pih8")
 health = 50
 
 [node name="UserMovementComponent" parent="." instance=ExtResource("5_4oels")]
+max_speed = 200.0
 
 [node name="ResourceComponent" parent="." instance=ExtResource("6_7mpsh")]
 
