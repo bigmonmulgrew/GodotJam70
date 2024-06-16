@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbmv5ka3j4o3s"]
+[gd_scene load_steps=8 format=3 uid="uid://bbmv5ka3j4o3s"]
 
 [ext_resource type="Texture2D" uid="uid://bsoah8gdmv5su" path="res://icon.svg" id="1_3p44r"]
 [ext_resource type="Script" path="res://Scripts/DELETEMETEST.gd" id="1_vmmgu"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://0vb83wfs1stj" path="res://Scenes/Components/static_damage_element.tscn" id="3_522r3"]
 [ext_resource type="PackedScene" uid="uid://7tmputkdxmuf" path="res://Scenes/empty_arena.tscn" id="4_x8guw"]
 [ext_resource type="PackedScene" uid="uid://d22mivc3fy6ts" path="res://Scenes/Components/damage_element.tscn" id="5_a30s6"]
+[ext_resource type="PackedScene" uid="uid://dktnlhjatfngg" path="res://Scenes/Healthbars.tscn" id="7_xxfqd"]
 
 [node name="TEMPTEST" type="Node2D"]
 script = ExtResource("1_vmmgu")
@@ -21,6 +22,7 @@ position = Vector2(533, 357)
 [node name="Character" parent="." instance=ExtResource("2_xnnp0")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="HealthBar" type="TextureProgressBar" parent="CanvasLayer"]
 offset_right = 128.0
@@ -41,3 +43,5 @@ value = 50.0
 texture_under = ExtResource("1_3p44r")
 texture_progress = ExtResource("1_3p44r")
 tint_under = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer2" parent="." instance=ExtResource("7_xxfqd")]
