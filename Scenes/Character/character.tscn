@@ -11,7 +11,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4cjkn"]
 size = Vector2(130, 130)
 
-[node name="Character" type="CharacterBody2D"]
+[node name="Character" type="CharacterBody2D" groups=["players"]]
 collision_mask = 14
 motion_mode = 1
 script = ExtResource("1_dxghx")
