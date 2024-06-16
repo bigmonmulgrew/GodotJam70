@@ -1,4 +1,5 @@
 extends Area2D
+class_name DamageElement
 
 @export var timer_time: float = 0.5
 @export var damage_amount: int = 2
@@ -15,7 +16,10 @@ func _ready():
 func _process(delta):
 	pass
 
-
+## Finds the health component of the body that overlaps (can be player or enemy depending on setup, but default is player) and then sets it as damageable.
+##[br]
+##[br]
+##Damage is dealt in Timeout method.
 func _on_body_entered(body):
 	health_component = body.get_node("HealthComponent")
 	bCanDamageBody = true

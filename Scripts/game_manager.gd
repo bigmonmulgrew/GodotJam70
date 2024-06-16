@@ -1,4 +1,5 @@
 extends Node
+class_name Game_Manager
 
 var selected_characters
 var active_character_index: int = 0
@@ -14,12 +15,15 @@ func _ready():
 	update_active_character(1)
 
 ## Updates currently active character when you swap character.
-##
+##[br]
+##[br]
 ## This method takes in an integer, which represents the index of the newly-active character.
-##
-## @tutorial: update_active_character(1)
-## @tutorial: this would update the active character to index 1, which is the second character in the list.
-func update_active_character(index):
+##[br]
+##[br]
+## update_active_character(1)
+##[br]
+## This would update the active character to index 1, which is the second character in the list.
+func update_active_character(index: int):
 	active_character_index = index
 	
 func display_unlocked_characters():
