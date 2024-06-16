@@ -1,14 +1,11 @@
-extends Node2D
+extends Attack
 
+# Get the animation player from the tree
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 
-@export var damage: int = 10
-
-func _process(delta):
-	if Input.is_action_just_pressed("left_mouse_button"): _attack()
-	
-	
-func _attack():
+# Overide for the base use
+# Plays the attack
+func use():
 	anim_player.play("sword_attack")
 
 
