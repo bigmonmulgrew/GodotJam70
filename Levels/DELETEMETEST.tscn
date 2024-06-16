@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbmv5ka3j4o3s"]
+
+[ext_resource type="Texture2D" uid="uid://bsoah8gdmv5su" path="res://icon.svg" id="1_3p44r"]
+[ext_resource type="Script" path="res://Scripts/DELETEMETEST.gd" id="1_vmmgu"]
+[ext_resource type="PackedScene" uid="uid://0vb83wfs1stj" path="res://Scenes/Components/static_damage_element.tscn" id="3_522r3"]
+[ext_resource type="PackedScene" uid="uid://7tmputkdxmuf" path="res://Scenes/empty_arena.tscn" id="4_x8guw"]
+[ext_resource type="PackedScene" uid="uid://d22mivc3fy6ts" path="res://Scenes/Components/damage_element.tscn" id="5_a30s6"]
+[ext_resource type="PackedScene" uid="uid://cjgkjhe7k58s" path="res://Scenes/Character/Player/king_arthur.tscn" id="6_novwh"]
+
+[node name="TEMPTEST" type="Node2D"]
+script = ExtResource("1_vmmgu")
+
+[node name="EmptyArena" parent="." instance=ExtResource("4_x8guw")]
+
+[node name="StaticDamageElement" parent="." instance=ExtResource("3_522r3")]
+position = Vector2(735, 290)
+
+[node name="DamageElement" parent="." instance=ExtResource("5_a30s6")]
+position = Vector2(533, 357)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_right = 128.0
+offset_bottom = 128.0
+scale = Vector2(6.50162, 0.462049)
+value = 50.0
+texture_under = ExtResource("1_3p44r")
+texture_progress = ExtResource("1_3p44r")
+tint_progress = Color(0, 1, 0, 1)
+
+[node name="ResourceBar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_left = 4.0
+offset_top = 584.0
+offset_right = 132.0
+offset_bottom = 712.0
+scale = Vector2(7.01436, 0.446208)
+value = 50.0
+texture_under = ExtResource("1_3p44r")
+texture_progress = ExtResource("1_3p44r")
+tint_under = Color(0, 0, 0, 1)
+
+[node name="KingArthur" parent="." instance=ExtResource("6_novwh")]
