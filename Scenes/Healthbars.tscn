@@ -74,6 +74,18 @@ text = "Robin Hood"
 label_settings = SubResource("LabelSettings_rqjmi")
 horizontal_alignment = 1
 
+[node name="PlayerResourceBar" type="TextureProgressBar" parent="PlayerHealthBar"]
+show_behind_parent = true
+offset_top = -17.0
+offset_right = 388.0
+offset_bottom = 14.0
+value = 100.0
+fill_mode = 1
+texture_under = ExtResource("1_pcnfk")
+texture_progress = ExtResource("1_pcnfk")
+tint_under = Color(0, 0, 0, 1)
+tint_progress = Color(1, 0, 1, 1)
+
 [node name="BossHealthBar" type="TextureProgressBar" parent="."]
 offset_left = 104.0
 offset_top = 33.0
