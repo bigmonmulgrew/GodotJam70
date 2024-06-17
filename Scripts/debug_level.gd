@@ -3,7 +3,6 @@ extends Node2D
 @export_file("*.tscn") var target_Level_next
 @onready var player: CharacterBody2D = $KingArthur
 @onready var health_bar_ui = $HealthBarUI
-@export var LevelToLoad:String
 
 func _ready():
 	health_bar_ui.player_max_health = player.get_node("HealthComponent").max_health
@@ -21,8 +20,7 @@ func delete_me1():
 	# Update Healthbar
 	health_bar_ui.player_current_health = player.get_node("HealthComponent").health
 	if Input.is_action_just_pressed("primary_action"):
-		LevelMaster.reload_level()
-		#player.get_node("HealthComponent").add_health(10)
+		player.get_node("HealthComponent").add_health(10)
 		
 	if Input.is_action_just_pressed("secondary_action"):
 		player.get_node("HealthComponent").remove_health(10)
