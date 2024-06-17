@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bde7hrspm44jm"
-path="res://.godot/imported/HealthBear4.png-592dae8660cd714971e86a0733d5703e.ctex"
+uid="uid://pkyaa7nnsvel"
+path="res://.godot/imported/goose.png-b5ec0d5c820c9b163c5b35886a6d949d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Animated Bar/HealthBear4.png"
-dest_files=["res://.godot/imported/HealthBear4.png-592dae8660cd714971e86a0733d5703e.ctex"]
+source_file="res://Textures/goose.png"
+dest_files=["res://.godot/imported/goose.png-b5ec0d5c820c9b163c5b35886a6d949d.ctex"]
 
 [params]
 
