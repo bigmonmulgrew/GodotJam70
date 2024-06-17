@@ -19,5 +19,6 @@ position = Vector2(735, 290)
 position = Vector2(533, 357)
 
 [node name="Character" parent="." instance=ExtResource("2_xnnp0")]
+position = Vector2(417, 246)
 
 [node name="HealthBarUI" parent="." instance=ExtResource("7_xxfqd")]
