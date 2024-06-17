@@ -116,9 +116,27 @@ func _set_ally_two_max_health(max_health: int):
 #region _process
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	player_current_health_pos = _move_bar(player_current_health,player_max_health,player_current_health_pos,player_bar_rate,$PlayerHealthBar)
-	player_current_resource_pos = _move_bar(player_current_resource_pos,player_max_resource,player_current_resource_pos,player_resource_rate,$PlayerResourceBar)
-	boss_current_health_pos = _move_bar(boss_current_health,boss_max_health,boss_current_health_pos,boss_bar_rate,$BossHealthBar)
+	player_current_health_pos = _move_bar(
+		player_current_health, 
+		player_max_health, 
+		player_current_health_pos, 
+		player_bar_rate, 
+		$PlayerHealthBar
+	)
+	player_current_resource_pos = _move_bar(
+		player_current_resource_pos,
+		player_max_resource,
+		player_current_resource_pos,
+		player_resource_rate,
+		$PlayerResourceBar
+	)
+	boss_current_health_pos = _move_bar(
+		boss_current_health, 
+		boss_max_health, 
+		boss_current_health_pos,
+		boss_bar_rate,
+		$BossHealthBar
+	)
 	
 	#setting the wobble
 	#It doesn't like being in a function :(
