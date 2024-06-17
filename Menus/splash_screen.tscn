@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://ck62d4618ls12"]
+
+[ext_resource type="Texture2D" uid="uid://ddsjrgewop3xw" path="res://Images/GodotWildJam/70-Folklore.png" id="1_dpe1b"]
+[ext_resource type="Script" path="res://Menus/splash_screen.gd" id="1_uthk2"]
+[ext_resource type="Texture2D" uid="uid://berheuhmc8xe4" path="res://Images/GodotWildJam/consequences.png" id="2_qorhy"]
+[ext_resource type="Texture2D" uid="uid://ba3v2u7n4adb8" path="res://Images/GodotWildJam/takeover.png" id="3_mufem"]
+
+[node name="Splash Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uthk2")
+target_Level = "res://Menus/main_menu.tscn"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="70-folklore" type="Sprite2D" parent="."]
+position = Vector2(558, 122)
+scale = Vector2(0.141, 0.2)
+texture = ExtResource("1_dpe1b")
+
+[node name="Consequences" type="Sprite2D" parent="."]
+position = Vector2(649, 506.4)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_qorhy")
+
+[node name="Takeover" type="Sprite2D" parent="."]
+position = Vector2(454, 506.8)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_mufem")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 379.0
+offset_top = 206.0
+offset_right = 731.0
+offset_bottom = 367.0
+theme_override_font_sizes/normal_font_size = 28
+text = "Game Name Not Found"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

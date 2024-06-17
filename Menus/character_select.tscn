@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://36fxkugwg738"]
+
+[ext_resource type="Texture2D" uid="uid://bsoah8gdmv5su" path="res://icon.svg" id="1_5x7rx"]
+[ext_resource type="Script" path="res://Menus/character_select.gd" id="2_rdqyx"]
+
+[node name="CharacterSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_rdqyx")
+target_Level_level_1 = "res://Levels/DELETEMETEST.tscn"
+target_Level_main_menu = "res://Menus/main_menu.tscn"
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 969.0
+offset_top = 596.0
+offset_right = 1141.0
+offset_bottom = 638.0
+theme_override_font_sizes/font_size = 24
+text = "Confirm Team"
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 22.0
+offset_right = 191.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 22
+text = "< Return to Menu"
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(144, 285)
+texture = ExtResource("1_5x7rx")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(327, 288)
+texture = ExtResource("1_5x7rx")
+
+[node name="Icon3" type="Sprite2D" parent="."]
+position = Vector2(529, 289)
+texture = ExtResource("1_5x7rx")
+
+[node name="Icon4" type="Sprite2D" parent="."]
+position = Vector2(1028, 291)
+rotation = 3.14159
+texture = ExtResource("1_5x7rx")
+
+[node name="Icon5" type="Sprite2D" parent="."]
+position = Vector2(783, 287)
+rotation = -3.14159
+texture = ExtResource("1_5x7rx")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 519.0
+offset_top = 21.0
+offset_right = 705.0
+offset_bottom = 66.0
+theme_override_font_sizes/font_size = 32
+text = "Select Team"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

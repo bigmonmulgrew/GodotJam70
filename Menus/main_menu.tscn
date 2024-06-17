@@ -1,0 +1,111 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4frjndtqopjn"]
+
+[ext_resource type="Script" path="res://Menus/main_menu.gd" id="1_vr068"]
+[ext_resource type="Texture2D" uid="uid://ddsjrgewop3xw" path="res://Images/GodotWildJam/70-Folklore.png" id="2_mwrmf"]
+[ext_resource type="Texture2D" uid="uid://berheuhmc8xe4" path="res://Images/GodotWildJam/consequences.png" id="3_n0gv1"]
+[ext_resource type="Texture2D" uid="uid://ba3v2u7n4adb8" path="res://Images/GodotWildJam/takeover.png" id="4_6n0rk"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vr068")
+target_Level_start_game = "res://Menus/character_select.tscn"
+target_Level_credits = "res://Menus/credits.tscn"
+target_Level_options = "res://Menus/options.tscn"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 424.0
+offset_top = 30.0
+offset_right = -370.0
+offset_bottom = -573.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Game Name Not found
+"
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 525.0
+offset_top = 323.0
+offset_right = -467.0
+offset_bottom = -265.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Start Game"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 968.0
+offset_top = 570.0
+offset_right = -24.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Quit
+"
+
+[node name="CreditsButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 979.0
+offset_top = 83.0
+offset_right = -13.0
+offset_bottom = -505.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Credits
+"
+
+[node name="OptionsButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 980.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = -576.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Options"
+
+[node name="70-folklore" type="Sprite2D" parent="."]
+position = Vector2(625, 582)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_mwrmf")
+
+[node name="Consequences" type="Sprite2D" parent="."]
+position = Vector2(210, 542)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_n0gv1")
+
+[node name="Takeover" type="Sprite2D" parent="."]
+position = Vector2(75.5, 542.3)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_6n0rk")
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]

@@ -1,2 +1,70 @@
 # Godot 4+ specific ignores
 .godot/
+
+# Godot-specific ignore rules for Godot Engine 4.x projects
+
+# Godot-generated folders
+.import/
+export_presets.cfg
+mono/
+# If using C#, you might want to comment out the mono/ line to include C# project files
+
+# Godot user-specific settings
+*.godot/editor_settings-3.tres
+*.godot/project_metadata.cfg
+
+# Godot generated files
+*.translation
+
+# Logs
+*.log
+
+# OS-specific ignore rules
+# macOS specific files
+.DS_Store
+*.swp
+# Windows specific files
+Thumbs.db
+Desktop.ini
+# Linux specific files
+.directory
+
+# Ignore build and export folders
+bin/
+export/
+
+# Ignore files that can contain sensitive information or user-specific data
+override.cfg
+
+# If using version control for CI, ignore deploy directories
+# Uncomment if needed
+#ci/
+
+# If you're including any native libraries or build artifacts, you can exclude them too
+#libs/
+#*.so
+#*.dll
+#*.dylib
+#*.a
+#*.lib
+
+
+
+
+# Ignore Microsoft Office temporary files
+~$*
+*.tmp
+
+# Excel temporary files
+*.xlsb
+*.xlk
+
+# Word temporary files
+*.wbk
+
+# PowerPoint temporary files
+*.pptm
+
+# General Office lock files (if needed)
+*.laccdb
+*.ldb

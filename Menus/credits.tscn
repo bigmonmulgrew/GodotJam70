@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbvbawwjo5jp3"]
+
+[ext_resource type="Script" path="res://Menus/credits.gd" id="1_giu45"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_giu45")
+target_Level_main_menu = "res://Menus/main_menu.tscn"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 509.0
+offset_top = 16.0
+offset_right = 653.0
+offset_bottom = 74.0
+theme_override_font_sizes/font_size = 42
+text = "Credits
+"
+
+[node name="ReturnToMenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 134.0
+offset_bottom = 38.0
+text = "< Back to Menu"
+
+[connection signal="pressed" from="ReturnToMenuButton" to="." method="_on_return_to_menu_button_pressed"]
