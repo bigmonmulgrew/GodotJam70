@@ -12,6 +12,8 @@ class_name StaticDamageElement
 @export var damage_amount: int = 2
 ## The force with which the trap bounces away the received collision body.
 @export var bounce_force: float = 1000
+## Damage type to apply.
+@export var damage_type: DamageType.Type = DamageType.Type.PHYSICAL
 ## An empty variable to store the recieved collision body's health component.
 @onready var health_component
 
@@ -26,7 +28,7 @@ class_name StaticDamageElement
 func _on_body_entered(body):
 	print(body.name)
 	health_component = body.get_node("HealthComponent")
-	health_component.remove_health(damage_amount)
+	health_component.remove_health(damage_amount, damage_type)
 	var direction = body.velocity.normalized()
 	if direction == Vector2.ZERO:
 		direction = global_position - body.global_position
