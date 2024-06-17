@@ -1,49 +1,51 @@
 [gd_scene load_steps=23 format=3 uid="uid://dktnlhjatfngg"]
 
 [ext_resource type="Script" path="res://Scripts/Healthbars.gd" id="1_dol2k"]
-[ext_resource type="Texture2D" uid="uid://ckfjq04cf0kpf" path="res://Textures/HealthBear.png" id="1_pcnfk"]
-[ext_resource type="Texture2D" uid="uid://dgphg5pw1a635" path="res://Textures/Animated Bar/HealthBear1.png" id="2_dego0"]
-[ext_resource type="Texture2D" uid="uid://btts7iyuo22v4" path="res://Textures/SmallHealthBear.png" id="2_i6mdl"]
-[ext_resource type="Texture2D" uid="uid://cjivxjrhi8m3s" path="res://Textures/Animated Bar/HealthBear2.png" id="3_ldc2h"]
+[ext_resource type="Texture2D" uid="uid://dn768scv8xtwj" path="res://Textures/Healthbar.png" id="2_q37to"]
+[ext_resource type="Texture2D" uid="uid://cmybxhm7f00hx" path="res://Textures/Animated Bar/Healthbar0.png" id="3_of8ka"]
 [ext_resource type="Texture2D" uid="uid://cnbn1d3ndnn08" path="res://Textures/Face Icon Smol.png" id="3_vmncw"]
-[ext_resource type="Texture2D" uid="uid://dlum2wio6wiea" path="res://Textures/Animated Bar/HealthBear11.png" id="4_6yfyt"]
+[ext_resource type="Texture2D" uid="uid://du103qqga5j8p" path="res://Textures/HealthbarBorder.png" id="3_vyaxa"]
 [ext_resource type="Texture2D" uid="uid://cqhalbj0v60j2" path="res://Textures/Face Icon Beeg.png" id="4_fe3t6"]
-[ext_resource type="Texture2D" uid="uid://dx54s25goqf11" path="res://Textures/Animated Bar/HealthBear12.png" id="5_53cv2"]
+[ext_resource type="Texture2D" uid="uid://brduq73eckmqb" path="res://Textures/Animated Bar/Healthbar1.png" id="4_fjhri"]
+[ext_resource type="Texture2D" uid="uid://b1i4rmnwk6ini" path="res://Textures/Animated Bar/Healthbar10.png" id="5_bapwj"]
 [ext_resource type="Texture2D" uid="uid://bvhohbcemwp0y" path="res://Textures/VS icon.png" id="5_knct6"]
-[ext_resource type="Texture2D" uid="uid://ddqfnvxtjqj1l" path="res://Textures/Animated Bar/HealthBear3.png" id="6_xdfvg"]
-[ext_resource type="Texture2D" uid="uid://bde7hrspm44jm" path="res://Textures/Animated Bar/HealthBear4.png" id="7_rgj44"]
-[ext_resource type="Texture2D" uid="uid://oi8y20jgjnga" path="res://Textures/Animated Bar/HealthBear5.png" id="8_ejwof"]
-[ext_resource type="Texture2D" uid="uid://20dhqoajji6a" path="res://Textures/Animated Bar/HealthBear6.png" id="9_dqahc"]
-[ext_resource type="Texture2D" uid="uid://cnqxe8pt2xtvg" path="res://Textures/Animated Bar/HealthBear7.png" id="10_ea4g3"]
-[ext_resource type="Texture2D" uid="uid://d1id2y5eliii" path="res://Textures/Animated Bar/HealthBear8.png" id="11_rt8t5"]
-[ext_resource type="Texture2D" uid="uid://c268rgn2vy6t4" path="res://Textures/Animated Bar/HealthBear9.png" id="12_b2a7t"]
-[ext_resource type="Texture2D" uid="uid://buof2a8rmshk0" path="res://Textures/Animated Bar/HealthBear10.png" id="13_whxex"]
+[ext_resource type="Texture2D" uid="uid://n0u76a6j7c4p" path="res://Textures/Animated Bar/Healthbar11.png" id="6_k3ecx"]
+[ext_resource type="Texture2D" uid="uid://tb2d4a825g18" path="res://Textures/Animated Bar/Healthbar2.png" id="7_sxlvn"]
+[ext_resource type="Texture2D" uid="uid://cgxhr4yhsxhog" path="res://Textures/Animated Bar/Healthbar3.png" id="8_jk6jt"]
+[ext_resource type="Texture2D" uid="uid://chiy8wg7c7sfm" path="res://Textures/Animated Bar/Healthbar4.png" id="9_rqi0h"]
+[ext_resource type="Texture2D" uid="uid://buwfcd7ihvptc" path="res://Textures/Animated Bar/Healthbar5.png" id="10_8blcq"]
+[ext_resource type="Texture2D" uid="uid://iukwxryasjqn" path="res://Textures/Animated Bar/Healthbar6.png" id="11_nf45b"]
+[ext_resource type="Texture2D" uid="uid://cvefttmk1j5f7" path="res://Textures/Animated Bar/Healthbar7.png" id="12_dy677"]
+[ext_resource type="Texture2D" uid="uid://dehli57okxcki" path="res://Textures/Animated Bar/Healthbar8.png" id="13_5oxna"]
+[ext_resource type="Texture2D" uid="uid://b3thi8lqxeppb" path="res://Textures/Animated Bar/Healthbar9.png" id="14_akt3t"]
+[ext_resource type="Texture2D" uid="uid://dxie4sb4w374k" path="res://Textures/SmallHealthBar.png" id="18_p00bc"]
+[ext_resource type="Texture2D" uid="uid://cvrnj7htpun3y" path="res://Textures/SmallHealthBarBorder.png" id="19_ahpvm"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_yl1c2"]
 frames = 12
 speed_scale = 0.0
-frame_0/texture = ExtResource("2_dego0")
-frame_1/texture = ExtResource("3_ldc2h")
+frame_0/texture = ExtResource("3_of8ka")
+frame_1/texture = ExtResource("4_fjhri")
 frame_1/duration = 1.0
-frame_2/texture = ExtResource("6_xdfvg")
+frame_2/texture = ExtResource("7_sxlvn")
 frame_2/duration = 1.0
-frame_3/texture = ExtResource("7_rgj44")
+frame_3/texture = ExtResource("8_jk6jt")
 frame_3/duration = 1.0
-frame_4/texture = ExtResource("8_ejwof")
+frame_4/texture = ExtResource("9_rqi0h")
 frame_4/duration = 1.0
-frame_5/texture = ExtResource("9_dqahc")
+frame_5/texture = ExtResource("10_8blcq")
 frame_5/duration = 1.0
-frame_6/texture = ExtResource("10_ea4g3")
+frame_6/texture = ExtResource("11_nf45b")
 frame_6/duration = 1.0
-frame_7/texture = ExtResource("11_rt8t5")
+frame_7/texture = ExtResource("12_dy677")
 frame_7/duration = 1.0
-frame_8/texture = ExtResource("12_b2a7t")
+frame_8/texture = ExtResource("13_5oxna")
 frame_8/duration = 1.0
-frame_9/texture = ExtResource("13_whxex")
+frame_9/texture = ExtResource("14_akt3t")
 frame_9/duration = 1.0
-frame_10/texture = ExtResource("4_6yfyt")
+frame_10/texture = ExtResource("5_bapwj")
 frame_10/duration = 1.0
-frame_11/texture = ExtResource("5_53cv2")
+frame_11/texture = ExtResource("6_k3ecx")
 frame_11/duration = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_rqjmi"]
@@ -55,62 +57,37 @@ shadow_size = 4
 shadow_color = Color(0.207843, 0.207843, 0.207843, 1)
 shadow_offset = Vector2(3, 3)
 
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_tnv5d"]
-frames = 12
-speed_scale = 0.0
-frame_0/texture = ExtResource("2_dego0")
-frame_1/texture = ExtResource("3_ldc2h")
-frame_1/duration = 1.0
-frame_2/texture = ExtResource("6_xdfvg")
-frame_2/duration = 1.0
-frame_3/texture = ExtResource("7_rgj44")
-frame_3/duration = 1.0
-frame_4/texture = ExtResource("8_ejwof")
-frame_4/duration = 1.0
-frame_5/texture = ExtResource("9_dqahc")
-frame_5/duration = 1.0
-frame_6/texture = ExtResource("10_ea4g3")
-frame_6/duration = 1.0
-frame_7/texture = ExtResource("11_rt8t5")
-frame_7/duration = 1.0
-frame_8/texture = ExtResource("12_b2a7t")
-frame_8/duration = 1.0
-frame_9/texture = ExtResource("13_whxex")
-frame_9/duration = 1.0
-frame_10/texture = ExtResource("4_6yfyt")
-frame_10/duration = 1.0
-frame_11/texture = ExtResource("5_53cv2")
-frame_11/duration = 1.0
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_qrsyg"]
-frames = 12
-speed_scale = 0.0
-frame_0/texture = ExtResource("2_dego0")
-frame_1/texture = ExtResource("3_ldc2h")
-frame_1/duration = 1.0
-frame_2/texture = ExtResource("6_xdfvg")
-frame_2/duration = 1.0
-frame_3/texture = ExtResource("7_rgj44")
-frame_3/duration = 1.0
-frame_4/texture = ExtResource("8_ejwof")
-frame_4/duration = 1.0
-frame_5/texture = ExtResource("9_dqahc")
-frame_5/duration = 1.0
-frame_6/texture = ExtResource("10_ea4g3")
-frame_6/duration = 1.0
-frame_7/texture = ExtResource("11_rt8t5")
-frame_7/duration = 1.0
-frame_8/texture = ExtResource("12_b2a7t")
-frame_8/duration = 1.0
-frame_9/texture = ExtResource("13_whxex")
-frame_9/duration = 1.0
-frame_10/texture = ExtResource("4_6yfyt")
-frame_10/duration = 1.0
-frame_11/texture = ExtResource("5_53cv2")
-frame_11/duration = 1.0
-
 [node name="HealthBarUI" type="CanvasLayer"]
 script = ExtResource("1_dol2k")
+
+[node name="BossHealthBar" type="TextureProgressBar" parent="."]
+offset_left = 104.0
+offset_top = 33.0
+offset_right = 492.0
+offset_bottom = 64.0
+value = 50.0
+texture_under = ExtResource("2_q37to")
+texture_over = ExtResource("3_vyaxa")
+texture_progress = SubResource("AnimatedTexture_yl1c2")
+tint_progress = Color(1, 0, 0, 1)
+
+[node name="BossIcon" type="Sprite2D" parent="BossHealthBar"]
+position = Vector2(-53, 16)
+texture = ExtResource("4_fe3t6")
+
+[node name="BossName" type="Label" parent="BossHealthBar"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 32.0
+offset_right = 387.0
+offset_bottom = 63.0
+text = "The Three Wise Men Of Gotham"
+label_settings = SubResource("LabelSettings_rqjmi")
+horizontal_alignment = 1
+
+[node name="VSIcon" type="Sprite2D" parent="."]
+position = Vector2(571, 52)
+texture = ExtResource("5_knct6")
 
 [node name="PlayerHealthBar" type="TextureProgressBar" parent="."]
 offset_left = 644.0
@@ -120,7 +97,8 @@ offset_bottom = 66.0
 step = 0.01
 value = 50.0
 fill_mode = 1
-texture_under = ExtResource("1_pcnfk")
+texture_under = ExtResource("2_q37to")
+texture_over = ExtResource("3_vyaxa")
 texture_progress = SubResource("AnimatedTexture_yl1c2")
 tint_progress = Color(0, 1, 0, 1)
 
@@ -132,8 +110,9 @@ offset_right = 357.0
 offset_bottom = 63.0
 value = 100.0
 fill_mode = 1
-texture_under = ExtResource("2_i6mdl")
-texture_progress = ExtResource("2_i6mdl")
+texture_under = ExtResource("18_p00bc")
+texture_over = ExtResource("19_ahpvm")
+texture_progress = ExtResource("18_p00bc")
 tint_under = Color(0, 0, 0, 1)
 tint_progress = Color(0, 1, 1, 1)
 
@@ -149,8 +128,9 @@ offset_right = 310.0
 offset_bottom = 96.0
 value = 100.0
 fill_mode = 1
-texture_under = ExtResource("2_i6mdl")
-texture_progress = ExtResource("2_i6mdl")
+texture_under = ExtResource("18_p00bc")
+texture_over = ExtResource("19_ahpvm")
+texture_progress = ExtResource("18_p00bc")
 tint_under = Color(0, 0, 0, 1)
 tint_progress = Color(0, 1, 1, 1)
 
@@ -181,35 +161,8 @@ offset_bottom = 14.0
 step = 0.01
 value = 100.0
 fill_mode = 1
-texture_under = ExtResource("1_pcnfk")
-texture_progress = SubResource("AnimatedTexture_tnv5d")
+texture_under = ExtResource("2_q37to")
+texture_over = ExtResource("3_vyaxa")
+texture_progress = SubResource("AnimatedTexture_yl1c2")
 tint_under = Color(0, 0, 0, 1)
 tint_progress = Color(1, 0, 1, 1)
-
-[node name="BossHealthBar" type="TextureProgressBar" parent="."]
-offset_left = 104.0
-offset_top = 33.0
-offset_right = 492.0
-offset_bottom = 64.0
-value = 50.0
-texture_under = ExtResource("1_pcnfk")
-texture_progress = SubResource("AnimatedTexture_qrsyg")
-tint_progress = Color(1, 0, 0, 1)
-
-[node name="BossIcon" type="Sprite2D" parent="BossHealthBar"]
-position = Vector2(-53, 16)
-texture = ExtResource("4_fe3t6")
-
-[node name="PlayerName" type="Label" parent="BossHealthBar"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 32.0
-offset_right = 387.0
-offset_bottom = 63.0
-text = "The Three Wise Men Of Gotham"
-label_settings = SubResource("LabelSettings_rqjmi")
-horizontal_alignment = 1
-
-[node name="VSIcon" type="Sprite2D" parent="."]
-position = Vector2(571, 52)
-texture = ExtResource("5_knct6")
