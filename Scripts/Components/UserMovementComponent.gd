@@ -2,9 +2,11 @@ extends Node
 
 
 ## Movement acceleration as a float
-@export var acceleration: float = 10
+@export var acceleration: float = 1200
+## Movement deceleration as a float
+@export var deceleration: float = 1600
 ## Max movement speed as a float
-@export var max_speed: float = 500
+@export var speed: float = 200.0
 
 var parent_to_move: CharacterBody2D
 var _can_move: bool = true
@@ -19,20 +21,15 @@ func _physics_process(delta):
 	vertical = Input.get_axis("move_up", "move_down")
 	
 	# Check if the parent is not null
-	if parent_to_move:
-		if _can_move:
-			if horizontal == 0:
-				parent_to_move.velocity.x = 0
-			if vertical == 0:
-				parent_to_move.velocity.y = 0
-			# Add horizontal velocity and keep it in bounds
-			parent_to_move.velocity.x += horizontal * acceleration
-			parent_to_move.velocity.x = clamp(parent_to_move.velocity.x, -max_speed, max_speed)
-			
-			parent_to_move.velocity.y += vertical * acceleration
-			parent_to_move.velocity.y = clamp(parent_to_move.velocity.y, -max_speed, max_speed)
-			
-			#print(parent_to_move.velocity)
+	if parent_to_move && _can_move:
+		#acceleration and deceleration interp mode setting for the move toward function
+		var celMoveSpeed = acceleration
+		if horizontal == 0 and vertical == 0:
+			celMoveSpeed = deceleration
+		parent_to_move.velocity = parent_to_move.velocity.move_toward(Vector2(speed*horizontal,speed*vertical),celMoveSpeed*delta)
+		
+		print(parent_to_move.velocity)
+		#print(parent_to_move.velocity)
 		
 	else:
 		print("Parent not found for movement component")
