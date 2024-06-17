@@ -1,18 +1,25 @@
 extends Action
 class_name DashAction
 
-## Dash speed as a float
-@export var dash_amount: float = 900;
-## Dash immunity time as a float
-@export var immune_time: float = 0.1
-## Dash cooldown time in seconds as a float
-@export var dash_cooldown: float = 2
+## Node that can be added to give dash functionality.
+## [br]If the owner has a HealthComponent, the i-frames will be applied
 
+#region Export Variables
+## Dash speed
+@export var dash_amount: float = 900;
+## Dash immunity time in seconds
+@export var immune_time: float = 0.1
+## Dash cooldown time in seconds
+@export var dash_cooldown: float = 2
+#endregion
+
+#region Runtime Variables
 var health_component: Node
 var parent_component: CharacterBody2D
 var movement_component: Node
 var dash_timer: Timer
 var is_dashing = false
+#endregion
 
 func _ready():
 	super()
@@ -21,6 +28,7 @@ func _ready():
 	movement_component = owner.get_node("UserMovementComponent")
 	dash_timer = $DashTimer
 
+## Will make the owner dash in input direction
 func use():
 	if can_use:
 		_dash()
