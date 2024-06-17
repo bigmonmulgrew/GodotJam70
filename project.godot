@@ -84,6 +84,7 @@ secondary_action={
 2d_physics/layer_2="enemy"
 2d_physics/layer_3="world"
 2d_physics/layer_4="traps"
+2d_physics/layer_5="attacks"
 
 [rendering]
 
