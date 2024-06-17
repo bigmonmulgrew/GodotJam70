@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Godot Jam 70"
-run/main_scene="res://Levels/DELETEMETEST.tscn"
+run/main_scene="res://Menus/splash_screen.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

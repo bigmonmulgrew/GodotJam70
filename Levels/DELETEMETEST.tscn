@@ -9,6 +9,7 @@
 
 [node name="TEMPTEST" type="Node2D"]
 script = ExtResource("1_vmmgu")
+target_Level_next = "res://Menus/game_over.tscn"
 
 [node name="EmptyArena" parent="." instance=ExtResource("4_x8guw")]
 
