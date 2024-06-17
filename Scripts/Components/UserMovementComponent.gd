@@ -28,7 +28,6 @@ func _physics_process(delta):
 			celMoveSpeed = deceleration
 		parent_to_move.velocity = parent_to_move.velocity.move_toward(Vector2(speed*horizontal,speed*vertical),celMoveSpeed*delta)
 		
-		print(parent_to_move.velocity)
 		#print(parent_to_move.velocity)
 		
 	else:
