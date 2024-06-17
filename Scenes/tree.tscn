@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpkrufu4v2wpk"]
+
+[ext_resource type="Texture2D" uid="uid://b0u4nic70aw1t" path="res://Images/Textures/tree-placeholder.png" id="1_ovbrp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p8rvg"]
+
+[node name="Tree" type="StaticBody2D"]
+collision_layer = 4
+
+[node name="TreeSprite" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, -2.38419e-07)
+scale = Vector2(1.71875, 1.59375)
+texture = ExtResource("1_ovbrp")
+
+[node name="TreeCollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_p8rvg")
