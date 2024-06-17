@@ -29,7 +29,6 @@ shape = SubResource("RectangleShape2D_4cjkn")
 health = 50
 
 [node name="UserMovementComponent" parent="." instance=ExtResource("3_i4ace")]
-max_speed = 200.0
 
 [node name="DashComponent" parent="." instance=ExtResource("5_36v8t")]
 
