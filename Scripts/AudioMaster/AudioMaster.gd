@@ -36,6 +36,7 @@ func play_sfx(sound, pitch:float = 1, volumeDB:float = 0):
 	TSound.pitch_scale = pitch
 	TSound.volume_db = volumeDB
 	TSound.volume_db = ((TSound.volume_db+80)*SFXMultipler)-80
+	TSound.finished.connect(_killsound.bind(TSound as Node))
 	$SoundEffects.add_child(TSound)
 	TSound.play(0)
 	
