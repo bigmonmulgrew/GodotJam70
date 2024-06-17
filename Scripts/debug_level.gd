@@ -10,7 +10,7 @@ func _ready():
 	health_bar_ui.player_max_resource = player.get_node("ResourceComponent").resource_cap
 
 func _process(delta):
-	delete_me1()
+	#delete_me1()
 	delete_me2()
 	delete_me3()
 	delete_me4()
@@ -29,7 +29,14 @@ func delete_me1():
 	
 func delete_me2():
 	# Use this to place code to not interfear with other debug code
-	pass
+	# Update Healthbar
+	health_bar_ui.player_current_health = player.get_node("HealthComponent").health
+	if Input.is_action_just_pressed("primary_action"):
+		LevelMaster.reload_level()
+		#player.get_node("HealthComponent").add_health(10)
+		
+	if Input.is_action_just_pressed("secondary_action"):
+		player.get_node("HealthComponent").remove_health(10)
 	
 func delete_me3():
 	# Use this to place code to not interfear with other debug code
