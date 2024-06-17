@@ -17,6 +17,8 @@ class_name DamageElement
 @export var timer_time: float = 0.5
 ## The amount of damage dealt each time the on_timer_timeout method is called.
 @export var damage_amount: int = 2
+## Set the damage type
+@export var damage_type: DamageType.Type = DamageType.Type.PHYSICAL
 ## Gets a reference to the Timer node from the DamageElement object.
 @onready var timer_instance = $Timer
 ## An empty variable that can be used to hold the health component of the received collision body.
@@ -44,7 +46,7 @@ func _on_body_exited(body):
 ## When the timer's Timeout signal fires, if the received collision body is damageable, health equal to the damage amount will be removed from its current health.
 func _on_timer_timeout():
 	if bCanDamageBody == true:
-		health_component.remove_health(damage_amount)
+		health_component.remove_health(damage_amount, damage_type)
 
 
 

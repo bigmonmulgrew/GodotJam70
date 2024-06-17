@@ -15,6 +15,7 @@ collision_mask = 14
 script = ExtResource("1_goc7c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("1_3i75j")
 
@@ -22,14 +23,17 @@ texture = ExtResource("1_3i75j")
 shape = SubResource("CircleShape2D_5pih8")
 
 [node name="PrimaryAction" type="Node2D" parent="."]
+rotation = 1.5708
 
 [node name="SwordSwipe" parent="PrimaryAction" instance=ExtResource("3_u3au3")]
 
 [node name="SecondaryAction" type="Node2D" parent="."]
+rotation = 1.5708
 
 [node name="SwordSwipe" parent="SecondaryAction" instance=ExtResource("3_u3au3")]
 
 [node name="DefensiveAction" type="Node2D" parent="."]
+rotation = 1.5708
 
 [node name="DashComponent" parent="DefensiveAction" instance=ExtResource("7_2pvyl")]
 
