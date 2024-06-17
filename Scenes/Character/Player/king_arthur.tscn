@@ -29,6 +29,10 @@ shape = SubResource("CircleShape2D_5pih8")
 
 [node name="SwordSwipe" parent="SecondaryAction" instance=ExtResource("3_u3au3")]
 
+[node name="DefensiveAction" type="Node2D" parent="."]
+
+[node name="DashComponent" parent="DefensiveAction" instance=ExtResource("7_2pvyl")]
+
 [node name="HealthComponent" parent="." instance=ExtResource("4_kq5tx")]
 health = 50
 
@@ -36,8 +40,6 @@ health = 50
 max_speed = 200.0
 
 [node name="ResourceComponent" parent="." instance=ExtResource("6_7mpsh")]
-
-[node name="DashComponent" parent="." instance=ExtResource("7_2pvyl")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
