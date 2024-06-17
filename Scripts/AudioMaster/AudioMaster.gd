@@ -8,6 +8,7 @@ var QueuedMusic = null
 var MusicFade = 1
 
 var SFXMultipler = 1
+var MUSICMultipler = 1
 
 func _ready():
 	
@@ -72,3 +73,7 @@ func SetSoundVolume(Multipler:float):
 	
 func play_music(sound):
 	QueuedMusic = sound
+	
+func SetMusicVolume(Multipler:float):
+	$MusicAudio.volume_db = (($MusicAudio.volume_db+80) * Multipler)-80
+	MUSICMultipler = Multipler
