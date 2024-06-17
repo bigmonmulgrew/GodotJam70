@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b22mbah3esni7"]
 
-[ext_resource type="Script" path="res://Scripts/Components/Actions/Attacks/sword_swipe.gd" id="1_quy50"]
-[ext_resource type="Texture2D" uid="uid://bsoah8gdmv5su" path="res://icon.svg" id="2_dqlk2"]
+[ext_resource type="Script" path="res://Scripts/Components/Actions/Attacks/sword_swipe.gd" id="1_quoe3"]
+[ext_resource type="Texture2D" uid="uid://bsoah8gdmv5su" path="res://icon.svg" id="2_ep7s6"]
 
 [sub_resource type="Animation" id="Animation_eeofq"]
 length = 0.001
@@ -117,7 +117,7 @@ _data = {
 size = Vector2(6, 33)
 
 [node name="SwordSwipe" type="Node2D"]
-script = ExtResource("1_quy50")
+script = ExtResource("1_quoe3")
 damage = null
 cooldown_time = null
 
@@ -136,7 +136,7 @@ collision_mask = 2
 visible = false
 position = Vector2(0.00340104, -17.0018)
 scale = Vector2(0.0469901, 0.25829)
-texture = ExtResource("2_dqlk2")
+texture = ExtResource("2_ep7s6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -17)

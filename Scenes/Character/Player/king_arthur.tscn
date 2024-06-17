@@ -1,16 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjgkjhe7k58s"]
+[gd_scene load_steps=10 format=3 uid="uid://cjgkjhe7k58s"]
 
 [ext_resource type="Texture2D" uid="uid://bsoah8gdmv5su" path="res://icon.svg" id="1_3i75j"]
 [ext_resource type="Script" path="res://Scripts/Character/Player/Player.gd" id="1_goc7c"]
-[ext_resource type="PackedScene" uid="uid://b22mbah3esni7" path="res://Scenes/Components/Attacks/sword_swipe.tscn" id="3_u3au3"]
+[ext_resource type="PackedScene" uid="uid://bmbffq7l4h1xg" path="res://Scenes/Components/Actions/Defensive/bubble_shield.tscn" id="3_5jpqi"]
+[ext_resource type="PackedScene" uid="uid://b22mbah3esni7" path="res://Scenes/Components/Actions/Attacks/sword_swipe.tscn" id="3_lbh0k"]
 [ext_resource type="PackedScene" uid="uid://cid0vv4el0hjd" path="res://Scenes/Components/health_component.tscn" id="4_kq5tx"]
+[ext_resource type="PackedScene" uid="uid://ok0kh73rhexf" path="res://Scenes/Components/Actions/Defensive/parry_action.tscn" id="4_nvb5x"]
 [ext_resource type="PackedScene" uid="uid://c74bwndkx5s18" path="res://Scenes/Components/user_movement_component.tscn" id="5_4oels"]
 [ext_resource type="PackedScene" uid="uid://b1jwlvk5nun41" path="res://Scenes/Components/resource_component.tscn" id="6_7mpsh"]
-[ext_resource type="PackedScene" uid="uid://cjafnq2r4f08n" path="res://Scenes/Components/dash_component.tscn" id="7_2pvyl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5pih8"]
 
 [node name="KingArthur" type="CharacterBody2D"]
+z_index = 5
 collision_mask = 14
 script = ExtResource("1_goc7c")
 
@@ -25,23 +27,29 @@ shape = SubResource("CircleShape2D_5pih8")
 [node name="PrimaryAction" type="Node2D" parent="."]
 rotation = 1.5708
 
-[node name="SwordSwipe" parent="PrimaryAction" instance=ExtResource("3_u3au3")]
+[node name="SwordSwipe" parent="PrimaryAction" instance=ExtResource("3_lbh0k")]
+damage = 10
+cooldown_time = 0.1
 
 [node name="SecondaryAction" type="Node2D" parent="."]
 rotation = 1.5708
 
-[node name="SwordSwipe" parent="SecondaryAction" instance=ExtResource("3_u3au3")]
+[node name="Parry" parent="SecondaryAction" instance=ExtResource("4_nvb5x")]
+resist_time = 0.5
+cooldown_time = 5.0
 
 [node name="DefensiveAction" type="Node2D" parent="."]
 rotation = 1.5708
 
-[node name="DashComponent" parent="DefensiveAction" instance=ExtResource("7_2pvyl")]
+[node name="BubbleShield" parent="DefensiveAction" instance=ExtResource("3_5jpqi")]
+resist_time = 0.5
+cooldown_time = 5.0
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_kq5tx")]
 health = 50
+armour = 1
 
 [node name="UserMovementComponent" parent="." instance=ExtResource("5_4oels")]
-max_speed = 200.0
 
 [node name="ResourceComponent" parent="." instance=ExtResource("6_7mpsh")]
 

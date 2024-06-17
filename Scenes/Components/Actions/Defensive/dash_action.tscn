@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://cjafnq2r4f08n"]
 
-[ext_resource type="Script" path="res://Scripts/Components/Actions/Defensive/dash_action.gd" id="1_cdjtx"]
+[ext_resource type="Script" path="res://Scripts/Components/Actions/Defensive/dash_action.gd" id="1_g12ux"]
 
-[node name="DashComponent" type="Node"]
-script = ExtResource("1_cdjtx")
+[node name="Dash" type="Node"]
+script = ExtResource("1_g12ux")
 
 [node name="DashTimer" type="Timer" parent="."]
 
