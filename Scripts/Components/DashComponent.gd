@@ -16,41 +16,52 @@ var can_dash = true
 var is_dashing = false
 
 func _ready():
-	parent_component = get_parent()
-	health_component = get_node("../HealthComponent")
-	movement_component = get_node("../UserMovementComponent")
+	parent_component = owner
+	health_component = owner.get_node("HealthComponent")
+	movement_component = owner.get_node("UserMovementComponent")
 	cooldown_timer = $DashCooldownTimer
 	dash_timer = $DashTimer
 
-func _process(delta):
-	if Input.is_action_just_pressed("defensive_action"): 
-		if can_dash:
-			_dash()
+func use():
+	_dash()
 
 
 func _dash() -> void:
+	if not can_dash:
+		return
 	print("dashed")
+	# Exit out if no movement component is found
+	if not movement_component:
+		print("Movement component not found, cannot dash")
+		return
+	# Exit out if the parent component isn't found
+	if not parent_component:
+		print("Parent not found for dash component")
+		return
+	# If the health component exists, add immunity time
 	if health_component:
-		if parent_component:
-			is_dashing = true
-			# Start the timer for how long you will be dashing
-			dash_timer.start(immune_time)
-			
-			# Start the i frames on the health component
-			health_component.add_immunity(immune_time)
-			# Stop the player from moving
-			movement_component.set_can_move(false)
-			var dash_direction = Vector2(movement_component.horizontal, movement_component.vertical)
-			parent_component.velocity = dash_direction.normalized() * dash_amount
-			
-			
-			# No more dashing ;-;
-			can_dash = false
-			cooldown_timer.start(dash_cooldown)
-		else:
-			print("Parent not found for dash component")
+		# Start the i frames on the health component
+		health_component.add_immunity(immune_time)
 	else:
-		print("Health component not found")
+		print("Health component not found. Dashing with no immunity")
+	
+	
+	
+	is_dashing = true
+	# Start the timer for how long you will be dashing
+	dash_timer.start(immune_time)
+	
+	
+	# Stop the player from moving
+	movement_component.set_can_move(false)
+	var dash_direction = Vector2(movement_component.horizontal, movement_component.vertical)
+	parent_component.velocity = dash_direction.normalized() * dash_amount
+		
+		
+	# No more dashing ;-;
+	can_dash = false
+	cooldown_timer.start(dash_cooldown)
+
 
 
 func _on_dash_cooldown_timer_timeout():
