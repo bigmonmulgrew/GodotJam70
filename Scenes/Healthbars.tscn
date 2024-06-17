@@ -1,0 +1,215 @@
+[gd_scene load_steps=23 format=3 uid="uid://dktnlhjatfngg"]
+
+[ext_resource type="Script" path="res://Scripts/Healthbars.gd" id="1_dol2k"]
+[ext_resource type="Texture2D" uid="uid://ckfjq04cf0kpf" path="res://Textures/HealthBear.png" id="1_pcnfk"]
+[ext_resource type="Texture2D" uid="uid://dgphg5pw1a635" path="res://Textures/Animated Bar/HealthBear1.png" id="2_dego0"]
+[ext_resource type="Texture2D" uid="uid://btts7iyuo22v4" path="res://Textures/SmallHealthBear.png" id="2_i6mdl"]
+[ext_resource type="Texture2D" uid="uid://cjivxjrhi8m3s" path="res://Textures/Animated Bar/HealthBear2.png" id="3_ldc2h"]
+[ext_resource type="Texture2D" uid="uid://cnbn1d3ndnn08" path="res://Textures/Face Icon Smol.png" id="3_vmncw"]
+[ext_resource type="Texture2D" uid="uid://dlum2wio6wiea" path="res://Textures/Animated Bar/HealthBear11.png" id="4_6yfyt"]
+[ext_resource type="Texture2D" uid="uid://cqhalbj0v60j2" path="res://Textures/Face Icon Beeg.png" id="4_fe3t6"]
+[ext_resource type="Texture2D" uid="uid://dx54s25goqf11" path="res://Textures/Animated Bar/HealthBear12.png" id="5_53cv2"]
+[ext_resource type="Texture2D" uid="uid://bvhohbcemwp0y" path="res://Textures/VS icon.png" id="5_knct6"]
+[ext_resource type="Texture2D" uid="uid://ddqfnvxtjqj1l" path="res://Textures/Animated Bar/HealthBear3.png" id="6_xdfvg"]
+[ext_resource type="Texture2D" uid="uid://bde7hrspm44jm" path="res://Textures/Animated Bar/HealthBear4.png" id="7_rgj44"]
+[ext_resource type="Texture2D" uid="uid://oi8y20jgjnga" path="res://Textures/Animated Bar/HealthBear5.png" id="8_ejwof"]
+[ext_resource type="Texture2D" uid="uid://20dhqoajji6a" path="res://Textures/Animated Bar/HealthBear6.png" id="9_dqahc"]
+[ext_resource type="Texture2D" uid="uid://cnqxe8pt2xtvg" path="res://Textures/Animated Bar/HealthBear7.png" id="10_ea4g3"]
+[ext_resource type="Texture2D" uid="uid://d1id2y5eliii" path="res://Textures/Animated Bar/HealthBear8.png" id="11_rt8t5"]
+[ext_resource type="Texture2D" uid="uid://c268rgn2vy6t4" path="res://Textures/Animated Bar/HealthBear9.png" id="12_b2a7t"]
+[ext_resource type="Texture2D" uid="uid://buof2a8rmshk0" path="res://Textures/Animated Bar/HealthBear10.png" id="13_whxex"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_yl1c2"]
+frames = 12
+speed_scale = 0.0
+frame_0/texture = ExtResource("2_dego0")
+frame_1/texture = ExtResource("3_ldc2h")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("6_xdfvg")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("7_rgj44")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("8_ejwof")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("9_dqahc")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("10_ea4g3")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("11_rt8t5")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("12_b2a7t")
+frame_8/duration = 1.0
+frame_9/texture = ExtResource("13_whxex")
+frame_9/duration = 1.0
+frame_10/texture = ExtResource("4_6yfyt")
+frame_10/duration = 1.0
+frame_11/texture = ExtResource("5_53cv2")
+frame_11/duration = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_rqjmi"]
+line_spacing = 4.0
+font_size = 24
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_color = Color(0.207843, 0.207843, 0.207843, 1)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_tnv5d"]
+frames = 12
+speed_scale = 0.0
+frame_0/texture = ExtResource("2_dego0")
+frame_1/texture = ExtResource("3_ldc2h")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("6_xdfvg")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("7_rgj44")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("8_ejwof")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("9_dqahc")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("10_ea4g3")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("11_rt8t5")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("12_b2a7t")
+frame_8/duration = 1.0
+frame_9/texture = ExtResource("13_whxex")
+frame_9/duration = 1.0
+frame_10/texture = ExtResource("4_6yfyt")
+frame_10/duration = 1.0
+frame_11/texture = ExtResource("5_53cv2")
+frame_11/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_qrsyg"]
+frames = 12
+speed_scale = 0.0
+frame_0/texture = ExtResource("2_dego0")
+frame_1/texture = ExtResource("3_ldc2h")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("6_xdfvg")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("7_rgj44")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("8_ejwof")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("9_dqahc")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("10_ea4g3")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("11_rt8t5")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("12_b2a7t")
+frame_8/duration = 1.0
+frame_9/texture = ExtResource("13_whxex")
+frame_9/duration = 1.0
+frame_10/texture = ExtResource("4_6yfyt")
+frame_10/duration = 1.0
+frame_11/texture = ExtResource("5_53cv2")
+frame_11/duration = 1.0
+
+[node name="HealthBarUI" type="CanvasLayer"]
+script = ExtResource("1_dol2k")
+
+[node name="PlayerHealthBar" type="TextureProgressBar" parent="."]
+offset_left = 644.0
+offset_top = 35.0
+offset_right = 1032.0
+offset_bottom = 66.0
+step = 0.01
+value = 50.0
+fill_mode = 1
+texture_under = ExtResource("1_pcnfk")
+texture_progress = SubResource("AnimatedTexture_yl1c2")
+tint_progress = Color(0, 1, 0, 1)
+
+[node name="AllyHealthBar1" type="TextureProgressBar" parent="PlayerHealthBar"]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 50.0
+offset_right = 357.0
+offset_bottom = 63.0
+value = 100.0
+fill_mode = 1
+texture_under = ExtResource("2_i6mdl")
+texture_progress = ExtResource("2_i6mdl")
+tint_under = Color(0, 0, 0, 1)
+tint_progress = Color(0, 1, 1, 1)
+
+[node name="AllyIcon1" type="Sprite2D" parent="PlayerHealthBar/AllyHealthBar1"]
+position = Vector2(162, 6)
+texture = ExtResource("3_vmncw")
+
+[node name="AllyHealthBar2" type="TextureProgressBar" parent="PlayerHealthBar"]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 83.0
+offset_right = 310.0
+offset_bottom = 96.0
+value = 100.0
+fill_mode = 1
+texture_under = ExtResource("2_i6mdl")
+texture_progress = ExtResource("2_i6mdl")
+tint_under = Color(0, 0, 0, 1)
+tint_progress = Color(0, 1, 1, 1)
+
+[node name="AllyIcon2" type="Sprite2D" parent="PlayerHealthBar/AllyHealthBar2"]
+position = Vector2(162, 6)
+texture = ExtResource("3_vmncw")
+
+[node name="PlayerIcon" type="Sprite2D" parent="PlayerHealthBar"]
+position = Vector2(454, 17)
+texture = ExtResource("4_fe3t6")
+
+[node name="PlayerName" type="Label" parent="PlayerHealthBar"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 33.0
+offset_right = 226.0
+offset_bottom = 64.0
+text = "Robin Hood"
+label_settings = SubResource("LabelSettings_rqjmi")
+horizontal_alignment = 1
+
+[node name="PlayerResourceBar" type="TextureProgressBar" parent="PlayerHealthBar"]
+show_behind_parent = true
+layout_mode = 0
+offset_top = -17.0
+offset_right = 388.0
+offset_bottom = 14.0
+step = 0.01
+value = 100.0
+fill_mode = 1
+texture_under = ExtResource("1_pcnfk")
+texture_progress = SubResource("AnimatedTexture_tnv5d")
+tint_under = Color(0, 0, 0, 1)
+tint_progress = Color(1, 0, 1, 1)
+
+[node name="BossHealthBar" type="TextureProgressBar" parent="."]
+offset_left = 104.0
+offset_top = 33.0
+offset_right = 492.0
+offset_bottom = 64.0
+value = 50.0
+texture_under = ExtResource("1_pcnfk")
+texture_progress = SubResource("AnimatedTexture_qrsyg")
+tint_progress = Color(1, 0, 0, 1)
+
+[node name="BossIcon" type="Sprite2D" parent="BossHealthBar"]
+position = Vector2(-53, 16)
+texture = ExtResource("4_fe3t6")
+
+[node name="PlayerName" type="Label" parent="BossHealthBar"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 32.0
+offset_right = 387.0
+offset_bottom = 63.0
+text = "The Three Wise Men Of Gotham"
+label_settings = SubResource("LabelSettings_rqjmi")
+horizontal_alignment = 1
+
+[node name="VSIcon" type="Sprite2D" parent="."]
+position = Vector2(571, 52)
+texture = ExtResource("5_knct6")
