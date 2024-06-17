@@ -118,6 +118,8 @@ size = Vector2(6, 33)
 
 [node name="SwordSwipe" type="Node2D"]
 script = ExtResource("1_vciys")
+damage = null
+cooldown_time = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

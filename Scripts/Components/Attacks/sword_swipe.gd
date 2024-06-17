@@ -6,8 +6,11 @@ extends Attack
 # Overide for the base use
 # Plays the attack
 func use():
-	anim_player.play("sword_attack")
+	if can_use:
+		anim_player.play("sword_attack")
+		can_use = false
+		start_cooldown_timer()
 
 
 func _on_area_2d_body_entered(body):
-	pass #TODO: Add enemy collision logic
+	body.get_node("HealthComponent").remove_health(damage)
