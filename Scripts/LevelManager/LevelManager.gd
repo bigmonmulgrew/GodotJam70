@@ -15,7 +15,7 @@ func load_level(Path:String):
 		var lastTime = $TransitionPlayer.current_animation_position
 		$TransitionPlayer.play("FadeOut")
 		#not really a fix but, I'm o blame dat on daveo, prase be the great merger
-		$TransitionPlayer.seek($TransitionPlayer.current_animation_length-lastTime)
+		$TransitionPlayer.seek((($TransitionPlayer.current_animation_length-lastTime)/$TransitionPlayer.current_animation_length)*$TransitionPlayer.get_animation("FadeIn").length)
 		await get_tree().create_timer($TransitionPlayer.get_animation("FadeOut").length).timeout
 		$TransitionPlayer.play("FadeIn")
 		get_tree().unload_current_scene()
