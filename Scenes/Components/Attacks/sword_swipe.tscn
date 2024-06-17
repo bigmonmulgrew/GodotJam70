@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b22mbah3esni7"]
 
-[ext_resource type="Script" path="res://Scripts/Components/Attacks/sword_swipe.gd" id="1_vciys"]
+[ext_resource type="Script" path="res://Scripts/Components/Actions/Attacks/sword_swipe.gd" id="1_quy50"]
 [ext_resource type="Texture2D" uid="uid://bsoah8gdmv5su" path="res://icon.svg" id="2_dqlk2"]
 
 [sub_resource type="Animation" id="Animation_eeofq"]
@@ -117,7 +117,7 @@ _data = {
 size = Vector2(6, 33)
 
 [node name="SwordSwipe" type="Node2D"]
-script = ExtResource("1_vciys")
+script = ExtResource("1_quy50")
 damage = null
 cooldown_time = null
 

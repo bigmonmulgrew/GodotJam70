@@ -1,13 +1,6 @@
-extends Node2D
-class_name Attack
+extends Node
+class_name Action
 
-## This is a template class to extend. 
-## [br]Use this to guarantee that attacks have a use method and will not
-## [br]crash when being used in a player or boss
-
-# Export variables
-## Damage value to apply
-@export var damage: int = 10
 ## Cooldown on the ability in seconds
 @export var cooldown_time: float = 1
 

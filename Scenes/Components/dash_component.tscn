@@ -1,13 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://cjafnq2r4f08n"]
 
-[ext_resource type="Script" path="res://Scripts/Components/DashComponent.gd" id="1_caeun"]
+[ext_resource type="Script" path="res://Scripts/Components/Actions/Defensive/DashComponent.gd" id="1_cdjtx"]
 
 [node name="DashComponent" type="Node"]
-script = ExtResource("1_caeun")
-
-[node name="DashCooldownTimer" type="Timer" parent="."]
+script = ExtResource("1_cdjtx")
 
 [node name="DashTimer" type="Timer" parent="."]
 
-[connection signal="timeout" from="DashCooldownTimer" to="." method="_on_dash_cooldown_timer_timeout"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
