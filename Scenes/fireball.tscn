@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bn71gentyo1xk"]
+[gd_scene load_steps=3 format=3 uid="uid://bn71gentyo1xk"]
 
 [ext_resource type="Script" path="res://Scripts/fireball.gd" id="1_yn6hq"]
+[ext_resource type="Texture2D" uid="uid://cqhalbj0v60j2" path="res://Images/Textures/Face Icon Beeg.png" id="2_frmmd"]
 
 [node name="Fireball" type="Node2D"]
 script = ExtResource("1_yn6hq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_frmmd")

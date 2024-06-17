@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjgkjhe7k58s"]
+[gd_scene load_steps=10 format=3 uid="uid://cjgkjhe7k58s"]
 
 [ext_resource type="Texture2D" uid="uid://bsoah8gdmv5su" path="res://icon.svg" id="1_3i75j"]
 [ext_resource type="Script" path="res://Scripts/Character/Player/Player.gd" id="1_goc7c"]
+[ext_resource type="PackedScene" uid="uid://qyn11dhewlu1" path="res://Scenes/fireball_attack.tscn" id="3_bs1da"]
 [ext_resource type="PackedScene" uid="uid://b22mbah3esni7" path="res://Scenes/Components/Attacks/sword_swipe.tscn" id="3_u3au3"]
 [ext_resource type="PackedScene" uid="uid://cid0vv4el0hjd" path="res://Scenes/Components/health_component.tscn" id="4_kq5tx"]
 [ext_resource type="PackedScene" uid="uid://c74bwndkx5s18" path="res://Scenes/Components/user_movement_component.tscn" id="5_4oels"]
@@ -25,7 +26,7 @@ shape = SubResource("CircleShape2D_5pih8")
 [node name="PrimaryAction" type="Node2D" parent="."]
 rotation = 1.5708
 
-[node name="SwordSwipe" parent="PrimaryAction" instance=ExtResource("3_u3au3")]
+[node name="fireball_attack" parent="PrimaryAction" instance=ExtResource("3_bs1da")]
 
 [node name="SecondaryAction" type="Node2D" parent="."]
 rotation = 1.5708
@@ -41,7 +42,6 @@ rotation = 1.5708
 health = 50
 
 [node name="UserMovementComponent" parent="." instance=ExtResource("5_4oels")]
-max_speed = 200.0
 
 [node name="ResourceComponent" parent="." instance=ExtResource("6_7mpsh")]
 

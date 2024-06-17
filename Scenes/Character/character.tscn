@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bs1eddaicb0iy"]
+[gd_scene load_steps=10 format=3 uid="uid://bs1eddaicb0iy"]
 
 [ext_resource type="Script" path="res://Scripts/Character/Character.gd" id="1_dxghx"]
 [ext_resource type="Texture2D" uid="uid://bsoah8gdmv5su" path="res://icon.svg" id="2_f665s"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cjafnq2r4f08n" path="res://Scenes/Components/dash_component.tscn" id="5_36v8t"]
 [ext_resource type="PackedScene" uid="uid://b22mbah3esni7" path="res://Scenes/Components/Attacks/sword_swipe.tscn" id="6_iqirn"]
 [ext_resource type="PackedScene" uid="uid://b1jwlvk5nun41" path="res://Scenes/Components/resource_component.tscn" id="7_47ilm"]
+[ext_resource type="PackedScene" uid="uid://qyn11dhewlu1" path="res://Scenes/fireball_attack.tscn" id="8_lqw0f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4cjkn"]
 size = Vector2(130, 130)
@@ -37,6 +38,8 @@ health = 50
 
 [node name="SwordSwipe" parent="." instance=ExtResource("6_iqirn")]
 rotation = 1.5708
+
+[node name="fireball_attack" parent="." instance=ExtResource("8_lqw0f")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
