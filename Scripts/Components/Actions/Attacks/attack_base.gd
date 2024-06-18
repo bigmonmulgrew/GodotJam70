@@ -8,3 +8,4 @@ class_name Attack
 # Export variables
 ## Damage value to apply
 @export var damage: int = 10
+@export var damage_type: DamageType.Type = DamageType.Type.PHYSICAL
