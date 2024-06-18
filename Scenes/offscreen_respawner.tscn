@@ -13,5 +13,13 @@ script = ExtResource("1_4pfsa")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5aleo")
 
+[node name="StartMarker" type="Marker2D" parent="."]
+position = Vector2(-676, -2)
+gizmo_extents = 250.0
+
+[node name="EndMarker" type="Marker2D" parent="."]
+position = Vector2(688, -2)
+gizmo_extents = 250.0
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

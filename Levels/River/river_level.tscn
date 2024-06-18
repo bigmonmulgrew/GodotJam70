@@ -32,3 +32,11 @@ scale = Vector2(10.4, 1)
 
 [node name="OffscreenRespawner" parent="." instance=ExtResource("7_fun08")]
 position = Vector2(561, 930)
+
+[node name="StartMarker" parent="OffscreenRespawner" index="1"]
+position = Vector2(-128, -1079)
+
+[node name="EndMarker" parent="OffscreenRespawner" index="2"]
+position = Vector2(527, -1070)
+
+[editable path="OffscreenRespawner"]
