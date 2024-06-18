@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bn71gentyo1xk"]
+[gd_scene load_steps=4 format=3 uid="uid://dg7rq0kgosyeo"]
 
 [ext_resource type="Script" path="res://Scripts/fireball.gd" id="1_yn6hq"]
 [ext_resource type="Texture2D" uid="uid://cqhalbj0v60j2" path="res://Images/Textures/Face Icon Beeg.png" id="2_frmmd"]
