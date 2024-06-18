@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GameManager="*res://Scenes/game_manager.tscn"
 AudioManager="*res://Scenes/AudioMaster/audio_master.tscn"
 LevelMaster="*res://Scenes/LevelManager/level_master.tscn"
+SaveSystem="*res://Scripts/SaveSystem/SaveSystem.gd"
 
 [display]
 
