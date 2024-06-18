@@ -47,6 +47,3 @@ func _on_body_exited(body):
 func _on_timer_timeout():
 	if bCanDamageBody == true:
 		health_component.remove_health(damage_amount, damage_type)
-
-
-
