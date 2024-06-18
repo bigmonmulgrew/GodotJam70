@@ -9,8 +9,8 @@ func _ready():
 	health_bar_ui.player_max_resource = player.get_node("ResourceComponent").resource_cap
 
 func _process(delta):
-	#delete_me1()
-	delete_me2()
+	delete_me1()
+	#delete_me2()
 	delete_me3()
 	delete_me4()
 
