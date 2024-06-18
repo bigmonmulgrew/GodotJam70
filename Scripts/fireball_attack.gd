@@ -22,6 +22,7 @@ func _ready():
 	parent_component = owner
 	print("PARENT COMPONENT NAME: " + str(parent_component.name))
 	health_component = owner.get_node("HealthComponent")
+	
 
 ## Implementation of the use() method from the action_base class. When called, it calls the fire method to send out a fireball.
 func use():
@@ -38,7 +39,7 @@ func fire():
 	start_cooldown_timer()
 	print("Creating fireball")
 	var fireball_instance = fireball_scene.instantiate()
-	get_parent().add_child(fireball_instance)
+	get_tree().get_root().add_child(fireball_instance)
 	var direction = Vector2(cos(parent_component.rotation), sin(parent_component.rotation))
 	fireball_instance.projectile_direction = direction
 	fireball_instance.global_position = get_parent().global_position

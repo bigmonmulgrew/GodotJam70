@@ -27,9 +27,30 @@ var projectile_position: Vector2
 ## A Vector2 that can be used to store the direction of the projectile.
 var projectile_direction: Vector2
 
+var projectile_container: Node2D
+
 ##An empty ready() method that can be expanded upon in children classes.
 func _ready():
-	pass
+	print("crteating projectile")
+	create_projectile_container()
+	projectile_container.add_child(self)
+	
+# This function looks for a "ProjectileContainer" at the root of the scene tree.
+# If it doesn't exist, it creates one and attaches it to the root.
+func create_projectile_container():
+	# Get the root of the current scene tree
+	var root = get_tree().get_root()
+
+	# Find a node named "ProjectileContainer" among the children of the root node
+	projectile_container = root.get_node("ProjectileContainer")
+
+	# If it does not exist, create a new Node2D and name it "ProjectileContainer"
+	if projectile_container == null:
+		projectile_container = Node2D.new()
+		projectile_container.name = "ProjectileContainer"
+
+		# Add it to the root node
+		root.add_child(projectile_container)
 	
 ## This method calls update_position(delta) on tick, updating the base_projectile's position every frame.
 func _physics_process(delta):
