@@ -31,7 +31,6 @@ var projectile_container: Node2D
 
 ##An empty ready() method that can be expanded upon in children classes.
 func _ready():
-	print("crteating projectile")
 	create_projectile_container()
 	projectile_container.add_child(self)
 	
