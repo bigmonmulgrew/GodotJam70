@@ -16,31 +16,43 @@ class_name StaticDamageElement
 @export var damage_type: DamageType.Type = DamageType.Type.PHYSICAL
 ## An empty variable to store the recieved collision body's health component.
 @onready var health_component
+## Array of currently colliding bodies / node2Ds.
+var colliding_objects:Array[Node2D]
 
-## Receives a collision body and gets it's health component. It then deals damage to the body, before bouncing it away with a knockback effect.
-##[br]
-##[br]
-## The knockback effect works by first getting the direction of the received collision body by normalising it's velocity.
-##[br]
-## It then checks if the direction is a ZERO vector (0,0). If it is, StaticDamageElement instead gets it's direction by finding the different between it's own position and the received body's position.
-##[br]
-## Finally, it flips the direction and applies the bounce_force to knock the received collision body away.
+## Adds newly collided bodies to the colliding_objects Array for later processing.
 func _on_body_entered(body: Node2D):
-	print(body.name)
-	health_component = body.get_node("HealthComponent")
-	health_component.remove_health(damage_amount, damage_type)
-	#dogde but quick fix for knock back to work better for all shapes
-	var ShapeRef:CollisionShape2D = body.get_node("CollisionShape2D")
-	if ShapeRef != null:
-		$ShapeCast2D.shape = ShapeRef.shape
-	$ShapeCast2D.global_position = body.global_position-(body.velocity*get_physics_process_delta_time())
-	$ShapeCast2D.target_position = (body.velocity*get_physics_process_delta_time())
-	$ShapeCast2D.clear_exceptions()
-	$ShapeCast2D.add_exception(body)
-	$ShapeCast2D.force_shapecast_update()
-	var direction = $ShapeCast2D.get_collision_normal(0)
-	direction = direction.normalized()
-  
-	print(direction," DT " , get_physics_process_delta_time())
+	colliding_objects.push_back(body)
+## Removes any bodies the leave collision area from the colliding_objects Array.
+func _on_body_exit(body:Node2D):
+	colliding_objects.remove_at(colliding_objects.find(body,0))
 	
-	body.velocity = direction * bounce_force
+## Processes all the colliding bodies in colliding_objects.
+##[br]
+##[br]
+## Going through each of the objects and calculate their collisons using a shapecast from their previous position to there next position with veloicty.
+##[br]
+##[br]
+## Requires a disabled SHAPECAST2D Node.
+func _process(delta):
+	for body in colliding_objects:
+		print(body.name)
+		#Calculate the bodies collision shape if it has it
+		var ShapeRef:CollisionShape2D = body.get_node("CollisionShape2D")
+		#Set the shapecasts casting shape based on the "ShapeRef" if it exists
+		if ShapeRef != null:
+			$ShapeCast2D.shape = ShapeRef.shape
+		#Set shape cast to the bodies previous position
+		$ShapeCast2D.global_position = body.global_position-(body.velocity*get_physics_process_delta_time())
+		#Set the shapes relative target cast position to be where the player is
+		$ShapeCast2D.target_position = (body.velocity*get_physics_process_delta_time())
+		#Update the cast recalculating it
+		$ShapeCast2D.force_shapecast_update()
+		if $ShapeCast2D.get_collision_count()>0:
+			#Health malipulation
+			health_component = body.get_node("HealthComponent")
+			health_component.remove_health(damage_amount, damage_type)
+			#Direction to throw object
+			var direction = $ShapeCast2D.get_collision_normal(0)
+			direction = direction.normalized()
+			#Add velocity to the body
+			body.velocity = direction * bounce_force
