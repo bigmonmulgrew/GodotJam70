@@ -14,47 +14,45 @@ class_name StaticDamageElement
 @export var bounce_force: float = 200
 ## Damage type to apply.
 @export var damage_type: DamageType.Type = DamageType.Type.PHYSICAL
-## A boolean that says whether the trap will despawn after a specified amount of time.
-@export var despawn_boolean = false
-## A float that specifies the time until the trap should despawn.
-@export var despawn_time = 0
 ## An empty variable to store the recieved collision body's health component.
 @onready var health_component
+## Array of currently colliding bodies / node2Ds.
+var colliding_objects:Array[Node2D]
 
-## If despawn_boolean has been set to true in the editor, then this trap will automatically delete itself after the specified despawn time.
-func _ready():
-	if despawn_boolean:
-		await get_tree().create_timer(despawn_time).timeout
-		queue_free()
-
-## Receives a collision body and gets it's health component. It then deals damage to the body, before bouncing it away with a knockback effect.
-##[br]
-##[br]
-## The knockback effect works by first getting the direction of the received collision body by normalising it's velocity.
-##[br]
-## It then checks if the direction is a ZERO vector (0,0). If it is, StaticDamageElement instead gets it's direction by finding the different between it's own position and the received body's position.
-##[br]
-## Finally, it flips the direction and applies the bounce_force to knock the received collision body away.
-func _on_body_entered(body):
-	print(body.name)
-	health_component = body.get_node("HealthComponent")
-	health_component.remove_health(damage_amount, damage_type)
-  
-	var direction = global_position - body.global_position
-	direction = direction.normalized()
-  
-	print(direction)
+## Adds newly collided bodies to the colliding_objects Array for later processing.
+func _on_body_entered(body: Node2D):
+	colliding_objects.push_back(body)
+## Removes any bodies the leave collision area from the colliding_objects Array.
+func _on_body_exit(body:Node2D):
+	colliding_objects.remove_at(colliding_objects.find(body,0))
 	
-	body.velocity = -direction * bounce_force
-
-## Receives a boolean value and sets the despawn_boolean variable to that value.
+## Processes all the colliding bodies in colliding_objects.
 ##[br]
-## Should be used when a trap is instantiated during a scene (e.g. if a boss creates one with an attack).
-func set_despawn_boolean(value: bool):
-	despawn_boolean = value
-
-## Receives a float value and sets the despawn_boolean variable to that value in seconds.
 ##[br]
-## Should be used when a trap is instantiated during a scene (e.g. if a boss creates one with an attack).
-func set_despawn_time(time: float):
-	despawn_time = time
+## Going through each of the objects and calculate their collisons using a shapecast from their previous position to there next position with veloicty.
+##[br]
+##[br]
+## Requires a disabled SHAPECAST2D Node.
+func _process(delta):
+	for body in colliding_objects:
+		print(body.name)
+		#Calculate the bodies collision shape if it has it
+		var ShapeRef:CollisionShape2D = body.get_node("CollisionShape2D")
+		#Set the shapecasts casting shape based on the "ShapeRef" if it exists
+		if ShapeRef != null:
+			$ShapeCast2D.shape = ShapeRef.shape
+		#Set shape cast to the bodies previous position
+		$ShapeCast2D.global_position = body.global_position-(body.velocity*get_physics_process_delta_time())
+		#Set the shapes relative target cast position to be where the player is
+		$ShapeCast2D.target_position = (body.velocity*get_physics_process_delta_time())
+		#Update the cast recalculating it
+		$ShapeCast2D.force_shapecast_update()
+		if $ShapeCast2D.get_collision_count()>0:
+			#Health malipulation
+			health_component = body.get_node("HealthComponent")
+			health_component.remove_health(damage_amount, damage_type)
+			#Direction to throw object
+			var direction = $ShapeCast2D.get_collision_normal(0)
+			direction = direction.normalized()
+			#Add velocity to the body
+			body.velocity = direction * bounce_force
