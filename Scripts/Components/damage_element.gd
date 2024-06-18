@@ -20,15 +20,24 @@ class_name DamageElement
 ## Set the damage type
 @export var damage_type: DamageType.Type = DamageType.Type.PHYSICAL
 ## Gets a reference to the Timer node from the DamageElement object.
-@onready var timer_instance = $Timer
+@onready var damage_timer_instance = $Timer
+## A boolean that says whether the trap will despawn after a specified amount of time.
+@export var despawn_boolean = false
+## A float that specifies the time until the trap should despawn.
+@export var despawn_time = 0
 ## An empty variable that can be used to hold the health component of the received collision body.
 @onready var health_component
 ## A boolean that allows the DamageElement to hurt the player while they are in the area of effect.
 @onready var bCanDamageBody: bool = false
 
 ## This simply starts the Timer. Since bCanDamageBody defaults to false, each Timeout will have no effect until something enters the area of effect.
+##[br]
+## If despawn_boolean has been set to true in the editor, then this trap will automatically delete itself after the specified despawn time.
 func _ready():
-	timer_instance.start(timer_time)
+	damage_timer_instance.start(timer_time)
+	if despawn_boolean:
+		await get_tree().create_timer(despawn_time).timeout
+		queue_free()
 
 ## Finds the health component of the body that overlaps (can be player or enemy depending on setup, but default is player) and then sets it as damageable.
 ##[br]
@@ -43,10 +52,19 @@ func _on_body_exited(body):
 	health_component = null
 	bCanDamageBody = false
 
-## When the timer's Timeout signal fires, if the received collision body is damageable, health equal to the damage amount will be removed from its current health.
+## When the damage_timer's Timeout signal fires, if the received collision body is damageable, health equal to the damage amount will be removed from its current health.
 func _on_timer_timeout():
 	if bCanDamageBody == true:
 		health_component.remove_health(damage_amount, damage_type)
 
+## Receives a boolean value and sets the despawn_boolean variable to that value.
+##[br]
+## Should be used when a trap is instantiated during a scene (e.g. if a boss creates one with an attack).
+func set_despawn_boolean(value: bool):
+	despawn_boolean = value
 
-
+## Receives a float value and sets the despawn_boolean variable to that value in seconds.
+##[br]
+## Should be used when a trap is instantiated during a scene (e.g. if a boss creates one with an attack).
+func set_despawn_time(time: float):
+	despawn_time = time

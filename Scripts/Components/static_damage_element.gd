@@ -14,8 +14,18 @@ class_name StaticDamageElement
 @export var bounce_force: float = 200
 ## Damage type to apply.
 @export var damage_type: DamageType.Type = DamageType.Type.PHYSICAL
+## A boolean that says whether the trap will despawn after a specified amount of time.
+@export var despawn_boolean = false
+## A float that specifies the time until the trap should despawn.
+@export var despawn_time = 0
 ## An empty variable to store the recieved collision body's health component.
 @onready var health_component
+
+## If despawn_boolean has been set to true in the editor, then this trap will automatically delete itself after the specified despawn time.
+func _ready():
+	if despawn_boolean:
+		await get_tree().create_timer(despawn_time).timeout
+		queue_free()
 
 ## Receives a collision body and gets it's health component. It then deals damage to the body, before bouncing it away with a knockback effect.
 ##[br]
@@ -36,3 +46,15 @@ func _on_body_entered(body):
 	print(direction)
 	
 	body.velocity = -direction * bounce_force
+
+## Receives a boolean value and sets the despawn_boolean variable to that value.
+##[br]
+## Should be used when a trap is instantiated during a scene (e.g. if a boss creates one with an attack).
+func set_despawn_boolean(value: bool):
+	despawn_boolean = value
+
+## Receives a float value and sets the despawn_boolean variable to that value in seconds.
+##[br]
+## Should be used when a trap is instantiated during a scene (e.g. if a boss creates one with an attack).
+func set_despawn_time(time: float):
+	despawn_time = time
