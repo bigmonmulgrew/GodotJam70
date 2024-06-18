@@ -23,6 +23,8 @@ texture = ExtResource("1_3i75j")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5pih8")
 
+[node name="ProjectileContainer" type="Node" parent="."]
+
 [node name="PrimaryAction" type="Node2D" parent="."]
 rotation = 1.5708
 
