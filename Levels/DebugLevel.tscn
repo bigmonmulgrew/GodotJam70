@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbmv5ka3j4o3s"]
+[gd_scene load_steps=9 format=3 uid="uid://bbmv5ka3j4o3s"]
 
 [ext_resource type="Script" path="res://Scripts/debug_level.gd" id="1_vmmgu"]
 [ext_resource type="PackedScene" uid="uid://0vb83wfs1stj" path="res://Scenes/Components/static_damage_element.tscn" id="3_522r3"]
 [ext_resource type="PackedScene" uid="uid://7tmputkdxmuf" path="res://Scenes/empty_arena.tscn" id="4_x8guw"]
 [ext_resource type="PackedScene" uid="uid://d22mivc3fy6ts" path="res://Scenes/Components/damage_element.tscn" id="5_a30s6"]
+[ext_resource type="PackedScene" uid="uid://cpkrufu4v2wpk" path="res://Scenes/tree.tscn" id="5_pr1o7"]
+[ext_resource type="PackedScene" uid="uid://bgnwtk06h0bhc" path="res://Scenes/rock.tscn" id="6_mlihn"]
 [ext_resource type="PackedScene" uid="uid://cjgkjhe7k58s" path="res://Scenes/Character/Player/king_arthur.tscn" id="6_u78w3"]
 [ext_resource type="PackedScene" uid="uid://dktnlhjatfngg" path="res://Scenes/Healthbars.tscn" id="7_xxfqd"]
 
@@ -13,13 +15,31 @@ target_Level_next = "res://Menus/game_over.tscn"
 
 [node name="EmptyArena" parent="." instance=ExtResource("4_x8guw")]
 
-[node name="StaticDamageElement" parent="." instance=ExtResource("3_522r3")]
+[node name="Traps" type="Node2D" parent="."]
+
+[node name="StaticDamageElement" parent="Traps" instance=ExtResource("3_522r3")]
 position = Vector2(735, 290)
 damage_amount = 3
 damage_type = 1
 
-[node name="DamageElement" parent="." instance=ExtResource("5_a30s6")]
+[node name="DamageElement" parent="Traps" instance=ExtResource("5_a30s6")]
 position = Vector2(533, 357)
+
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="Tree" parent="Obstacles" instance=ExtResource("5_pr1o7")]
+position = Vector2(351, 264)
+
+[node name="Rock" parent="Obstacles" instance=ExtResource("6_mlihn")]
+position = Vector2(780, 540)
+scale = Vector2(0.2, 0.2)
+
+[node name="Tree2" parent="Obstacles" instance=ExtResource("5_pr1o7")]
+position = Vector2(101, 539)
+
+[node name="Rock2" parent="Obstacles" instance=ExtResource("6_mlihn")]
+position = Vector2(971, 77)
+scale = Vector2(0.2, 0.2)
 
 [node name="HealthBarUI" parent="." instance=ExtResource("7_xxfqd")]
 

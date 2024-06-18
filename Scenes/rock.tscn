@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgnwtk06h0bhc"]
+
+[ext_resource type="Texture2D" uid="uid://c2aiy7cxyudr4" path="res://Images/Textures/Rock eyebrow.png" id="1_jug1w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7levj"]
+size = Vector2(452, 412)
+
+[node name="Rock" type="StaticBody2D"]
+collision_layer = 4
+
+[node name="RockSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_jug1w")
+
+[node name="RockCollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7levj")
