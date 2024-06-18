@@ -56,15 +56,3 @@ func _on_body_exited(body):
 func _on_timer_timeout():
 	if bCanDamageBody == true:
 		health_component.remove_health(damage_amount, damage_type)
-
-## Receives a boolean value and sets the despawn_boolean variable to that value.
-##[br]
-## Should be used when a trap is instantiated during a scene (e.g. if a boss creates one with an attack).
-func set_despawn_boolean(value: bool):
-	despawn_boolean = value
-
-## Receives a float value and sets the despawn_boolean variable to that value in seconds.
-##[br]
-## Should be used when a trap is instantiated during a scene (e.g. if a boss creates one with an attack).
-func set_despawn_time(time: float):
-	despawn_time = time
