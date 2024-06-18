@@ -8,8 +8,8 @@ radius = 17.0294
 
 [node name="Fireball" type="Node2D"]
 script = ExtResource("1_yn6hq")
-travel_speed = null
-damage_value = null
+travel_speed = 5.0
+damage_type = 1
 impact_explosion = true
 
 [node name="FireballSprite" type="Sprite2D" parent="."]

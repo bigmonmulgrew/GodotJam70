@@ -18,9 +18,10 @@ position = Vector2(735, 290)
 damage_amount = 3
 damage_type = 1
 
-[node name="DamageElement" parent="." instance=ExtResource("5_a30s6")]
-position = Vector2(533, 357)
-
 [node name="HealthBarUI" parent="." instance=ExtResource("7_xxfqd")]
 
 [node name="KingArthur" parent="." instance=ExtResource("6_u78w3")]
+z_index = 1
+
+[node name="DamageElement" parent="." instance=ExtResource("5_a30s6")]
+position = Vector2(533, 357)
