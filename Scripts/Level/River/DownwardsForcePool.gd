@@ -9,8 +9,7 @@ var children: Array = []
 func _ready():
 	# Get the children
 	children = get_children()
-	
-	
+
 func _physics_process(delta):
 	for object in children:
 		object.global_position.y += gravity * delta

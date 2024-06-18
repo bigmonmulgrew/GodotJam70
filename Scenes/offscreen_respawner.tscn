@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://db5mujv3yhta3"]
+
+[ext_resource type="Script" path="res://Scripts/Level/offscreen_respawner.gd" id="1_4pfsa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5aleo"]
+size = Vector2(1360, 73)
+
+[node name="OffscreenRespawner" type="Area2D"]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_4pfsa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5aleo")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
