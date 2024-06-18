@@ -1,12 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bk3ae6a5v0fon"]
+[gd_scene load_steps=3 format=3 uid="uid://bk3ae6a5v0fon"]
 
 [ext_resource type="Script" path="res://Scripts/scrolling_background.gd" id="1_alt2i"]
 [ext_resource type="Texture2D" uid="uid://bsoah8gdmv5su" path="res://icon.svg" id="1_rmphl"]
-[ext_resource type="Texture2D" uid="uid://b3qhide1flnmq" path="res://Images/Background/River Test Background.png" id="2_8jol0"]
 
 [node name="ScrollingBackground" type="ParallaxBackground"]
 script = ExtResource("1_alt2i")
-bg_texture = ExtResource("2_8jol0")
 vertical_speed = 100.0
 horizontal_speed = 0.0
 

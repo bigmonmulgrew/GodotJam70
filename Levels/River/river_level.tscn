@@ -1,7 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://bcp08ef822d37"]
+[gd_scene load_steps=5 format=3 uid="uid://bcp08ef822d37"]
 
 [ext_resource type="PackedScene" uid="uid://bk3ae6a5v0fon" path="res://Scenes/scrolling_background.tscn" id="1_k13x5"]
+[ext_resource type="Texture2D" uid="uid://b3qhide1flnmq" path="res://Images/Background/River Test Background.png" id="2_mtju2"]
+[ext_resource type="PackedScene" uid="uid://cjgkjhe7k58s" path="res://Scenes/Character/Player/king_arthur.tscn" id="3_01rjq"]
+[ext_resource type="Script" path="res://Scripts/Level/River/DownwardsForcePool.gd" id="3_8c3ya"]
 
 [node name="RiverLevel" type="Node2D"]
 
 [node name="ScrollingBackground" parent="." instance=ExtResource("1_k13x5")]
+bg_texture = ExtResource("2_mtju2")
+
+[node name="PlayerSpawnMarker" type="Marker2D" parent="."]
+position = Vector2(804, 329)
+
+[node name="DownwardsForcePool" type="Node2D" parent="."]
+script = ExtResource("3_8c3ya")
+gravity = 100.0
+
+[node name="KingArthur" parent="DownwardsForcePool" instance=ExtResource("3_01rjq")]
+position = Vector2(890, 396)
