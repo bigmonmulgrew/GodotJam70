@@ -22,7 +22,6 @@ func _ready():
 	parent_component = owner
 	print("PARENT COMPONENT NAME: " + str(parent_component.name))
 	health_component = owner.get_node("HealthComponent")
-	fireball_container = owner.get_node("ProjectileContainer")
 
 ## Implementation of the use() method from the action_base class. When called, it calls the fire method to send out a fireball.
 func use():
@@ -31,14 +30,16 @@ func use():
 ## The fire method instances a fireball, adds it to the fireball_container node, gets the direction in which the parent is facing, and sends the fireball out in that direction.
 ##[br]
 ##[br]
-## It uses the cooldown implementation from the base_action class.
+## It uses the cooldown implementation from the base_action class.a
 func fire():
 	if not can_use:
 		return
 	can_use = false
+	start_cooldown_timer()
+	print("Creating fireball")
 	var fireball_instance = fireball_scene.instantiate()
-	fireball_container.add_child(fireball_instance)
+	get_parent().add_child(fireball_instance)
 	var direction = Vector2(cos(parent_component.rotation), sin(parent_component.rotation))
 	fireball_instance.projectile_direction = direction
-	fireball_instance.global_position = global_position
-	start_cooldown_timer()
+	fireball_instance.global_position = get_parent().global_position
+	
