@@ -14,7 +14,7 @@ var DefaultSaveFileName:String = "SaveFile"
 
 ##Adds empty SaveFile0 if it doesnt exist.
 func _ready():
-	if !FileAccess.file_exists("user://"+DefaultSaveFileName+"0"):
+	if !savefile_exists(0):
 		save_data(0,"DefaultCanDelete",0)
 	pass # Replace with function body.
 
@@ -26,9 +26,13 @@ func save_data(savefile:int=0,key:String="Key",value=0):
 	file.store_string(JSON.stringify(Data))
 	file.close()
 
+##returns true or false for a certain savefile
+func savefile_exists(savefile:int=0):
+	return FileAccess.file_exists("user://"+DefaultSaveFileName+str(savefile))
+
 ##gets the entire dictionary of a savefile.
 func get_dict_data(savefile:int=0):
-	if !FileAccess.file_exists("user://"+DefaultSaveFileName+str(savefile)):
+	if !savefile_exists(0):
 		save_data(savefile,"TEST",null)
 		return null
 	var file = FileAccess.open("user://"+DefaultSaveFileName+str(savefile), FileAccess.READ).get_as_text()
@@ -52,6 +56,6 @@ func save_obj_for_object(NodeRef:Node,savefile:int=0,key:String="Key",value=0):
 func load_data_from_object(NodeRef:Node,savefile:int=0,key:String="Key"):
 	var data = null
 	var ObjectKey:String = "OBJ."+str(NodeRef.get_instance_id())+key
-	if FileAccess.file_exists("user://"+DefaultSaveFileName+str(savefile)):
+	if savefile_exists(0):
 		data = load_data(savefile,ObjectKey)
 	return data
