@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://0vb83wfs1stj"]
+[gd_scene load_steps=6 format=3 uid="uid://0vb83wfs1stj"]
 
 [ext_resource type="Texture2D" uid="uid://bsoah8gdmv5su" path="res://icon.svg" id="1_nn5in"]
 [ext_resource type="Script" path="res://Scripts/Components/static_damage_element.gd" id="1_tsi31"]
@@ -6,8 +6,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8fkes"]
 size = Vector2(126, 126)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcaj7"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klkpf"]
 size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7hvgf"]
 
 [node name="StaticDamageElement" type="StaticBody2D"]
 collision_layer = 8
@@ -19,12 +21,21 @@ texture = ExtResource("1_nn5in")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_8fkes")
+disabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_wcaj7")
+[node name="CollisionTrigger2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_klkpf")
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+process_mode = 4
+shape = SubResource("RectangleShape2D_7hvgf")
+exclude_parent = false
+collision_mask = 8
+collide_with_areas = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exit"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
