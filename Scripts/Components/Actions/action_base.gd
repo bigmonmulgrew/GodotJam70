@@ -11,14 +11,8 @@ var can_use: bool = true
 var cooldown_timer: Timer = null
 
 func _ready():
-	# Make a timer
-	cooldown_timer = Timer.new()
-	# Add as a child
-	add_child(cooldown_timer)
-	# Connnect the signal to renable can_use
-	cooldown_timer.timeout.connect(_on_cooldown_timer_timeout)
-	# Stop the timer from looping
-	cooldown_timer.one_shot = true
+	# Sometimes created befor ready is called so check for null firsst
+	if cooldown_timer == null: create_timer()
 	
 ## Template function for children
 func use():
@@ -27,8 +21,21 @@ func use():
 ## Function to start the cooldown timer.
 ## [br]Optional parameter to overide the cooldown time
 func start_cooldown_timer(time: float = cooldown_time) -> void:
+	# Check if timer is null and create first.
+	if cooldown_timer == null: create_timer()
+	
 	# Start the timer
 	cooldown_timer.start(time)
 
 func _on_cooldown_timer_timeout() -> void:
 	can_use = true
+	
+func create_timer():
+	# Make a timer
+	cooldown_timer = Timer.new()
+	# Add as a child
+	add_child(cooldown_timer)
+	# Connnect the signal to renable can_use
+	cooldown_timer.timeout.connect(_on_cooldown_timer_timeout)
+	# Stop the timer from looping
+	cooldown_timer.one_shot = true
