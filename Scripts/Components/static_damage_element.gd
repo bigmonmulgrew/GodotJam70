@@ -25,14 +25,22 @@ class_name StaticDamageElement
 ## It then checks if the direction is a ZERO vector (0,0). If it is, StaticDamageElement instead gets it's direction by finding the different between it's own position and the received body's position.
 ##[br]
 ## Finally, it flips the direction and applies the bounce_force to knock the received collision body away.
-func _on_body_entered(body):
+func _on_body_entered(body: Node2D):
 	print(body.name)
 	health_component = body.get_node("HealthComponent")
 	health_component.remove_health(damage_amount, damage_type)
-  
-	var direction = global_position - body.global_position
+	#dogde but quick fix for knock back to work better for all shapes
+	var ShapeRef:CollisionShape2D = body.get_node("CollisionShape2D")
+	if ShapeRef != null:
+		$ShapeCast2D.shape = ShapeRef.shape
+	$ShapeCast2D.global_position = body.global_position-(body.velocity*get_physics_process_delta_time())
+	$ShapeCast2D.target_position = (body.velocity*get_physics_process_delta_time())
+	$ShapeCast2D.clear_exceptions()
+	$ShapeCast2D.add_exception(body)
+	$ShapeCast2D.force_shapecast_update()
+	var direction = $ShapeCast2D.get_collision_normal(0)
 	direction = direction.normalized()
   
-	print(direction)
+	print(direction," DT " , get_physics_process_delta_time())
 	
-	body.velocity = -direction * bounce_force
+	body.velocity = direction * bounce_force
