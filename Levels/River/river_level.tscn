@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcp08ef822d37"]
+
+[ext_resource type="PackedScene" uid="uid://bk3ae6a5v0fon" path="res://Scenes/scrolling_background.tscn" id="1_k13x5"]
+
+[node name="RiverLevel" type="Node2D"]
+
+[node name="ScrollingBackground" parent="." instance=ExtResource("1_k13x5")]
