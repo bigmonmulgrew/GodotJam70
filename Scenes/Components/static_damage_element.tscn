@@ -37,5 +37,5 @@ collision_mask = 8
 collide_with_areas = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_body_exit"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exit"]
