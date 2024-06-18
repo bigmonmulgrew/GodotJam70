@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcp08ef822d37"]
+[gd_scene load_steps=6 format=3 uid="uid://bcp08ef822d37"]
 
 [ext_resource type="PackedScene" uid="uid://bk3ae6a5v0fon" path="res://Scenes/scrolling_background.tscn" id="1_k13x5"]
 [ext_resource type="Texture2D" uid="uid://b3qhide1flnmq" path="res://Images/Background/River Test Background.png" id="2_mtju2"]
 [ext_resource type="PackedScene" uid="uid://cjgkjhe7k58s" path="res://Scenes/Character/Player/king_arthur.tscn" id="3_01rjq"]
 [ext_resource type="Script" path="res://Scripts/Level/River/DownwardsForcePool.gd" id="3_8c3ya"]
+[ext_resource type="PackedScene" uid="uid://0vb83wfs1stj" path="res://Scenes/Components/static_damage_element.tscn" id="5_ok5tw"]
 
 [node name="RiverLevel" type="Node2D"]
 
@@ -19,3 +20,7 @@ gravity = 100.0
 
 [node name="KingArthur" parent="DownwardsForcePool" instance=ExtResource("3_01rjq")]
 position = Vector2(890, 396)
+
+[node name="StaticDamageElement" parent="." instance=ExtResource("5_ok5tw")]
+position = Vector2(562, 712)
+scale = Vector2(10.4, 1)
