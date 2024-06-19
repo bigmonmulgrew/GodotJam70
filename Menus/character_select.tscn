@@ -32,12 +32,32 @@ offset_bottom = 64.0
 theme_override_font_sizes/font_size = 22
 text = "< Return to Menu"
 
+[node name="Select_Character1_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 215.0
+offset_right = 302.0
+offset_bottom = 351.0
+text = "Select
+Character1"
+icon = ExtResource("1_5x7rx")
+
+[node name="Select_Character2_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 219.0
+offset_top = 369.0
+offset_right = 445.0
+offset_bottom = 505.0
+text = "Select
+Character2"
+icon = ExtResource("1_5x7rx")
+
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(144, 285)
 texture = ExtResource("1_5x7rx")
 
 [node name="Icon2" type="Sprite2D" parent="."]
-position = Vector2(327, 288)
+position = Vector2(144, 437)
 texture = ExtResource("1_5x7rx")
 
 [node name="Icon3" type="Sprite2D" parent="."]
@@ -65,3 +85,5 @@ text = "Select Team"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Select_Character1_Button" to="." method="_on_select_character_1_button_pressed"]
+[connection signal="pressed" from="Select_Character2_Button" to="." method="_on_select_character_2_button_pressed"]

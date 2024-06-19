@@ -17,7 +17,7 @@ class_name Game_Manager
 ## Certain methods should be called from other scripts. E.g. update_active_character should be called whenever you swap character. The appropriate time to call each method will be included in its description.
 
 ## A list of characters that are selected for the current run.
-var selected_characters: Array[Node]
+var selected_characters: Array
 ## This is a variable used to store the index of the currently active character.
 var active_character_index: int = 0
 ## An array of booleans that flag whether each selected character has been used in the current round.
@@ -28,6 +28,9 @@ var character_health_values: Array[int]
 var round_number: int = 0
 ## A dictionary of all characters in the game, paired with boolean values for whether they are unlocked or not.
 var character_dict = {"char_1": true, "char_2": true, "char_3": true, "char_4": false, "char_5": false}
+
+var king_arthur_scene = preload("res://Scenes/Character/Player/king_arthur.tscn")
+var robin_hood_scene = preload("res://Scenes/Character/Player/test_player.tscn")
 
 func _ready():
 	display_unlocked_characters()
@@ -57,7 +60,9 @@ func display_unlocked_characters():
 
 ## Populates the selected_chatacters array with all characters in the "players" group. This call is deffered in _ready(), so that it is called after the main scene has been instanced. This was necessary as autoloads are technically loaded before the main scene, which would cause issues as the players wouldn't have been spawned yet.
 func _find_characters():
-	selected_characters = get_tree().get_nodes_in_group("players")
+	for player in get_tree().get_nodes_in_group("players"):
+		player = player as CharacterBody2D
+		selected_characters.append(player)
 	for character in selected_characters:
 		print(character)
 		print(character.get_node("HealthComponent").health)
