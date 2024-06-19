@@ -17,9 +17,13 @@ func _process(delta):
 	delete_me3()
 	delete_me4()
 
+## A spawn player method that is called in ready. Spawns the first selected character. This probably should be moved elsewhere at some point - GameManager?
+##[br]
+## But I can't think how to detect that we are moving into a level scene where players need to spawn. Open to ideas!
 func spawn_player_start():
 	player = game_manager.selected_characters[0]
 	get_tree().get_root().add_child(player)
+	game_manager.update_active_character(0)
 
 func delete_me1():
 	# Use this to place code to not interfear with other debug code
