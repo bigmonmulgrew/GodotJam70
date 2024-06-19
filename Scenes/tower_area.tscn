@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://iu64afw2eg6d"]
+
+[ext_resource type="Script" path="res://Scripts/tower_deathzone.gd" id="1_ovmgc"]
+[ext_resource type="Texture2D" uid="uid://dx3sa07obo7qm" path="res://Images/Textures/Tower-placeholder.png" id="2_05hpl"]
+[ext_resource type="PackedScene" uid="uid://dktnlhjatfngg" path="res://Scenes/Healthbars.tscn" id="3_5xevs"]
+[ext_resource type="PackedScene" uid="uid://cjgkjhe7k58s" path="res://Scenes/Character/Player/king_arthur.tscn" id="3_d3kvl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kad73"]
+radius = 302.015
+
+[node name="TowerArea" type="Area2D"]
+position = Vector2(564, 315)
+collision_layer = 4
+script = ExtResource("1_ovmgc")
+
+[node name="TowerSprite" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_05hpl")
+
+[node name="TowerCollisionBody" type="CollisionShape2D" parent="."]
+position = Vector2(3, 41)
+shape = SubResource("CircleShape2D_kad73")
+
+[node name="HealthBarUI" parent="." instance=ExtResource("3_5xevs")]
+
+[node name="KingArthur" parent="." instance=ExtResource("3_d3kvl")]
+position = Vector2(1, -24)
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
