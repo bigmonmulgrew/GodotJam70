@@ -28,5 +28,5 @@ func create_timer():
 func _on_body_exited(body):
 	health_component = body.get_node("HealthComponent")
 	if health_component:
-		health_component.remove_health(50) # damage type defaults to physical
+		health_component.remove_health((health_component.max_health * 0.5)) # damage type defaults to physical
 		start_respawn_timer(respawn_time)
