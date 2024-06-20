@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://d22mivc3fy6ts" path="res://Scenes/Components/damage_element.tscn" id="5_a30s6"]
 [ext_resource type="PackedScene" uid="uid://cpkrufu4v2wpk" path="res://Scenes/tree.tscn" id="5_pr1o7"]
 [ext_resource type="PackedScene" uid="uid://bgnwtk06h0bhc" path="res://Scenes/rock.tscn" id="6_mlihn"]
-
 [ext_resource type="PackedScene" uid="uid://dktnlhjatfngg" path="res://Scenes/Healthbars.tscn" id="7_xxfqd"]
 
 [node name="TEMPTEST" type="Node2D"]

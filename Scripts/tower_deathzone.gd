@@ -10,34 +10,11 @@ var health_component
 @export var respawn_time: float = 3
 ## variable used to later reference the created respawn_timer
 var respawn_timer: Timer = null
-
-## This starts a timer with a respawn time equal to that set in the inspector using the respawn_time export variable. It first creates a timer if there is no timer to start.
-func start_respawn_timer(time: float = respawn_time) -> void:
-	# Check if timer is null and create first.
-	if respawn_timer == null: create_timer()
-	
-	# Start the timer
-	respawn_timer.start(time)
-
-## This is where we will call/implement the respawn logic for the player later.
-func _on_respawn_timer_timeout() -> void:
-	print("I HAVE RESPAWNED")
-	#b_is_active = true
-
-## Creates a timer that, when it times out, sends a signal to the _on_respawn_timer_timeout method.
-func create_timer():
-	# Make a timer
-	respawn_timer = Timer.new()
-	# Add as a child
-	add_child(respawn_timer)
-	# Connnect the signal to renable can_use
-	respawn_timer.timeout.connect(_on_respawn_timer_timeout)
-	# Stop the timer from looping
-	respawn_timer.one_shot = true
+@onready var game_manager = $"/root/GameManager"
 
 ## Method that receives the body_exited signal. It reduces the player's health by 50% of their max health total.
 func _on_body_exited(body):
 	health_component = body.get_node("HealthComponent")
 	if health_component:
 		health_component.remove_health((health_component.max_health * 0.5)) # damage type defaults to physical
-		start_respawn_timer(respawn_time)
+		game_manager.respawn_character()
