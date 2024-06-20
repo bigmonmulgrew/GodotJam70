@@ -152,6 +152,8 @@ vertical_icon_alignment = 2
 [connection signal="pressed" from="ReturnToMenuButton" to="." method="_on_return_to_menu_button_pressed"]
 [connection signal="pressed" from="BMD_Button" to="." method="_credit_button" binds= [0, "https://github.com/bigmonmulgrew"]]
 [connection signal="pressed" from="L_Button" to="." method="_credit_button" binds= [1, "https://linktr.ee/speedyeyeball"]]
+[connection signal="pressed" from="G_Button" to="." method="_credit_button" binds= [2, "https://the-kunk.itch.io/"]]
+[connection signal="pressed" from="J_Button" to="." method="_credit_button" binds= [3, "https://www.youtube.com/watch?v=dQw4w9WgXcQ"]]
 [connection signal="pressed" from="N_Button" to="." method="_credit_button" binds= [6, "https://www.lingscars.com/"]]
 [connection signal="pressed" from="H_Button" to="." method="_credit_button" binds= [5, "https://maze.toys/mazes/mini/daily/"]]
 [connection signal="pressed" from="DB_Button" to="." method="_credit_button" binds= [7, "https://cursoreffects.com/"]]

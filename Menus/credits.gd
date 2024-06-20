@@ -44,11 +44,3 @@ func _credit_button(soundnumber: int, link: String) -> void:
 	OS.shell_open(link)
 	funny_timer = 5
 	funny_bool = true
-
-
-func _on_g_button_pressed(extra_arg_0, extra_arg_1):
-	pass # Replace with function body.
-
-
-func _on_j_button_pressed(extra_arg_0, extra_arg_1):
-	pass # Replace with function body.
