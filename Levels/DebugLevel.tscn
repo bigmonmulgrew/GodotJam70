@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbmv5ka3j4o3s"]
+[gd_scene load_steps=8 format=3 uid="uid://bbmv5ka3j4o3s"]
 
 [ext_resource type="Script" path="res://Scripts/debug_level.gd" id="1_vmmgu"]
 [ext_resource type="PackedScene" uid="uid://0vb83wfs1stj" path="res://Scenes/Components/static_damage_element.tscn" id="3_522r3"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d22mivc3fy6ts" path="res://Scenes/Components/damage_element.tscn" id="5_a30s6"]
 [ext_resource type="PackedScene" uid="uid://cpkrufu4v2wpk" path="res://Scenes/tree.tscn" id="5_pr1o7"]
 [ext_resource type="PackedScene" uid="uid://bgnwtk06h0bhc" path="res://Scenes/rock.tscn" id="6_mlihn"]
-[ext_resource type="PackedScene" uid="uid://cjgkjhe7k58s" path="res://Scenes/Character/Player/king_arthur.tscn" id="6_u78w3"]
+
 [ext_resource type="PackedScene" uid="uid://dktnlhjatfngg" path="res://Scenes/Healthbars.tscn" id="7_xxfqd"]
 
 [node name="TEMPTEST" type="Node2D"]
@@ -42,5 +42,3 @@ position = Vector2(971, 77)
 scale = Vector2(0.2, 0.2)
 
 [node name="HealthBarUI" parent="." instance=ExtResource("7_xxfqd")]
-
-[node name="KingArthur" parent="." instance=ExtResource("6_u78w3")]

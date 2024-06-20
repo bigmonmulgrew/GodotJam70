@@ -9,6 +9,7 @@ class_name Player
 @onready var defensive_action: Node = $DefensiveAction.get_child(0)
 
 @export var controller_look_deadzone: float = 0.3
+@onready var game_manager = $"/root/GameManager"
 
 ## Runtime variable to denote if the last input was controller or MNK
 var is_mnk: bool = true
@@ -38,6 +39,11 @@ func _check_input():
 	# Check if defensive action is not null
 	if defensive_action:
 		if Input.is_action_just_pressed("defensive_action"): defensive_action.use()
+	## Added swap character buttons, tied to 1 and 2 number keys.
+	if Input.is_action_just_pressed("select_character1"):
+		game_manager.swap_character(0)
+	if Input.is_action_just_pressed("select_character2"):
+		game_manager.swap_character(1)
 	
 func _face_player():
 	#check 

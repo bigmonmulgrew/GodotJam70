@@ -17,7 +17,7 @@ class_name Game_Manager
 ## Certain methods should be called from other scripts. E.g. update_active_character should be called whenever you swap character. The appropriate time to call each method will be included in its description.
 
 ## A list of characters that are selected for the current run.
-var selected_characters: Array[Node]
+var selected_characters: Array
 ## This is a variable used to store the index of the currently active character.
 var active_character_index: int = 0
 ## An array of booleans that flag whether each selected character has been used in the current round.
@@ -28,12 +28,16 @@ var character_health_values: Array[int]
 var round_number: int = 0
 ## A dictionary of all characters in the game, paired with boolean values for whether they are unlocked or not.
 var character_dict = {"char_1": true, "char_2": true, "char_3": true, "char_4": false, "char_5": false}
+## A preload of the KingArthur character scene, which can be switched to if it is part of the selected_characters pool.
+var king_arthur_scene = preload("res://Scenes/Character/Player/king_arthur.tscn")
+## A preload of the RobinHood test player character scene, which can be switched to if it is part of the selected_characters pool.
+var robin_hood_scene = preload("res://Scenes/Character/Player/test_player.tscn")
 
 func _ready():
 	display_unlocked_characters()
 	call_deferred("_find_characters")
 
-## Updates currently active character. It should be called whenever you swap character.
+## Updates currently active character. It is called whenever you swap character.
 ##[br]
 ##[br]
 ## This method takes in an integer, which represents the index of the newly-active character.
@@ -48,6 +52,32 @@ func _ready():
 func update_active_character(index: int):
 	active_character_index = index
 	has_been_used[index] = true
+
+## This method swaps the character from the current character to another character in the selected_character list.
+##[br]
+##[br]
+## It takes in an index, which is supplied by player inputs. Pressing 1 will pass in index 0 (swap to character 1), pressing 2 will pass in index 1 (swap to character 2), etc.
+##[br]
+##[br]
+## The method gets the level node. It then assings the current player in the level to a temp_player placeholder variable. E.g., if you are swapping FROM King Arthur to another character, temp_player becomes King Arthur.
+##[br]
+## The level player then becomes the newly-selected character. If you are swapping to Robin Hood, for example, then level.player now stores Robin Hood.
+##[br]
+## It then adds the newly-selected character to the scene, sets it's position to that of the temp_player, and then removes temp_player from the scene.
+##[br]
+## This leaves you with just one character in the scene - the one that you swapped to.
+##[br]
+## The active character index variable is then changed accordingly to match the currently-played character.
+func swap_character(index: int):
+	if index != active_character_index:
+		var level = get_tree().get_root().get_node("TEMPTEST")
+		var temp_player = level.player
+		level.player = selected_characters[index]
+		get_tree().get_root().add_child(level.player)
+		level.player.global_position = temp_player.global_position
+		temp_player.get_parent().remove_child(temp_player)
+		update_active_character(index)
+	
 	
 ## Prints the key, value pairs from the character dictionary.
 func display_unlocked_characters():
@@ -57,7 +87,9 @@ func display_unlocked_characters():
 
 ## Populates the selected_chatacters array with all characters in the "players" group. This call is deffered in _ready(), so that it is called after the main scene has been instanced. This was necessary as autoloads are technically loaded before the main scene, which would cause issues as the players wouldn't have been spawned yet.
 func _find_characters():
-	selected_characters = get_tree().get_nodes_in_group("players")
+	for player in get_tree().get_nodes_in_group("players"):
+		player = player as CharacterBody2D
+		selected_characters.append(player)
 	for character in selected_characters:
 		print(character)
 		print(character.get_node("HealthComponent").health)
