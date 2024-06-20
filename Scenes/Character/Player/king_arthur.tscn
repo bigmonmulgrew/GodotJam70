@@ -48,6 +48,3 @@ armour = 1
 [node name="UserMovementComponent" parent="." instance=ExtResource("5_4oels")]
 
 [node name="ResourceComponent" parent="." instance=ExtResource("6_7mpsh")]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)

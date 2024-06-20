@@ -5,12 +5,12 @@
 
 [node name="ScrollingBackground" type="ParallaxBackground"]
 script = ExtResource("1_alt2i")
-vertical_speed = -100.0
+vertical_speed = 100.0
 horizontal_speed = 0.0
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(10, 10)
-motion_mirroring = Vector2(128, 128)
+motion_mirroring = Vector2(1152, 648)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
 texture_repeat = 2
