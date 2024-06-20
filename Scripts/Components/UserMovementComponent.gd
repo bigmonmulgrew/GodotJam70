@@ -25,15 +25,17 @@ func set_can_move(flag: bool) -> void:
 	_can_move = flag
 
 func _apply_user_input(delta) -> void:
+	if not _can_move:
+		return
 	horizontal = Input.get_axis("move_left","move_right")
 	vertical = Input.get_axis("move_up", "move_down")
 	
 	# Check if the parent is not null
-	if _can_move:
-		#acceleration and deceleration interp mode setting for the move toward function
-		var celMoveSpeed = acceleration
-		if horizontal == 0 and vertical == 0:
-			celMoveSpeed = deceleration
-		parent_to_move.velocity = parent_to_move.velocity.move_toward(Vector2(speed*horizontal,speed*vertical),celMoveSpeed*delta)
+	
+	#acceleration and deceleration interp mode setting for the move toward function
+	var celMoveSpeed = acceleration
+	if horizontal == 0 and vertical == 0:
+		celMoveSpeed = deceleration
+	parent_to_move.velocity = parent_to_move.velocity.move_toward(Vector2(speed*horizontal,speed*vertical),celMoveSpeed*delta)
 		
-		#print(parent_to_move.velocity)
+	#print(parent_to_move.velocity)
