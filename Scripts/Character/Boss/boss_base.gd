@@ -34,10 +34,6 @@ var ranged_actions: Node2D:
 			update_configuration_warnings()
 #endregion
 
-#region Runtime Variables
-var player: Player
-#endregion
-
 ## Gets the active character from the gameplay manager
 func get_player_location() -> Player:
 	return GameManager.selected_characters[GameManager.active_character_index]
