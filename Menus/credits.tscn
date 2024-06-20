@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Menus/credits.gd" id="1_giu45"]
 [ext_resource type="Theme" uid="uid://tiym6ulqk0i6" path="res://Menus/credit_button.tres" id="2_6n4js"]
 [ext_resource type="AudioStream" uid="uid://3hqn5u3r5lu" path="res://Audio/SFX/CreditSounds/yippeeeeeeeeeeeeee.wav" id="2_tgycr"]
-[ext_resource type="Texture2D" uid="uid://dtb0l8bthsy7c" path="res://Images/UI/Credit Icons/bmD_Icon.png" id="3_7p4vr"]
+[ext_resource type="Texture2D" uid="uid://d2vq23a7hrlc" path="res://Images/UI/Credit Icons/bmD_Icon.png" id="3_7p4vr"]
 [ext_resource type="AudioStream" uid="uid://ca8cox8uxuvx2" path="res://Audio/SFX/CreditSounds/Lucky Day.wav" id="3_jerfl"]
 [ext_resource type="AudioStream" uid="uid://b7sbmewv8kuua" path="res://Audio/SFX/CreditSounds/Luigi (14).wav" id="4_l7mlr"]
 [ext_resource type="Texture2D" uid="uid://cxvk30mv7w0kh" path="res://Images/UI/Credit Icons/L_Icon.png" id="7_h7wqd"]
@@ -34,10 +34,10 @@ credit_audio_array = Array[AudioStream]([null, ExtResource("2_tgycr"), ExtResour
 
 [node name="CreditTitle" type="Label" parent="."]
 layout_mode = 0
-offset_left = 312.0
+offset_left = 151.0
 offset_top = 16.0
-offset_right = 850.0
-offset_bottom = 74.0
+offset_right = 1011.0
+offset_bottom = 99.0
 theme_override_font_sizes/font_size = 42
 text = "Credits
 "
@@ -66,6 +66,7 @@ icon_alignment = 1
 vertical_icon_alignment = 2
 
 [node name="L_Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 389.0
 offset_top = 182.0
 offset_right = 584.0
@@ -77,6 +78,7 @@ icon_alignment = 1
 vertical_icon_alignment = 2
 
 [node name="G_Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 590.0
 offset_top = 368.0
 offset_right = 785.0
@@ -88,6 +90,7 @@ icon_alignment = 1
 vertical_icon_alignment = 2
 
 [node name="J_Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 790.0
 offset_top = 368.0
 offset_right = 985.0
@@ -99,6 +102,7 @@ icon_alignment = 1
 vertical_icon_alignment = 2
 
 [node name="N_Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 389.0
 offset_top = 368.0
 offset_right = 584.0
@@ -110,6 +114,7 @@ icon_alignment = 1
 vertical_icon_alignment = 2
 
 [node name="H_Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 790.0
 offset_top = 182.0
 offset_right = 985.0
@@ -121,6 +126,7 @@ icon_alignment = 1
 vertical_icon_alignment = 2
 
 [node name="DB_Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 189.0
 offset_top = 368.0
 offset_right = 384.0
@@ -132,6 +138,7 @@ icon_alignment = 1
 vertical_icon_alignment = 2
 
 [node name="C_Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 189.0
 offset_top = 182.0
 offset_right = 384.0
@@ -143,11 +150,9 @@ icon_alignment = 1
 vertical_icon_alignment = 2
 
 [connection signal="pressed" from="ReturnToMenuButton" to="." method="_on_return_to_menu_button_pressed"]
-[connection signal="pressed" from="BMD_Button" to="." method="_dave_button"]
-[connection signal="pressed" from="L_Button" to="." method="_leeroy_button"]
-[connection signal="pressed" from="G_Button" to="." method="_gabe_button"]
-[connection signal="pressed" from="J_Button" to="." method="_jacob_button"]
-[connection signal="pressed" from="N_Button" to="." method="_niall_button"]
-[connection signal="pressed" from="H_Button" to="." method="_hayden_button"]
-[connection signal="pressed" from="DB_Button" to="." method="_DBEAN_button"]
-[connection signal="pressed" from="C_Button" to="." method="_callum_button"]
+[connection signal="pressed" from="BMD_Button" to="." method="_credit_button" binds= [0, "https://github.com/bigmonmulgrew"]]
+[connection signal="pressed" from="L_Button" to="." method="_credit_button" binds= [1, "https://linktr.ee/speedyeyeball"]]
+[connection signal="pressed" from="N_Button" to="." method="_credit_button" binds= [6, "https://www.lingscars.com/"]]
+[connection signal="pressed" from="H_Button" to="." method="_credit_button" binds= [5, "https://maze.toys/mazes/mini/daily/"]]
+[connection signal="pressed" from="DB_Button" to="." method="_credit_button" binds= [7, "https://cursoreffects.com/"]]
+[connection signal="pressed" from="C_Button" to="." method="_credit_button" binds= [4, "https://optical.toys/"]]

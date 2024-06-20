@@ -17,52 +17,38 @@ var credit_title_array = [
 var array_number: int
 @onready var credit_title = $CreditTitle
 @export var credit_audio_array: Array[AudioStream] = [AudioStream.new()]
+var funny_timer: float
+var funny_bool: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	array_number = randf_range(1,len(credit_title_array))
-	print(array_number)
 	credit_title.text = credit_title_array[array_number]
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	funny_timer -= delta
+	if funny_timer <= 0 and funny_bool == true:
+		array_number = randf_range(1,len(credit_title_array))
+		credit_title.text = credit_title_array[array_number]
+		funny_bool = false
 
 func _on_return_to_menu_button_pressed() -> void:
 	get_tree().change_scene_to_file(target_Level_main_menu)
 	
 
 #region credit buttons
-func _dave_button() -> void:
-	AudioManager.play_sfx(credit_audio_array[0])
-	OS.shell_open("https://weirdorconfusing.com/")
-	
-func _leeroy_button() -> void:
-	AudioManager.play_sfx(credit_audio_array[1])
-	OS.shell_open("https://linktr.ee/speedyeyeball")
-	
-func _gabe_button() -> void:
-	AudioManager.play_sfx(credit_audio_array[2])
-	OS.shell_open("https://the-kunk.itch.io/")
-	
-func _jacob_button() -> void:
-	AudioManager.play_sfx(credit_audio_array[3])
-	OS.shell_open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-	
-func _callum_button() -> void:
-	AudioManager.play_sfx(credit_audio_array[4])
-	OS.shell_open("https://optical.toys/")
-	
-func _hayden_button() -> void:
-	AudioManager.play_sfx(credit_audio_array[5])
-	OS.shell_open("https://maze.toys/mazes/mini/daily/")
-	
-func _niall_button() -> void:
-	AudioManager.play_sfx(credit_audio_array[6])
-	OS.shell_open("https://www.lingscars.com/")
+func _credit_button(soundnumber: int, link: String) -> void:
+	AudioManager.play_sfx(credit_audio_array[soundnumber])
+	OS.shell_open(link)
+	funny_timer = 5
+	funny_bool = true
 
-func _DBEAN_button() -> void:
-	AudioManager.play_sfx(credit_audio_array[7])
-	OS.shell_open("https://cursoreffects.com/")
-#endregion
+
+func _on_g_button_pressed(extra_arg_0, extra_arg_1):
+	pass # Replace with function body.
+
+
+func _on_j_button_pressed(extra_arg_0, extra_arg_1):
+	pass # Replace with function body.
