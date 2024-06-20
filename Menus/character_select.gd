@@ -14,9 +14,7 @@ func _process(delta: float) -> void:
 
 func _on_play_button_pressed() -> void:
 	var character_counter = 0
-	for character in game_manager.selected_characters:
-		character_counter += 1
-	if character_counter == 2:
+	if game_manager.selected_characters.size() == 2:
 		get_tree().change_scene_to_file(target_Level_level_1) # Will only load the level if there are two characters selected. Bump to three in final game!
 	else:
 		print("You need to select a character!")
