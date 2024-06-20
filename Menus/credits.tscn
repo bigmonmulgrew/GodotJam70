@@ -1,6 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbvbawwjo5jp3"]
+[gd_scene load_steps=15 format=3 uid="uid://bbvbawwjo5jp3"]
 
 [ext_resource type="Script" path="res://Menus/credits.gd" id="1_giu45"]
+[ext_resource type="Theme" uid="uid://tiym6ulqk0i6" path="res://Menus/credit_button.tres" id="2_6n4js"]
+[ext_resource type="AudioStream" uid="uid://3hqn5u3r5lu" path="res://Audio/SFX/CreditSounds/yippeeeeeeeeeeeeee.wav" id="2_tgycr"]
+[ext_resource type="Texture2D" uid="uid://dtb0l8bthsy7c" path="res://Images/UI/Credit Icons/bmD_Icon.png" id="3_7p4vr"]
+[ext_resource type="AudioStream" uid="uid://ca8cox8uxuvx2" path="res://Audio/SFX/CreditSounds/Lucky Day.wav" id="3_jerfl"]
+[ext_resource type="AudioStream" uid="uid://b7sbmewv8kuua" path="res://Audio/SFX/CreditSounds/Luigi (14).wav" id="4_l7mlr"]
+[ext_resource type="Texture2D" uid="uid://cxvk30mv7w0kh" path="res://Images/UI/Credit Icons/L_Icon.png" id="7_h7wqd"]
+[ext_resource type="Texture2D" uid="uid://ctab423dh58fb" path="res://Images/UI/Credit Icons/G_Icon.png" id="8_e3xaa"]
+[ext_resource type="Texture2D" uid="uid://b6pami5ldxvkb" path="res://Images/UI/Credit Icons/J_Icon.png" id="9_bp7m1"]
+[ext_resource type="Texture2D" uid="uid://7365kiurkaer" path="res://Images/UI/Credit Icons/N_Icon.png" id="10_q01bt"]
+[ext_resource type="Texture2D" uid="uid://3k7sxkg44nvq" path="res://Images/UI/Credit Icons/H_Icon.png" id="11_e80oa"]
+[ext_resource type="Texture2D" uid="uid://caobista3l35r" path="res://Images/UI/Credit Icons/dB_Icon.png" id="12_n3r8g"]
+[ext_resource type="Texture2D" uid="uid://bk6hr424ooylt" path="res://Images/UI/Credit Icons/C_Icon.png" id="13_m3ka7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pjhg7"]
+font_size = 60
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0.129412, 0.129412, 0.129412, 0.862745)
+shadow_offset = Vector2(5, 5)
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -11,16 +30,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_giu45")
 target_Level_main_menu = "res://Menus/main_menu.tscn"
+credit_audio_array = Array[AudioStream]([null, ExtResource("2_tgycr"), ExtResource("3_jerfl"), ExtResource("4_l7mlr"), null, null, null, null])
 
-[node name="Label" type="Label" parent="."]
+[node name="CreditTitle" type="Label" parent="."]
 layout_mode = 0
-offset_left = 509.0
+offset_left = 312.0
 offset_top = 16.0
-offset_right = 653.0
+offset_right = 850.0
 offset_bottom = 74.0
 theme_override_font_sizes/font_size = 42
 text = "Credits
 "
+label_settings = SubResource("LabelSettings_pjhg7")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ReturnToMenuButton" type="Button" parent="."]
 layout_mode = 0
@@ -28,6 +51,103 @@ offset_left = 7.0
 offset_top = 7.0
 offset_right = 134.0
 offset_bottom = 38.0
-text = "< Back to Menu"
+text = "Main Menu"
+
+[node name="BMD_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 182.0
+offset_right = 785.0
+offset_bottom = 356.0
+theme = ExtResource("2_6n4js")
+text = "Big Mon D"
+icon = ExtResource("3_7p4vr")
+icon_alignment = 1
+vertical_icon_alignment = 2
+
+[node name="L_Button" type="Button" parent="."]
+offset_left = 389.0
+offset_top = 182.0
+offset_right = 584.0
+offset_bottom = 356.0
+theme = ExtResource("2_6n4js")
+text = "SpeedyEyeBall"
+icon = ExtResource("7_h7wqd")
+icon_alignment = 1
+vertical_icon_alignment = 2
+
+[node name="G_Button" type="Button" parent="."]
+offset_left = 590.0
+offset_top = 368.0
+offset_right = 785.0
+offset_bottom = 542.0
+theme = ExtResource("2_6n4js")
+text = "The Kunk"
+icon = ExtResource("8_e3xaa")
+icon_alignment = 1
+vertical_icon_alignment = 2
+
+[node name="J_Button" type="Button" parent="."]
+offset_left = 790.0
+offset_top = 368.0
+offset_right = 985.0
+offset_bottom = 542.0
+theme = ExtResource("2_6n4js")
+text = "King Of Capitalism"
+icon = ExtResource("9_bp7m1")
+icon_alignment = 1
+vertical_icon_alignment = 2
+
+[node name="N_Button" type="Button" parent="."]
+offset_left = 389.0
+offset_top = 368.0
+offset_right = 584.0
+offset_bottom = 542.0
+theme = ExtResource("2_6n4js")
+text = "Noel Burger"
+icon = ExtResource("10_q01bt")
+icon_alignment = 1
+vertical_icon_alignment = 2
+
+[node name="H_Button" type="Button" parent="."]
+offset_left = 790.0
+offset_top = 182.0
+offset_right = 985.0
+offset_bottom = 356.0
+theme = ExtResource("2_6n4js")
+text = "TheHeff"
+icon = ExtResource("11_e80oa")
+icon_alignment = 1
+vertical_icon_alignment = 2
+
+[node name="DB_Button" type="Button" parent="."]
+offset_left = 189.0
+offset_top = 368.0
+offset_right = 384.0
+offset_bottom = 542.0
+theme = ExtResource("2_6n4js")
+text = "DBEAN"
+icon = ExtResource("12_n3r8g")
+icon_alignment = 1
+vertical_icon_alignment = 2
+
+[node name="C_Button" type="Button" parent="."]
+offset_left = 189.0
+offset_top = 182.0
+offset_right = 384.0
+offset_bottom = 356.0
+theme = ExtResource("2_6n4js")
+text = "Yuxxxi"
+icon = ExtResource("13_m3ka7")
+icon_alignment = 1
+vertical_icon_alignment = 2
 
 [connection signal="pressed" from="ReturnToMenuButton" to="." method="_on_return_to_menu_button_pressed"]
+[connection signal="pressed" from="BMD_Button" to="." method="_dave_button"]
+[connection signal="pressed" from="L_Button" to="." method="_leeroy_button"]
+[connection signal="pressed" from="G_Button" to="." method="_gabe_button"]
+[connection signal="pressed" from="J_Button" to="." method="_jacob_button"]
+[connection signal="pressed" from="N_Button" to="." method="_niall_button"]
+[connection signal="pressed" from="H_Button" to="." method="_hayden_button"]
+[connection signal="pressed" from="DB_Button" to="." method="_DBEAN_button"]
+[connection signal="pressed" from="C_Button" to="." method="_callum_button"]
