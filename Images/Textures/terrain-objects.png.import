@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://04bq74ubub4g"
-path="res://.godot/imported/GroundTiles-Demo.png-cea7766e89148086961d6f0c94e75dcf.ctex"
+uid="uid://b61c6nvgb1s8m"
+path="res://.godot/imported/terrain-objects.png-3a860eda9da273d4b8eca98420388122.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Textures/GroundTiles-Demo.png"
-dest_files=["res://.godot/imported/GroundTiles-Demo.png-cea7766e89148086961d6f0c94e75dcf.ctex"]
+source_file="res://Images/Textures/terrain-objects.png"
+dest_files=["res://.godot/imported/terrain-objects.png-3a860eda9da273d4b8eca98420388122.ctex"]
 
 [params]
 
