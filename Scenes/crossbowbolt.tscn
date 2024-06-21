@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://vg0g1ff3q0ux"]
+
+[ext_resource type="Script" path="res://crossbowbolt.gd" id="1_wsiyw"]
+[ext_resource type="Texture2D" uid="uid://dj3maxhybohwe" path="res://Textures/Playable Character Sprites/GrandmaWolf/Icon_GrandmaWolf_00.png" id="2_il2na"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82wwo"]
+size = Vector2(92.0746, 63.924)
+
+[node name="crossbowbolt" type="Node2D"]
+script = ExtResource("1_wsiyw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_il2na")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 14
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, 15)
+rotation = -0.335918
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_82wwo")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_crossbow_area_body_entered"]
