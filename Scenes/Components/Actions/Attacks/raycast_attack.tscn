@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0vdyg8ghc3pw"]
+
+[ext_resource type="Script" path="res://Scripts/RaycastAttack.gd" id="1_rpc4h"]
+[ext_resource type="Script" path="res://Scripts/Raycast.gd" id="2_844jg"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wj7dc"]
+particle_flag_disable_z = true
+initial_velocity_min = 55.35
+initial_velocity_max = 56.7
+gravity = Vector3(0, 0, 0)
+
+[node name="RaycastAttack" type="Node2D"]
+script = ExtResource("1_rpc4h")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = false
+target_position = Vector2(500, 0)
+collision_mask = 12
+script = ExtResource("2_844jg")
+
+[node name="Line2D" type="Line2D" parent="RayCast2D"]
+points = PackedVector2Array(0, -1, 495, 0)
+default_color = Color(0.941176, 0.670588, 1, 1)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="RayCast2D"]
+position = Vector2(492, 1)
+emitting = false
+amount = 28
+process_material = SubResource("ParticleProcessMaterial_wj7dc")
