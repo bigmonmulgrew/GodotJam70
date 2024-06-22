@@ -9,7 +9,7 @@ extends Node
 ## The amount of resource you get back when the regen timer expires as an integer
 @export var amount_to_regen: int = 1
 
-var current_resource = 50
+@export var current_resource = 50
 @onready var regen_timer: Timer = $RegenTimer
 
 
@@ -24,7 +24,7 @@ func spend_resource(amount: int) -> bool:
 	if current_resource - amount < 0:
 		return false
 	else:
-		current_resource - amount
+		current_resource -= amount
 		return true
 
 
