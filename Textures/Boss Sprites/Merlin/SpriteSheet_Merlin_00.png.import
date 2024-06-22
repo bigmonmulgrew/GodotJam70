@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uxe3m7drqvnj"
-path="res://.godot/imported/SpriteSheet_RobinHood_00.png-3aefdf411dbf5f6ab31da828dfaf64ff.ctex"
+uid="uid://cdm3qjtl2qklk"
+path="res://.godot/imported/SpriteSheet_Merlin_00.png-bbea36b1bc159c728e4bcd189ba94c9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Playable Character Sprites/RobinHood/SpriteSheet_RobinHood_00.png"
-dest_files=["res://.godot/imported/SpriteSheet_RobinHood_00.png-3aefdf411dbf5f6ab31da828dfaf64ff.ctex"]
+source_file="res://Textures/Boss Sprites/Merlin/SpriteSheet_Merlin_00.png"
+dest_files=["res://.godot/imported/SpriteSheet_Merlin_00.png-bbea36b1bc159c728e4bcd189ba94c9e.ctex"]
 
 [params]
 
