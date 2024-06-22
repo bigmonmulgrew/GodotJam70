@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b0vdyg8ghc3pw"]
 
-[ext_resource type="Script" path="res://Scripts/RaycastAttack.gd" id="1_rpc4h"]
+[ext_resource type="Script" path="res://Scripts/Components/Actions/Attacks/RaycastAttack.gd" id="1_rpc4h"]
 [ext_resource type="Script" path="res://Scripts/Raycast.gd" id="2_844jg"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wj7dc"]
