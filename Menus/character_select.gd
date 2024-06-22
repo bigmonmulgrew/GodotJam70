@@ -15,7 +15,7 @@ func _ready() -> void:
 	stylebox.bg_color = color_button_default
 	for but in get_children():
 		var is_but = but as Button
-		if is_but != null:
+		if is_but != null && but.name.begins_with("Select"):
 			is_but.add_theme_stylebox_override("normal", stylebox)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -50,6 +50,6 @@ func _character_pass(name: String, ButtonRef: Button):
 #super dirty but tis the godot method
 
 func _on_select_character_1_button_pressed() -> void:
-	_character_pass("King Arthur", $Select_Character1_Button)
+	_character_pass("King Arthur", $ButtonControl/Select_Character1_Button)
 func _on_select_character_2_button_pressed() -> void:
-	_character_pass("Robin Hood", $Select_Character2_Button)
+	_character_pass("Robin Hood", $ButtonControl/Select_Character2_Button)
