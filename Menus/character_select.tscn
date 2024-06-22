@@ -11,8 +11,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_rdqyx")
-target_Level_level_1 = "res://Levels/DebugLevel.tscn"
-target_Level_main_menu = "res://Menus/main_menu.tscn"
+target_Level_level_1 = "Levels/DebugLevel.tscn"
+target_Level_main_menu = "Menus/main_menu.tscn"
 
 [node name="PlayButton" type="Button" parent="."]
 layout_mode = 0
@@ -85,5 +85,5 @@ text = "Select Team"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="Select_Character1_Button" to="." method="_on_select_character_1_button_pressed"]
-[connection signal="pressed" from="Select_Character2_Button" to="." method="_on_select_character_2_button_pressed"]
+[connection signal="pressed" from="Select_Character1_Button" to="." method="_character_pass" binds= ["King Arthur"]]
+[connection signal="pressed" from="Select_Character2_Button" to="." method="_character_pass" binds= ["Robin Hood"]]

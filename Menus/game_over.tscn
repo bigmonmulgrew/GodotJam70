@@ -10,9 +10,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ffd6x")
-target_Level_main_menu = "res://Menus/main_menu.tscn"
+target_Level_main_menu = "Menus/main_menu.tscn"
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 509.0
 offset_top = 16.0
 offset_right = 653.0
@@ -21,6 +22,7 @@ theme_override_font_sizes/font_size = 42
 text = "Game Over"
 
 [node name="ReturnToMenuButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 7.0
 offset_top = 7.0
 offset_right = 134.0

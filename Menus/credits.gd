@@ -11,4 +11,5 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_return_to_menu_button_pressed() -> void:
-	get_tree().change_scene_to_file(target_Level_main_menu)
+	LevelMaster.load_level(target_Level_main_menu)
+	#get_tree().change_scene_to_file(target_Level_main_menu)

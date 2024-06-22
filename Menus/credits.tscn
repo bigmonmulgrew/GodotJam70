@@ -10,7 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_giu45")
-target_Level_main_menu = "res://Menus/main_menu.tscn"
+target_Level_main_menu = "Menus/main_menu.tscn"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0

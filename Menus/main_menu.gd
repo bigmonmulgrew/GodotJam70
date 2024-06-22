@@ -15,7 +15,8 @@ func _process(delta: float) -> void:
 
 func _on_start_button_pressed() -> void:
 	# Transition to the game scene
-	get_tree().change_scene_to_file(target_Level_start_game)
+	LevelMaster.load_level(target_Level_start_game)
+	#get_tree().change_scene_to_file(target_Level_start_game)
 
 func _on_quit_button_pressed() -> void:
 	_quit_game()
@@ -24,7 +25,9 @@ func _quit_game():
 	get_tree().quit()
 
 func _on_credits_button_pressed() -> void:
-	get_tree().change_scene_to_file(target_Level_credits)
+	LevelMaster.load_level(target_Level_credits)
+	#get_tree().change_scene_to_file(target_Level_credits)
 
 func _on_options_button_pressed() -> void:
-	get_tree().change_scene_to_file(target_Level_options)
+	LevelMaster.load_level(target_Level_options)
+	#get_tree().change_scene_to_file(target_Level_options)

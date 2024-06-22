@@ -17,7 +17,7 @@ class_name Game_Manager
 ## Certain methods should be called from other scripts. E.g. update_active_character should be called whenever you swap character. The appropriate time to call each method will be included in its description.
 
 ## A list of characters that are selected for the current run.
-var selected_characters: Array
+var selected_characters: Array[Node]
 ## This is a variable used to store the index of the currently active character.
 var active_character_index: int = 0
 ## An array of booleans that flag whether each selected character has been used in the current round.
@@ -131,3 +131,23 @@ func end_round():
 			selected_characters[i].get_node("HealthComponent").add_health(50)
 	has_been_used = [false, false, false]
 	update_health()
+	
+func character_select_option(name:String):
+	var pass_object = null
+	match (name.to_lower()):
+		"king arthur":
+			pass_object = king_arthur_scene
+		"robin hood":
+			pass_object = robin_hood_scene
+	if pass_object != null:
+		for character in selected_characters:
+			if character.name == name: # If King Arthur is already on your team, remove him.
+				selected_characters.erase(character)
+				print("removed character ", name)
+				return
+		var object_temp_instance = pass_object.instantiate()
+		object_temp_instance.name = name
+		selected_characters.append(object_temp_instance)
+		print("added character ", name)
+	pass
+	
