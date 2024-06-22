@@ -77,7 +77,25 @@ func swap_character(index: int):
 		level.player.global_position = temp_player.global_position
 		temp_player.get_parent().remove_child(temp_player)
 		update_active_character(index)
+
+## Respawn character takes the position of the player, removes them from the tree, and then adds them back onto the tower after a few seconds.
+##[br]
+## To move them back onto the tower, it gets a direction vector from where they "fell" towards the centre of the tower and sets the position of the respawned player to be slightly closer to the centre of the tower. This should always move them back onto the tower near where they initially fell.
+##[br]
+## It's not perfect, but it works for now.
+func respawn_character():
+
+	var level = get_tree().get_root().get_node("TEMPTEST")
+	var stored_player = level.player
+	var player_position = level.player.global_position
+	var tower_centre_pos = (get_tree().get_root().get_node("TEMPTEST").get_node("Tower Centre").global_position)
+	var direction_to_centre = (tower_centre_pos-player_position).normalized() # find position of tower centre node and put it before player_pos
+	var respawn_pos = player_position + (200 * direction_to_centre)
 	
+	get_tree().get_root().remove_child(level.player)
+	await get_tree().create_timer(3.0).timeout
+	get_tree().get_root().add_child(stored_player)
+	stored_player.global_position = respawn_pos
 	
 ## Prints the key, value pairs from the character dictionary.
 func display_unlocked_characters():

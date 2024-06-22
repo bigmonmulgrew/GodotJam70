@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://04bq74ubub4g"
-path="res://.godot/imported/GroundTiles-Demo.png-cea7766e89148086961d6f0c94e75dcf.ctex"
+uid="uid://bq76qcm1qk0bg"
+path="res://.godot/imported/melee-weapon-sprites.png-92dedfa30db4d1de6a7633d99f18dca3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Textures/GroundTiles-Demo.png"
-dest_files=["res://.godot/imported/GroundTiles-Demo.png-cea7766e89148086961d6f0c94e75dcf.ctex"]
+source_file="res://Images/Attacks/melee-weapon-sprites.png"
+dest_files=["res://.godot/imported/melee-weapon-sprites.png-92dedfa30db4d1de6a7633d99f18dca3.ctex"]
 
 [params]
 

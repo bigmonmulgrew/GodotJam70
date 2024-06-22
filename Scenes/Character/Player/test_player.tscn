@@ -44,4 +44,6 @@ health = 50
 [node name="UserMovementComponent" parent="." instance=ExtResource("7_lvtgv")]
 
 [node name="ResourceComponent" parent="." instance=ExtResource("8_3fxre")]
+
 regen_time = 1.0
+

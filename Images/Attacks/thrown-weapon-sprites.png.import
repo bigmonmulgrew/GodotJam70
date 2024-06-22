@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://04bq74ubub4g"
-path="res://.godot/imported/GroundTiles-Demo.png-cea7766e89148086961d6f0c94e75dcf.ctex"
+uid="uid://dlsxn2kvp5b5l"
+path="res://.godot/imported/thrown-weapon-sprites.png-4bdbff289b7cb51347ae5ef095b99318.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Textures/GroundTiles-Demo.png"
-dest_files=["res://.godot/imported/GroundTiles-Demo.png-cea7766e89148086961d6f0c94e75dcf.ctex"]
+source_file="res://Images/Attacks/thrown-weapon-sprites.png"
+dest_files=["res://.godot/imported/thrown-weapon-sprites.png-4bdbff289b7cb51347ae5ef095b99318.ctex"]
 
 [params]
 
