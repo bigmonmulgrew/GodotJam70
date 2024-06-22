@@ -11,7 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_rdqyx")
-target_Level_level_1 = "res://Scenes/tower_area.tscn"
+target_Level_level_1 = "res://Levels/DebugLevel.tscn"
 target_Level_main_menu = "res://Menus/main_menu.tscn"
 
 [node name="PlayButton" type="Button" parent="."]

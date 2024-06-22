@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5av2qpeghxuh"]
+
+[ext_resource type="Script" path="res://Scenes/thrown_attack.gd" id="1_mxe1i"]
+
+[node name="thrown_attack" type="Node2D"]
+script = ExtResource("1_mxe1i")
+thrown_attack_cooldown = 1.0
+damage = 2

@@ -19,6 +19,8 @@ class_name BaseProjectile
 @export var damage_type: DamageType.Type
 ## A boolean that allows you to set whether the projectile should explode on impact. This allows you to give projectiles slightly different impact behaviours.
 @export var impact_explosion: bool = false
+## The rotation of the projectile in degrees. This can be set in the editor. base is 0 so that usual projectiles are stationaryD
+@export var projectile_rotation_degrees: float = 0
 
 ## A boolean that states whether the projectile is active. Currently unused, but may be used if you want to stop the projectile moving but keep it in the game.
 var projectile_active: bool = true
@@ -54,6 +56,8 @@ func create_projectile_container():
 ## This method calls update_position(delta) on tick, updating the base_projectile's position every frame.
 func _physics_process(delta):
 	update_position(delta)
+	##this rotates the projectile each frame if rotation is more that 0
+	rotate(deg_to_rad(projectile_rotation_degrees))
 
 ## This methods checks if the projectile is currently active. If it is, it changes the position based on direction and speed.
 func update_position(delta):
@@ -67,3 +71,5 @@ func delete_projectile():
 ## This prints "(name) EXPLODEd!!". Fill this out in the appropriate child class that you are designing if the projectile should explode.
 func explode():
 		print(str(name) + " EXPLODED!!")
+		
+
