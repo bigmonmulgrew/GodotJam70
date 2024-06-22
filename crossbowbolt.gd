@@ -1,10 +1,10 @@
 extends BaseProjectile
 
-class_name CrossbowboltAttack
+class_name CrossbowBoltAttack
 
-## A CrossbowboltAttack that inherits from BaseProjectile.
+## A CrossbowBoltAttack that inherits from BaseProjectile.
 ##
-## CrossbowboltAttack is a projectile that can explode on impact, leaving behind lingering flames. The fireball deals damage on impact, and the flames use the DamageElement class to deal damage over time.
+## CrossbowBoltAttack is a projectile that can explode on impact, leaving behind lingering flames. The Crossbow bolt deals damage on impact, and the flames use the DamageElement class to deal damage over time.
 
 ## A variable used to store the health component of the received collision body.
 var health_component
@@ -16,7 +16,7 @@ var flames_scene = preload("res://Scenes/Components/damage_element.tscn")
 func _ready():
 	pass
 
-## A collision method that triggers when a body collides with the Crossbowbolt. This deals damage to the received collision body if it has a health component, and then makes the Crossbowbolt explode.
+## A collision method that triggers when a body collides with the Crossbowbolt. This deals damage to the received collision body if it has a health component, and then makes the Crossbowbolt explode if it is set to explode in the editor.
 ##[br]
 ##[br]
 ## We have to check if the collision body has a health component because the Crossbowbolt can also collide with a wall, at which point it should not try to remove health.

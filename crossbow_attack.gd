@@ -1,21 +1,21 @@
 extends Attack
 
-class_name CrossbowbolterAttack
+class_name CrossbowBolterAttack
 
 ## An attack component for firing a crossbowbolt.
 ##
-## crossbowbolt attack is a component that can be attached to a player or an enemy to allow them to fire a crossbowbolt.
+## crossbowbolt attack is a component that can be attached to a player or an enemy to allow them to fire a crossbow bolt.
 
-## The cooldown of the crossbowbolt
+## The cooldown of the crossbow bolt
 @export var crossbowbolt_cooldown: float = 0.5
 ## A variable used to store the parent node
 var parent_component: CharacterBody2D
 ## A variable used to store a health component of the parent node
 var health_component: Node
-## A variable used to store a reference to an empty node container, under which fireballs are instanced.
+## A variable used to store a reference to an empty node container, under which Crossbow bolts are instanced.
 var crossbowbolt_container: Node
-## A preload of the fireball scene so that it can be instanced.
-var crossbowbolt_scene = preload("res://Scenes/crossbowbolt.tscn")
+## A preload of the Crossbow bolt scene so that it can be instanced.
+var crossbowbolt_scene = preload("res://Scenes/crossbow_bolt.tscn")
 
 ## The ready method attaches the parent_component, the health_component, and the crossbowbolt_container to the appropriate nodes.
 func _ready():
@@ -24,7 +24,7 @@ func _ready():
 	health_component = owner.get_node("HealthComponent")
 	
 
-## Implementation of the use() method from the action_base class. When called, it calls the fire method to send out a fireball.
+## Implementation of the use() method from the action_base class. When called, it calls the fire method to send out a Crossbow bolt.
 func use():
 	fire()
 
