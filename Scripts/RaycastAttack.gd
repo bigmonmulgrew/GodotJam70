@@ -7,6 +7,7 @@ var is_firing: bool = false
 @export var b_can_damage: bool = true
 @export var b_has_force: bool = false
 @export var force: float = 0
+@export var resource_usage: int = 2
 
 func use():
 	if resource_component.current_resource > 0:
@@ -28,4 +29,4 @@ func stop_firing():
 func _on_timer_timeout():
 	if is_firing:
 		print(resource_component.current_resource)
-		resource_component.spend_resource(2)
+		resource_component.spend_resource(resource_usage)
