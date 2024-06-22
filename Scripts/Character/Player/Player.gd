@@ -40,8 +40,8 @@ func _check_input():
 	# Check if defensive action is not null
 	if defensive_action:
 		if Input.is_action_just_pressed("defensive_action"): defensive_action.use()
-	## Added swap character buttons, tied to 1 and 2 number keys.
-	for i in Game_Manager.max_player_select:
+	## Added swap character buttons, tied to the number of max players number keys.
+	for i in GameManager.selected_characters.size():
 		if Input.is_action_just_pressed("select_character"+str(i+1)):
 			game_manager.swap_character(i)
 	
