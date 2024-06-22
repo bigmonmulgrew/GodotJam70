@@ -21,8 +21,8 @@ func _ready():
 ##[br]
 ## We have to check if the collision body has a health component because the fireball can also collide with a wall, at which point it should not try to remove health.
 func _on_fireball_area_body_entered(body):
-	health_component = body.get_node("HealthComponent")
-	if health_component:
+	if body.has_node("HealthComponent"):
+		health_component = body.get_node("HealthComponent")
 		health_component.remove_health(damage_value, damage_type)
 		delete_projectile()
 	if impact_explosion:
@@ -36,7 +36,7 @@ func explode():
 	super()
 	var flames_instance = flames_scene.instantiate()
 	print("FLAMES")
-	level_root.add_child(flames_instance)
+	get_tree().current_scene.call_deferred("add_child",(flames_instance))
 	flames_instance.global_position = global_position
 	flames_instance.scale = Vector2(0.2, 0.2)
 	delete_projectile()

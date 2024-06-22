@@ -43,4 +43,3 @@ func fire():
 	var direction = Vector2(cos(parent_component.rotation), sin(parent_component.rotation))
 	crossbowbolt_instance.projectile_direction = direction
 	crossbowbolt_instance.global_position = get_parent().global_position
-	
