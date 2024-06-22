@@ -26,12 +26,27 @@ var has_been_used: Array[bool] = [false, false, false]
 var character_health_values: Array[int]
 ## An int counter used to track the current round of the current run.
 var round_number: int = 0
+
+##character section
+
 ## A dictionary of all characters in the game, paired with boolean values for whether they are unlocked or not.
 var character_dict = {"char_1": true, "char_2": true, "char_3": true, "char_4": false, "char_5": false}
 ## A preload of the KingArthur character scene, which can be switched to if it is part of the selected_characters pool.
 var king_arthur_scene = preload("res://Scenes/Character/Player/king_arthur.tscn")
 ## A preload of the RobinHood test player character scene, which can be switched to if it is part of the selected_characters pool.
 var robin_hood_scene = preload("res://Scenes/Character/Player/test_player.tscn")
+
+#UPDATE!!!!------------------------------------------
+var grandma_wolf_scene = preload("res://Scenes/Character/Player/king_arthur.tscn")
+## A preload of the RobinHood test player character scene, which can be switched to if it is part of the selected_characters pool.
+var oberon_scene = preload("res://Scenes/Character/Player/test_player.tscn")
+
+var goose_scene = preload("res://Scenes/Character/Player/king_arthur.tscn")
+## A preload of the RobinHood test player character scene, which can be switched to if it is part of the selected_characters pool.
+var sixth_character_scene = preload("res://Scenes/Character/Player/test_player.tscn")
+
+
+const max_player_select = 3
 
 func _ready():
 	display_unlocked_characters()
@@ -139,6 +154,14 @@ func character_select_option(name:String):
 			pass_object = king_arthur_scene
 		"robin hood":
 			pass_object = robin_hood_scene
+		"grandma wolf":
+			pass_object = oberon_scene
+		"oberon":
+			pass_object = robin_hood_scene
+		"goose":
+			pass_object = robin_hood_scene
+		"sixth":
+			pass_object = robin_hood_scene
 	if pass_object != null:
 		for character in selected_characters:
 			if character.name == name: # If King Arthur is already on your team, remove him.
@@ -148,6 +171,9 @@ func character_select_option(name:String):
 		var object_temp_instance = pass_object.instantiate()
 		object_temp_instance.name = name
 		selected_characters.append(object_temp_instance)
+		#excessive checks useful for when function is called outside select screen
+		if selected_characters.size() > max_player_select:
+			selected_characters.remove_at(0)
 		print("added character ", name)
 		return true
 	return null

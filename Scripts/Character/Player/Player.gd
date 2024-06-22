@@ -41,10 +41,9 @@ func _check_input():
 	if defensive_action:
 		if Input.is_action_just_pressed("defensive_action"): defensive_action.use()
 	## Added swap character buttons, tied to 1 and 2 number keys.
-	if Input.is_action_just_pressed("select_character1"):
-		game_manager.swap_character(0)
-	if Input.is_action_just_pressed("select_character2"):
-		game_manager.swap_character(1)
+	for i in Game_Manager.max_player_select:
+		if Input.is_action_just_pressed("select_character"+str(i+1)):
+			game_manager.swap_character(i)
 	
 func _face_player():
 	#check 
