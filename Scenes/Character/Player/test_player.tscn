@@ -11,7 +11,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d2mch"]
 
-[node name="RobinHood" type="CharacterBody2D"]
+[node name="RobinHood" type="CharacterBody2D" groups=["players"]]
 z_index = 5
 collision_mask = 14
 script = ExtResource("1_ppxvn")
@@ -32,6 +32,7 @@ shape = SubResource("CircleShape2D_d2mch")
 [node name="SecondaryAction" type="Node2D" parent="."]
 
 [node name="RaycastAttack" parent="SecondaryAction" instance=ExtResource("4_ug7j5")]
+force = -5.0
 
 [node name="DefensiveAction" type="Node2D" parent="."]
 

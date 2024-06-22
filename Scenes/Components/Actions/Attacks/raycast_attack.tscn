@@ -5,12 +5,14 @@
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wj7dc"]
 particle_flag_disable_z = true
-initial_velocity_min = 55.35
-initial_velocity_max = 56.7
+initial_velocity_min = 41.9
+initial_velocity_max = 42.0
 gravity = Vector3(0, 0, 0)
 
 [node name="RaycastAttack" type="Node2D"]
 script = ExtResource("1_rpc4h")
+b_has_force = true
+force = 5.0
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 enabled = false
@@ -19,11 +21,12 @@ collision_mask = 12
 script = ExtResource("2_844jg")
 
 [node name="Line2D" type="Line2D" parent="RayCast2D"]
-points = PackedVector2Array(0, -1, 495, 0)
+points = PackedVector2Array(0, 0, 500, 0)
 default_color = Color(0.941176, 0.670588, 1, 1)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="RayCast2D"]
 position = Vector2(492, 1)
 emitting = false
-amount = 28
+amount = 16
 process_material = SubResource("ParticleProcessMaterial_wj7dc")
+lifetime = 0.2
