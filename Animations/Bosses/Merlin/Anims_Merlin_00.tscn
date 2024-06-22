@@ -215,5 +215,5 @@ animations = [{
 
 [node name="MerlinAnims" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_2ttdu")
-animation = &"WalkSE"
-frame_progress = 0.701228
+animation = &"WalkS"
+autoplay = "WalkS"

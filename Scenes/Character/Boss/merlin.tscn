@@ -1,49 +1,27 @@
-[gd_scene load_steps=10 format=3 uid="uid://dbfsf38esgiwf"]
+[gd_scene load_steps=5 format=3 uid="uid://dbfsf38esgiwf"]
 
-[ext_resource type="Script" path="res://Scripts/Character/Player/Player.gd" id="1_kcris"]
-[ext_resource type="Texture2D" uid="uid://b8b3sno3rbbdi" path="res://Images/Boss Sprites/Merlin/Icon_Merlin_00.png" id="2_ldetk"]
-[ext_resource type="PackedScene" path="res://Scenes/fireball_attack.tscn" id="3_13wdr"]
-[ext_resource type="PackedScene" path="res://Scenes/thrown_attack.tscn" id="4_w4s5s"]
-[ext_resource type="PackedScene" uid="uid://bmbffq7l4h1xg" path="res://Scenes/Components/Actions/Defensive/bubble_shield.tscn" id="5_uv1op"]
+[ext_resource type="Script" path="res://Scripts/Character/Boss/merlin.gd" id="1_r10hk"]
 [ext_resource type="PackedScene" uid="uid://cid0vv4el0hjd" path="res://Scenes/Components/health_component.tscn" id="6_n87pw"]
-[ext_resource type="PackedScene" uid="uid://b1jwlvk5nun41" path="res://Scenes/Components/resource_component.tscn" id="7_pbnkb"]
-[ext_resource type="PackedScene" uid="uid://wucjj4n8wrd7" path="res://Scenes/Character/Boss/boss_ai.tscn" id="8_6essi"]
+[ext_resource type="PackedScene" uid="uid://bxrjko83xlhxa" path="res://Animations/Bosses/Merlin/Anims_Merlin_00.tscn" id="8_citex"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5pih8"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_mh234"]
+radius = 18.0
 
 [node name="Merlin" type="CharacterBody2D"]
 z_index = 5
-collision_mask = 14
-script = ExtResource("1_kcris")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_ldetk")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_5pih8")
-
-[node name="PrimaryAction" type="Node2D" parent="."]
-rotation = 1.5708
-
-[node name="fireball_attack" parent="PrimaryAction" instance=ExtResource("3_13wdr")]
-
-[node name="SecondaryAction" type="Node2D" parent="."]
-rotation = 1.5708
-
-[node name="thrown_attack" parent="SecondaryAction" instance=ExtResource("4_w4s5s")]
-
-[node name="DefensiveAction" type="Node2D" parent="."]
-rotation = 1.5708
-
-[node name="BubbleShield" parent="DefensiveAction" instance=ExtResource("5_uv1op")]
-resist_time = 0.5
-cooldown_time = 5.0
+collision_layer = 2
+script = ExtResource("1_r10hk")
 
 [node name="HealthComponent" parent="." instance=ExtResource("6_n87pw")]
 health = 50
 armour = 1
 
-[node name="ResourceComponent" parent="." instance=ExtResource("7_pbnkb")]
+[node name="MerlinAnims" parent="." instance=ExtResource("8_citex")]
+animation = &"WalkN"
 
-[node name="BossAI" parent="." instance=ExtResource("8_6essi")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mh234")
+
+[node name="RangedActions" type="Node2D" parent="."]
+
+[node name="MeleeActions" type="Node2D" parent="."]

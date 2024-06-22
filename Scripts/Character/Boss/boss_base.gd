@@ -34,9 +34,12 @@ var ranged_actions: Node2D:
 			update_configuration_warnings()
 #endregion
 
+func _physics_process(delta):
+	ranged_actions.look_at(get_player_location())
+
 ## Gets the active character from the gameplay manager
-func get_player_location() -> Player:
-	return GameManager.selected_characters[GameManager.active_character_index]
+func get_player_location() -> Vector2:
+	return GameManager.selected_characters[GameManager.active_character_index].global_position
 
 # Inform the user that a health component needs to be added.
 func _get_configuration_warnings() -> PackedStringArray:
