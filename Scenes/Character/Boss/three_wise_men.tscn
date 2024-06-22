@@ -1,0 +1,52 @@
+[gd_scene load_steps=11 format=3 uid="uid://c3k1kxm3bc1bm"]
+
+[ext_resource type="Script" path="res://Scripts/Character/Player/Player.gd" id="1_us64s"]
+[ext_resource type="Texture2D" uid="uid://b8b3sno3rbbdi" path="res://Images/Boss Sprites/Merlin/Icon_Merlin_00.png" id="2_rtipp"]
+[ext_resource type="PackedScene" path="res://Scenes/fireball_attack.tscn" id="3_j5icv"]
+[ext_resource type="PackedScene" uid="uid://dx0yytejv6w7p" path="res://Scenes/Components/Actions/Attacks/tentacle_attack.tscn" id="4_vmnja"]
+[ext_resource type="PackedScene" path="res://Scenes/thrown_attack.tscn" id="4_yobg7"]
+[ext_resource type="PackedScene" uid="uid://bmbffq7l4h1xg" path="res://Scenes/Components/Actions/Defensive/bubble_shield.tscn" id="5_tw5ej"]
+[ext_resource type="PackedScene" uid="uid://cid0vv4el0hjd" path="res://Scenes/Components/health_component.tscn" id="6_wwn4c"]
+[ext_resource type="PackedScene" uid="uid://b1jwlvk5nun41" path="res://Scenes/Components/resource_component.tscn" id="7_kgkre"]
+[ext_resource type="PackedScene" uid="uid://wucjj4n8wrd7" path="res://Scenes/Character/Boss/boss_ai.tscn" id="8_rscv4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5pih8"]
+
+[node name="ThreeWiseMen" type="CharacterBody2D"]
+z_index = 5
+collision_mask = 14
+script = ExtResource("1_us64s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_rtipp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5pih8")
+
+[node name="PrimaryAction" type="Node2D" parent="."]
+rotation = 1.5708
+
+[node name="fireball_attack" parent="PrimaryAction" instance=ExtResource("3_j5icv")]
+
+[node name="TentacleAttack" parent="PrimaryAction" instance=ExtResource("4_vmnja")]
+
+[node name="SecondaryAction" type="Node2D" parent="."]
+rotation = 1.5708
+
+[node name="thrown_attack" parent="SecondaryAction" instance=ExtResource("4_yobg7")]
+
+[node name="DefensiveAction" type="Node2D" parent="."]
+rotation = 1.5708
+
+[node name="BubbleShield" parent="DefensiveAction" instance=ExtResource("5_tw5ej")]
+resist_time = 0.5
+cooldown_time = 5.0
+
+[node name="HealthComponent" parent="." instance=ExtResource("6_wwn4c")]
+health = 50
+armour = 1
+
+[node name="ResourceComponent" parent="." instance=ExtResource("7_kgkre")]
+
+[node name="BossAIComponent" parent="." instance=ExtResource("8_rscv4")]

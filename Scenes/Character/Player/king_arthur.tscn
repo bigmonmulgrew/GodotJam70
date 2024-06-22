@@ -1,24 +1,23 @@
 [gd_scene load_steps=9 format=3 uid="uid://cjgkjhe7k58s"]
 
-[ext_resource type="Texture2D" uid="uid://bsoah8gdmv5su" path="res://icon.svg" id="1_3i75j"]
 [ext_resource type="Script" path="res://Scripts/Character/Player/Player.gd" id="1_goc7c"]
+[ext_resource type="Texture2D" uid="uid://dj33hp54ba015" path="res://Textures/Playable Character Sprites/KingArthur/Icon_KingArthur_00.png" id="2_gjdpi"]
 [ext_resource type="PackedScene" uid="uid://bmbffq7l4h1xg" path="res://Scenes/Components/Actions/Defensive/bubble_shield.tscn" id="3_5jpqi"]
-[ext_resource type="PackedScene" uid="uid://xhr1iffrbnc1" path="res://Scenes/fireball_attack.tscn" id="3_53g7t"]
+[ext_resource type="PackedScene" path="res://Scenes/fireball_attack.tscn" id="3_53g7t"]
 [ext_resource type="PackedScene" uid="uid://cid0vv4el0hjd" path="res://Scenes/Components/health_component.tscn" id="4_kq5tx"]
 [ext_resource type="PackedScene" uid="uid://c74bwndkx5s18" path="res://Scenes/Components/user_movement_component.tscn" id="5_4oels"]
 [ext_resource type="PackedScene" uid="uid://b1jwlvk5nun41" path="res://Scenes/Components/resource_component.tscn" id="6_7mpsh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5pih8"]
 
-[node name="KingArthur" type="CharacterBody2D" groups=["players"]]
+[node name="KingArthur" type="CharacterBody2D"]
 z_index = 5
-collision_mask = 46
+collision_mask = 14
 script = ExtResource("1_goc7c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = 1.5708
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("1_3i75j")
+texture = ExtResource("2_gjdpi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5pih8")
