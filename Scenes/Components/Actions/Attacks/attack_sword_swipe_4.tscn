@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu3deotcyexuy"]
+
+[ext_resource type="PackedScene" uid="uid://b22mbah3esni7" path="res://Scenes/Components/Actions/Attacks/attack_sword_swipe_1.tscn" id="1_y32tx"]
+
+[node name="SwordSwipe4" instance=ExtResource("1_y32tx")]
+
+[node name="Sprite2D" parent="Area2D" index="0"]
+region_rect = Rect2(85, 0, 22, 64)

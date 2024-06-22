@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://r1jn2f5wwvt1"]
+
+[ext_resource type="PackedScene" uid="uid://b22mbah3esni7" path="res://Scenes/Components/Actions/Attacks/attack_sword_swipe_1.tscn" id="1_giv5f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfsqa"]
+size = Vector2(4, 22)
+
+[node name="SwordSwipe" instance=ExtResource("1_giv5f")]
+
+[node name="Sprite2D" parent="Area2D" index="0"]
+position = Vector2(-0.017938, -12.234)
+scale = Vector2(0.248523, 0.412125)
+region_rect = Rect2(88, 199, 16, 57)
+
+[node name="CollisionShape2D" parent="Area2D" index="1"]
+position = Vector2(-1.90735e-06, -12)
+shape = SubResource("RectangleShape2D_jfsqa")

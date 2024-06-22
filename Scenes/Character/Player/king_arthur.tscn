@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://Scripts/Character/Player/Player.gd" id="1_goc7c"]
 [ext_resource type="Texture2D" uid="uid://dj33hp54ba015" path="res://Textures/Playable Character Sprites/KingArthur/Icon_KingArthur_00.png" id="2_gjdpi"]
 [ext_resource type="PackedScene" uid="uid://bmbffq7l4h1xg" path="res://Scenes/Components/Actions/Defensive/bubble_shield.tscn" id="3_5jpqi"]
-[ext_resource type="PackedScene" uid="uid://xhr1iffrbnc1" path="res://Scenes/Components/Actions/Attacks/fireball_attack.tscn" id="3_53g7t"]
+[ext_resource type="PackedScene" uid="uid://bj6hnoidynu0t" path="res://Scenes/Components/Actions/Attacks/attack_unarmed_1.tscn" id="3_k1lna"]
+[ext_resource type="PackedScene" uid="uid://bxlxgk0bvt4x0" path="res://Scenes/Components/Actions/Attacks/crossbow_attack.tscn" id="4_885hc"]
 [ext_resource type="PackedScene" uid="uid://cid0vv4el0hjd" path="res://Scenes/Components/health_component.tscn" id="4_kq5tx"]
-[ext_resource type="PackedScene" uid="uid://bxlxgk0bvt4x0" path="res://Scenes/Components/Actions/Attacks/crossbow_attack.tscn" id="4_yyddj"]
 [ext_resource type="PackedScene" uid="uid://c74bwndkx5s18" path="res://Scenes/Components/user_movement_component.tscn" id="5_4oels"]
 [ext_resource type="PackedScene" uid="uid://b1jwlvk5nun41" path="res://Scenes/Components/resource_component.tscn" id="6_7mpsh"]
 
@@ -26,12 +26,12 @@ shape = SubResource("CircleShape2D_5pih8")
 [node name="PrimaryAction" type="Node2D" parent="."]
 rotation = 1.5708
 
-[node name="fireball_attack" parent="PrimaryAction" instance=ExtResource("3_53g7t")]
+[node name="Unarmed1" parent="PrimaryAction" instance=ExtResource("3_k1lna")]
 
 [node name="SecondaryAction" type="Node2D" parent="."]
 rotation = 1.5708
 
-[node name="crossbow_attack" parent="SecondaryAction" instance=ExtResource("4_yyddj")]
+[node name="crossbow_attack" parent="SecondaryAction" instance=ExtResource("4_885hc")]
 
 [node name="DefensiveAction" type="Node2D" parent="."]
 rotation = 1.5708

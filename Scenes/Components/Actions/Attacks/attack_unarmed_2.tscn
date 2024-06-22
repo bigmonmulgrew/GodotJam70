@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdr03ituukbj1"]
+
+[ext_resource type="PackedScene" uid="uid://bj6hnoidynu0t" path="res://Scenes/Components/Actions/Attacks/attack_unarmed_1.tscn" id="1_euavk"]
+
+[node name="Unarmed2" instance=ExtResource("1_euavk")]
+
+[node name="Sprite2D" parent="Area2D" index="0"]
+region_rect = Rect2(77, 403, 44, 27)
