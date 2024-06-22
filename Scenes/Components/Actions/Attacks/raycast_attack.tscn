@@ -17,7 +17,8 @@ force = 5.0
 [node name="RayCast2D" type="RayCast2D" parent="."]
 enabled = false
 target_position = Vector2(500, 0)
-collision_mask = 12
+collision_mask = 36
+collide_with_areas = true
 script = ExtResource("2_844jg")
 
 [node name="Line2D" type="Line2D" parent="RayCast2D"]
@@ -30,3 +31,9 @@ emitting = false
 amount = 16
 process_material = SubResource("ParticleProcessMaterial_wj7dc")
 lifetime = 0.2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -97,6 +97,7 @@ select_character2={
 2d_physics/layer_3="world"
 2d_physics/layer_4="traps"
 2d_physics/layer_5="attacks"
+2d_physics/layer_6="impassable_traps"
 
 [rendering]
 

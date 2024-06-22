@@ -46,7 +46,7 @@ scale = Vector2(0.2, 0.2)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="Obstacles"]
 position = Vector2(355, 332)
-collision_layer = 12
+collision_layer = 4
 collision_mask = 15
 gravity_scale = 0.0
 

@@ -25,7 +25,7 @@ func _physics_process(delta):
 		return
 
 	var collider = get_collider()
-	if collider is PhysicsBody2D:  # Check if the collided object is a physics body
+	if collider is PhysicsBody2D or collider.get_parent() is PhysicsBody2D:  # Check if the collided object is a physics body
 		particle_emitter.emitting = true
 		var collision_point_local = line.to_local(get_collision_point())
 		var collision_point_global = get_collision_point()

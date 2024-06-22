@@ -13,7 +13,7 @@
 
 [node name="KingArthur" type="CharacterBody2D" groups=["players"]]
 z_index = 5
-collision_mask = 14
+collision_mask = 46
 script = ExtResource("1_goc7c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
