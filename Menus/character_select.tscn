@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://36fxkugwg738"]
+[gd_scene load_steps=4 format=3 uid="uid://36fxkugwg738"]
 
 [ext_resource type="Texture2D" uid="uid://bsoah8gdmv5su" path="res://icon.svg" id="1_5x7rx"]
 [ext_resource type="Script" path="res://Menus/character_select.gd" id="2_rdqyx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q0sgc"]
 
 [node name="CharacterSelect" type="Control"]
 layout_mode = 3
@@ -38,6 +40,7 @@ offset_left = 76.0
 offset_top = 215.0
 offset_right = 302.0
 offset_bottom = 351.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_q0sgc")
 text = "Select
 Character1"
 icon = ExtResource("1_5x7rx")
@@ -85,5 +88,5 @@ text = "Select Team"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="Select_Character1_Button" to="." method="_character_pass" binds= ["King Arthur"]]
-[connection signal="pressed" from="Select_Character2_Button" to="." method="_character_pass" binds= ["Robin Hood"]]
+[connection signal="pressed" from="Select_Character1_Button" to="." method="_get_p_my_g" binds= [NodePath("../Icon")]]
+[connection signal="pressed" from="Select_Character2_Button" to="." method="_character_pass" binds= ["Robin Hood", NodePath(".")]]

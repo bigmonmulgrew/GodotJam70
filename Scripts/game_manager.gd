@@ -144,10 +144,11 @@ func character_select_option(name:String):
 			if character.name == name: # If King Arthur is already on your team, remove him.
 				selected_characters.erase(character)
 				print("removed character ", name)
-				return
+				return false
 		var object_temp_instance = pass_object.instantiate()
 		object_temp_instance.name = name
 		selected_characters.append(object_temp_instance)
 		print("added character ", name)
-	pass
+		return true
+	return null
 	
