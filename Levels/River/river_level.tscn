@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bcp08ef822d37"]
+[gd_scene load_steps=12 format=3 uid="uid://bcp08ef822d37"]
 
 [ext_resource type="PackedScene" uid="uid://bk3ae6a5v0fon" path="res://Scenes/scrolling_background.tscn" id="1_k13x5"]
 [ext_resource type="AudioStream" uid="uid://dd82c2rs3fmm7" path="res://Audio/SFX/river_background.wav" id="2_3mhc6"]
@@ -8,12 +8,25 @@
 [ext_resource type="PackedScene" uid="uid://d22mivc3fy6ts" path="res://Scenes/Components/damage_element.tscn" id="5_ma85h"]
 [ext_resource type="PackedScene" uid="uid://0vb83wfs1stj" path="res://Scenes/Components/static_damage_element.tscn" id="5_ok5tw"]
 [ext_resource type="PackedScene" uid="uid://db5mujv3yhta3" path="res://Scenes/offscreen_respawner.tscn" id="7_fun08"]
+[ext_resource type="PackedScene" uid="uid://c3k1kxm3bc1bm" path="res://Scenes/Character/Boss/three_wise_men.tscn" id="9_4v5j6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikfqc"]
+size = Vector2(206, 1372)
+
+[sub_resource type="Curve2D" id="Curve2D_dv1mv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 311, 81, 0, 0, 0, 0, 327, 381, 0, 0, 0, 0, 327, 512, 0, 0, 0, 0, 322, 610, 0, 0, 0, 0, 267, 614, 0, 0, 0, 0, 275, 518, 0, 0, 0, 0, 282, 416, 0, 0, 0, 0, 303, 313, 0, 0, 0, 0, 294, 187, 0, 0, 0, 0, 284, 102, 0, 0, 0, 0, 306, 76, 0, 0, 0, 0, 311, 81)
+}
+point_count = 12
 
 [node name="RiverLevel" type="Node2D"]
 
 [node name="ScrollingBackground" parent="." instance=ExtResource("1_k13x5")]
 sound_ref = ExtResource("2_3mhc6")
 bg_texture = ExtResource("2_mtju2")
+
+[node name="Sprite2D" parent="ScrollingBackground/ParallaxLayer" index="0"]
+texture = ExtResource("2_mtju2")
 
 [node name="PlayerSpawnMarker" type="Marker2D" parent="."]
 position = Vector2(804, 329)
@@ -41,4 +54,39 @@ position = Vector2(-128, -1079)
 [node name="EndMarker" parent="OffscreenRespawner" index="2"]
 position = Vector2(527, -1070)
 
+[node name="WallTop" type="StaticBody2D" parent="."]
+position = Vector2(738, 20)
+rotation = -1.5708
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop"]
+position = Vector2(123, -146)
+shape = SubResource("RectangleShape2D_ikfqc")
+
+[node name="WallRight" type="StaticBody2D" parent="."]
+position = Vector2(1132, 576)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight"]
+position = Vector2(123, -474)
+shape = SubResource("RectangleShape2D_ikfqc")
+
+[node name="WallLeft" type="StaticBody2D" parent="."]
+position = Vector2(-226, 142)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft"]
+position = Vector2(123, -146)
+shape = SubResource("RectangleShape2D_ikfqc")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_dv1mv")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(311, 81)
+rotates = false
+
+[node name="ThreeWiseMenBoss" parent="Path2D/PathFollow2D" instance=ExtResource("9_4v5j6")]
+
+[editable path="ScrollingBackground"]
 [editable path="OffscreenRespawner"]

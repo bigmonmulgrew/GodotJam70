@@ -4,9 +4,15 @@ enum State { ALIVE, DIED }
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var death_timer = $DeathTimer
 @onready var attack_timer = $AttackTimer
+@onready var path_follow: PathFollow2D = get_parent()
 
 
 var current_state = State.ALIVE
+
+func _physics_process(delta):
+	path_follow.progress += 100 * delta
+	var direction = global_position.direction_to(get_player_location())
+	ranged_actions.rotation = atan2(direction.y, direction.x)
 
 func _boss_died():
 	current_state = State.DIED
