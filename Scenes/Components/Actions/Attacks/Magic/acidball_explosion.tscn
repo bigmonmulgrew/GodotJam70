@@ -10,6 +10,8 @@ radius = 42.0
 collision_layer = 8
 script = ExtResource("1_xtvvx")
 damage_amount = 6
+despawn_boolean = true
+despawn_time = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_bty4v")
