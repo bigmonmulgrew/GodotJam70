@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dg7rq0kgosyeo"]
+
+[ext_resource type="Script" path="res://Scripts/fireball.gd" id="1_yn6hq"]
+[ext_resource type="Texture2D" uid="uid://cqhalbj0v60j2" path="res://Images/Textures/Face Icon Beeg.png" id="2_frmmd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_60pv4"]
+radius = 17.0294
+
+[node name="Fireball" type="Node2D"]
+script = ExtResource("1_yn6hq")
+travel_speed = 5.0
+damage_type = 1
+impact_explosion = true
+
+[node name="FireballSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_frmmd")
+
+[node name="FireballArea" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="FireballCollisionShape" type="CollisionShape2D" parent="FireballArea"]
+shape = SubResource("CircleShape2D_60pv4")
+
+[connection signal="body_entered" from="FireballArea" to="." method="_on_fireball_area_body_entered"]

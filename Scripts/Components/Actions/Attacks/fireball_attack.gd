@@ -9,7 +9,7 @@ class_name FireballAttack
 ## The cooldown of the fireball
 @export var fireball_cooldown: float = 2
 ## A variable used to store the parent node
-var parent_component: CharacterBody2D
+var parent_component: Node2D
 ## A variable used to store a health component of the parent node
 var health_component: Node
 ## A variable used to store a reference to an empty node container, under which fireballs are instanced.
@@ -19,7 +19,7 @@ var fireball_container: Node
 
 ## The ready method attaches the parent_component, the health_component, and the fireball_container to the appropriate nodes.
 func _ready():
-	parent_component = owner
+	parent_component = get_parent()
 	print("PARENT COMPONENT NAME: " + str(parent_component.name))
 	health_component = owner.get_node("HealthComponent")
 	
