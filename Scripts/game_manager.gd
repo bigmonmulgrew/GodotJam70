@@ -48,7 +48,7 @@ var queued_stages: Array[String] = []
 @export var sixth_character_scene = preload("res://Scenes/Character/Player/mf_broom.tscn")
 
 const leveloptionsaves:Array[String] = ["WoodlandHouse", "RiverCascade", "MerlinsTower"]
-var levellocations:Array[String] = ["Levels/River/river_level.tscn", "Levels/River/river_level.tscn", "Levels/River/river_level.tscn"]
+var levellocations:Array[String] = ["Levels/DebugLevel.tscn", "Levels/River/river_level.tscn", "Scenes/tower_area.tscn"]
 
 const max_player_select = 3
 
