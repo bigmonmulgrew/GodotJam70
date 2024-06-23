@@ -6,6 +6,9 @@ class_name CrossbowBolterAttack
 ##
 ## crossbowbolt attack is a component that can be attached to a player or an enemy to allow them to fire a crossbow bolt.
 
+## Variable a sound effect can be attatched too
+@export var sound_ref:AudioStream
+
 ## The cooldown of the crossbow bolt
 @export var crossbowbolt_cooldown: float = 0.5
 ## A variable used to store the parent node
@@ -38,6 +41,10 @@ func fire():
 	can_use = false
 	start_cooldown_timer()
 	print("Creating crossbowbolt")
+	
+		## Play the sound effect here in the fire func
+	AudioManager.play_sfx(sound_ref, 1)
+	
 	var crossbowbolt_instance = crossbowbolt_scene.instantiate()
 	get_tree().get_root().add_child(crossbowbolt_instance)
 	var direction = Vector2(cos(parent_component.rotation), sin(parent_component.rotation))

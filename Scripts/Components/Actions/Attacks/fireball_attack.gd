@@ -6,6 +6,10 @@ class_name FireballAttack
 ##
 ## Fireball attack is a component that can be attached to a player or an enemy to allow them to fire a fireball.
 
+
+## Variable a sound effect can be attatched too
+@export var sound_ref:AudioStream
+
 ## The cooldown of the fireball
 @export var fireball_cooldown: float = 2
 ## A variable used to store the parent node
@@ -24,6 +28,7 @@ func _ready():
 	health_component = owner.get_node("HealthComponent")
 	
 
+
 ## Implementation of the use() method from the action_base class. When called, it calls the fire method to send out a fireball.
 func use():
 	fire()
@@ -38,6 +43,10 @@ func fire():
 	can_use = false
 	start_cooldown_timer()
 	print("Creating fireball")
+	
+	## Play the sound effect here in the fire func
+	AudioManager.play_sfx(sound_ref, 1)
+	
 	var fireball_instance = projectile_scene.instantiate()
 	get_tree().get_root().add_child(fireball_instance)
 	var direction = Vector2(cos(parent_component.rotation), sin(parent_component.rotation))
