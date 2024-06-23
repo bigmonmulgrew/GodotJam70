@@ -42,6 +42,7 @@ func _check_input():
 	# Check if primary action is not null
 	if primary_action:
 		if Input.is_action_just_pressed("primary_action"): primary_action.use()
+		elif Input.is_action_pressed("primary_action") == false && primary_action.has_method("stop_firing"): primary_action.stop_firing()
 	# Check if secondary action is not null
 	if secondary_action:
 		if Input.is_action_pressed("secondary_action"): secondary_action.use()
