@@ -70,19 +70,19 @@ texture_progress = SubResource("AnimatedTexture_yl1c2")
 tint_progress = Color(1, 0, 0, 1)
 
 [node name="BossIcon" type="Sprite2D" parent="BossHealthBar"]
-position = Vector2(-53, 16)
+position = Vector2(-57, -79)
 texture = ExtResource("4_fe3t6")
 
 [node name="VSIcon" type="Sprite2D" parent="."]
-position = Vector2(571, 48)
+position = Vector2(571, -48)
 texture = ExtResource("5_knct6")
 
 [node name="PlayerResourceBar" type="TextureProgressBar" parent="."]
 show_behind_parent = true
 offset_left = 644.0
-offset_top = 10.0
+offset_top = 27.0
 offset_right = 1032.0
-offset_bottom = 41.0
+offset_bottom = 58.0
 step = 0.01
 value = 100.0
 fill_mode = 1
@@ -105,30 +105,30 @@ texture_progress = SubResource("AnimatedTexture_yl1c2")
 tint_progress = Color(0, 1, 0, 1)
 
 [node name="PlayerIcon" type="Sprite2D" parent="PlayerHealthBar"]
-position = Vector2(454, 17)
+position = Vector2(467, -80)
 texture = ExtResource("4_fe3t6")
 
 [node name="AllyIcon1" type="Sprite2D" parent="PlayerHealthBar"]
-position = Vector2(366, 56)
+position = Vector2(389, -68)
 texture = ExtResource("3_vmncw")
 
 [node name="AllyIcon2" type="Sprite2D" parent="PlayerHealthBar"]
-position = Vector2(315, 56)
+position = Vector2(328, -65)
 texture = ExtResource("3_vmncw")
 
 [node name="PlayerName" type="Label" parent="."]
-offset_left = 647.0
+offset_left = 646.0
 offset_top = 60.0
-offset_right = 936.0
+offset_right = 1030.0
 offset_bottom = 94.0
-text = "Robin Hood"
+text = "You"
 label_settings = SubResource("LabelSettings_rqjmi")
 horizontal_alignment = 1
 
 [node name="BossName" type="Label" parent="."]
-offset_left = 106.0
+offset_left = 109.0
 offset_top = 57.0
-offset_right = 491.0
+offset_right = 494.0
 offset_bottom = 91.0
 text = "The Three Wise Men Of Gotham"
 label_settings = SubResource("LabelSettings_rqjmi")
