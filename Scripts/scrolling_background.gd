@@ -26,6 +26,7 @@ func _ready():
 	parallax_layer.motion_mirroring = Vector2(bg_width, bg_height)
 	
 func _process(delta):
+	debug()
 	# Scroll the background by speed
 	sprite.region_rect.position += delta * Vector2(horizontal_speed, -vertical_speed)
 	
@@ -34,3 +35,9 @@ func _process(delta):
 		sprite.region_rect.position = Vector2.ZERO
 	elif sprite.region_rect.position.y >= bg_height or sprite.region_rect.position.y <= -bg_height:
 		sprite.region_rect.position = Vector2.ZERO
+
+func debug():
+	#TODO remove on production
+	if(Input.is_action_just_pressed("debug_win")):
+		SaveSystem.save_data(0,"RiverCascade", true)
+		LevelMaster.load_level("Menus/character_select.tscn")
