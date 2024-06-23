@@ -15,6 +15,7 @@ class_name Player
 var is_mnk: bool = true
 
 func _ready():
+	add_to_group("Player")
 	primary_action = get_node_or_null("PrimaryAction")
 	if primary_action!=null: primary_action = primary_action.get_child(0)
 	secondary_action = get_node_or_null("SecondaryAction")
@@ -48,9 +49,12 @@ func _check_input():
 	# Check if defensive action is not null
 	if defensive_action:
 		if Input.is_action_just_pressed("defensive_action"): defensive_action.use()
+	
 	## Added swap character buttons, tied to the number of max players number keys.
 	for i in GameManager.selected_characters.size():
+		
 		if Input.is_action_just_pressed("select_character"+str(i+1)):
+			print("Calling swap character from _check_input on player.gd, changing to " + str(i))
 			game_manager.swap_character(i)
 	
 func _face_player():

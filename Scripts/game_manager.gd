@@ -89,16 +89,24 @@ func update_active_character(index: int):
 ## The active character index variable is then changed accordingly to match the currently-played character.
 func swap_character(index: int):
 	if index != active_character_index:
+		print("This worked, current char index: " + str(active_character_index))
 		#reworked dodge system
 		var level = get_tree().current_scene
 		var temp_player_ref:CharacterBody2D = null
 		for i in get_tree().get_nodes_in_group("Player"):
+			print(i)
+			print(get_tree().current_scene.name)
+			print(i.find_parent(get_tree().current_scene.name))
 			print("rty ",i.find_parent(get_tree().current_scene.name) )
-			if i.find_parent(get_tree().current_scene.name) != null:
+			if i.get_parent() != null:
+				print("This worked4")
 				temp_player_ref = i as CharacterBody2D
 		#level.player = selected_characters[index]
 		var pl_temp:CharacterBody2D = selected_characters[index] as CharacterBody2D
+		print("This worked 2")
+				
 		if temp_player_ref != null:
+			print("This worked3")
 			temp_player_ref.get_parent().add_child(pl_temp)
 			pl_temp.global_position = temp_player_ref.global_position
 			pl_temp.velocity = temp_player_ref.velocity
@@ -189,6 +197,7 @@ func character_select_option(name:String):
 				return false
 		var object_temp_instance = pass_object.instantiate()
 		object_temp_instance.name = name
+		
 		selected_characters.append(object_temp_instance)
 		#excessive checks useful for when function is called outside select screen
 		if selected_characters.size() > max_player_select:
