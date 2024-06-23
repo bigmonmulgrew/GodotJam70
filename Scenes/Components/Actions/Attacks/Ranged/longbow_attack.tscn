@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqus1mwiav56m"]
+
+[ext_resource type="Script" path="res://Scripts/Components/Actions/Attacks/crossbow_attack.gd" id="1_aswr5"]
+
+[node name="longbow_attack" type="Node2D"]
+script = ExtResource("1_aswr5")
+crossbowbolt_cooldown = 0.3

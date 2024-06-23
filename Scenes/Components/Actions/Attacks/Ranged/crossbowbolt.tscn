@@ -1,22 +1,23 @@
 [gd_scene load_steps=4 format=3 uid="uid://cp1glg5y70k5a"]
 
 [ext_resource type="Script" path="res://crossbowbolt.gd" id="1_3xjp5"]
-[ext_resource type="Texture2D" uid="uid://dj3maxhybohwe" path="res://Textures/Playable Character Sprites/GrandmaWolf/Icon_GrandmaWolf_00.png" id="2_vlcgs"]
+[ext_resource type="Texture2D" uid="uid://ccrwsig0bh7jn" path="res://Images/Attacks/projectile-weapon-sprites.png" id="2_nr5ti"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82wwo"]
-size = Vector2(107.927, 72.8792)
+size = Vector2(6, 30)
 
 [node name="crossbowbolt" type="Node2D"]
 script = ExtResource("1_3xjp5")
+travel_speed = 12.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_vlcgs")
+texture = ExtResource("2_nr5ti")
+region_enabled = true
+region_rect = Rect2(156.32, 79.2426, 7.02678, 32.3532)
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-4.23141, 16.0979)
-rotation = -0.422212
 shape = SubResource("RectangleShape2D_82wwo")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_crossbow_area_body_entered"]
