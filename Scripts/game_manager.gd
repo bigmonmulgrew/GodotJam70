@@ -104,6 +104,13 @@ func swap_character(index: int):
 			pl_temp.velocity = temp_player_ref.velocity
 			temp_player_ref.get_parent().remove_child(temp_player_ref)
 			update_active_character(index)
+			
+func _detach_player_from_scene() -> void:
+	print("gdgsrhggsrhsrh")
+	var temp_player_ref:CharacterBody2D = null
+	for i in get_tree().get_nodes_in_group("Player"):
+		i.get_parent().remove_child(i)
+	LevelMaster.transition_sig.disconnect(_detach_player_from_scene)
 
 ## Respawn character takes the position of the player, removes them from the tree, and then adds them back onto the tower after a few seconds.
 ##[br]
@@ -201,4 +208,7 @@ func load_level_from_collection():
 	#if it cant find any unbeaten level play all
 	if list_to_ref.size() <= 0:
 		rool = randi_range(0,leveloptionsaves.size()-1)
+	LevelMaster.transition_sig.connect(_detach_player_from_scene)
 	LevelMaster.load_level(levellocations[rool])
+	
+

@@ -39,4 +39,6 @@ func _process(delta):
 func debug():
 	#TODO remove on production
 	if(Input.is_action_just_pressed("debug_win")):
+		SaveSystem.save_data(0,"RiverCascade", true)
 		GameManager.load_level_from_collection()
+		#LevelMaster.load_level("Menus/character_select.tscn")
