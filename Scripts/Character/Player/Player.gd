@@ -39,12 +39,29 @@ func _physics_process(delta):
 
 func _check_input():
 	# Check if primary action is not null
+	#if primary_action:
+		#if Input.is_action_just_pressed("primary_action"): primary_action.use()
+	
 	if primary_action:
-		if Input.is_action_just_pressed("primary_action"): primary_action.use()
+		if primary_action != get_node("PrimaryAction").get_node("RaycastAttack"):
+			if Input.is_action_just_pressed("primary_action"): primary_action.use()
+		else:
+			if Input.is_action_pressed("primary_action"):
+				primary_action.use()
+			elif Input.is_action_pressed("primary_action") == false:
+				primary_action.stop_firing()
+	
 	# Check if secondary action is not null
 	if secondary_action:
-		if Input.is_action_pressed("secondary_action"): secondary_action.use()
-		elif Input.is_action_pressed("secondary_action") == false && secondary_action.has_method("stop_firing"): secondary_action.stop_firing()
+		#if Input.is_action_pressed("secondary_action"): secondary_action.use()
+		#elif Input.is_action_pressed("secondary_action") == false && secondary_action.has_method("stop_firing"): secondary_action.stop_firing()
+		if secondary_action != get_node("SecondaryAction").get_node("RaycastAttack"):
+			if Input.is_action_just_pressed("secondary_action"): secondary_action.use()
+		else:
+			if Input.is_action_pressed("secondary_action"):
+				secondary_action.use()
+			elif Input.is_action_pressed("secondary_action") == false:
+				secondary_action.stop_firing()
 	# Check if defensive action is not null
 	if defensive_action:
 		if Input.is_action_just_pressed("defensive_action"): defensive_action.use()

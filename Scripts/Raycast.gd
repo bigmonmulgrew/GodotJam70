@@ -39,6 +39,6 @@ func _physics_process(delta):
 		
 		# finding the movement component and moving it by the required force
 		if not collider is StaticBody2D and ("Walls" not in collider.get_groups()) and parent_node.b_has_force:
-			var player_position = get_tree().get_nodes_in_group("players")[0].global_position
+			var player_position = global_position
 			var direction_player_to_body = player_position.direction_to(collision_point_global)
 			collider.global_position = collider.global_position + (direction_player_to_body * parent_node.force)
