@@ -4,13 +4,15 @@ extends Node2D
 @onready var player: CharacterBody2D
 @onready var health_bar_ui = $HealthBarUI
 var game_manager
+var merlin
 
 func _ready():
 	game_manager = get_tree().get_root().get_node("GameManager")
 	spawn_player_start()
 	health_bar_ui.player_max_health = player.get_node("HealthComponent").max_health
 	health_bar_ui.player_max_resource = player.get_node("ResourceComponent").resource_cap
-
+	merlin = $Merlin
+	health_bar_ui.boss_max_health = merlin.get_node("HealthComponent").max_health
 func _process(delta):
 	delete_me1()
 	#delete_me2()
@@ -30,6 +32,7 @@ func delete_me1():
 	
 	# Update Healthbar
 	health_bar_ui.player_current_health = player.get_node("HealthComponent").health
+	health_bar_ui.boss_current_health = merlin.get_node("HealthComponent").health
 	if Input.is_action_just_pressed("primary_action"):
 		player.get_node("HealthComponent").add_health(10)
 		
