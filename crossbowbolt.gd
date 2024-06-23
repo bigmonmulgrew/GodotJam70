@@ -9,7 +9,7 @@ class_name CrossbowBoltAttack
 ## A variable used to store the health component of the received collision body.
 var health_component
 ## A preload of the damage element scene, so that we can instance it to represent flames.
-var flames_scene = preload("res://Scenes/Components/damage_element.tscn")
+@export var flames_scene = preload("res://Scenes/Components/damage_element.tscn")
 ## A variable that stores the root node of the level on ready, so that flames can be spawned as a child of the level.
 @onready var level_root = get_tree().current_scene
 
