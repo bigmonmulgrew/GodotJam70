@@ -6,3 +6,5 @@
 script = ExtResource("1_mxe1i")
 thrown_attack_cooldown = 1.0
 damage = 2
+damage_type = null
+cooldown_time = null

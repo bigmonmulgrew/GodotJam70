@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://byjecbkaruvi4"]
 
-[ext_resource type="Script" path="res://Scenes/thrown.gd" id="1_3eyff"]
-[ext_resource type="Texture2D" uid="uid://h6q16tiys3b6" path="res://Textures/Playable Character Sprites/Goose/Icon_Goose_00.png" id="2_ihytc"]
+[ext_resource type="Script" path="res://Scenes/thrown.gd" id="1_n0p41"]
+[ext_resource type="Texture2D" uid="uid://h6q16tiys3b6" path="res://Textures/Playable Character Sprites/Goose/Icon_Goose_00.png" id="2_q77gk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mjkvd"]
 radius = 16.0
 
 [node name="thrown" type="Node2D"]
-script = ExtResource("1_3eyff")
+script = ExtResource("1_n0p41")
 travel_speed = 4.0
 damage_value = 2
 projectile_rotation_degrees = 10.0
@@ -15,7 +15,7 @@ projectile_rotation_degrees = 10.0
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.999996, -2)
 scale = Vector2(0.289063, 0.273438)
-texture = ExtResource("2_ihytc")
+texture = ExtResource("2_q77gk")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 14
