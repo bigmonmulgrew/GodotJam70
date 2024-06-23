@@ -22,6 +22,8 @@ func _ready():
 	if secondary_action!=null: secondary_action = secondary_action.get_child(0)
 	defensive_action = get_node_or_null("DefensiveAction")
 	if defensive_action!=null: defensive_action = defensive_action.get_child(0)
+	var ht = (get_node("HealthComponent")as HealthComponent)
+	ht.died_signal.connect(GameManager.kill_current_player)
 
 # Check if the latest input event is mnk or controller
 func _input(event):

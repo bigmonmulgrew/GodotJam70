@@ -38,10 +38,11 @@ func delete_me1():
 	# Use this to place code to not interfear with other debug code
 	
 	# Update Healthbar
-	health_bar_ui.player_current_health = player.get_node("HealthComponent").health
-	health_bar_ui.boss_current_health = merlin.get_node("HealthComponent").health
+	if is_instance_valid(player):
+		health_bar_ui.player_current_health = player.get_node("HealthComponent").health
+		health_bar_ui.boss_current_health = merlin.get_node("HealthComponent").health
 	if Input.is_action_just_pressed("primary_action"):
-		player.get_node("HealthComponent").add_health(0)
+		player.get_node("HealthCodsmponent").add_health(0)
 		
 	if Input.is_action_just_pressed("secondary_action"):
 		player.get_node("HealthComponent").remove_health(0)
