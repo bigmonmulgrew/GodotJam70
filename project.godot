@@ -32,6 +32,14 @@ window/vsync/vsync_mode=0
 
 project/assembly_name="Godot Jam 70"
 
+[file_customization]
+
+folder_colors={
+"res://Images/": "pink",
+"res://Scenes/Character/": "red",
+"res://Scenes/Components/Actions/Attacks/": "green"
+}
+
 [input]
 
 move_right={

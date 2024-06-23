@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmi4ec33gsa41"]
+
+[ext_resource type="Script" path="res://Scripts/fireball.gd" id="1_1ww7w"]
+[ext_resource type="PackedScene" uid="uid://me0yimigov51" path="res://Scenes/Components/Actions/Attacks/Magic/iceball_explosion.tscn" id="2_p5pqh"]
+[ext_resource type="Texture2D" uid="uid://ccrwsig0bh7jn" path="res://Images/Attacks/projectile-weapon-sprites.png" id="3_f3kwg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_60pv4"]
+radius = 8.06226
+
+[node name="Iceball Projectile" type="Node2D"]
+script = ExtResource("1_1ww7w")
+damage_aoe_scene = ExtResource("2_p5pqh")
+travel_speed = 5.0
+damage_type = 1
+impact_explosion = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_f3kwg")
+region_enabled = true
+region_rect = Rect2(152, 216, 17, 28)
+
+[node name="Area" type="Area2D" parent="."]
+collision_mask = 14
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Area"]
+shape = SubResource("CircleShape2D_60pv4")
+
+[connection signal="body_entered" from="Area" to="." method="_on_fireball_area_body_entered"]

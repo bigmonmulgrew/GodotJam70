@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://r1jn2f5wwvt1"]
 
-[ext_resource type="PackedScene" uid="uid://b22mbah3esni7" path="res://Scenes/Components/Actions/Attacks/attack_sword_swipe_1.tscn" id="1_giv5f"]
+[ext_resource type="PackedScene" uid="uid://b22mbah3esni7" path="res://Scenes/Components/Actions/Attacks/Melee/attack_sword_swipe_1.tscn" id="1_giv5f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jfsqa"]
 size = Vector2(4, 22)

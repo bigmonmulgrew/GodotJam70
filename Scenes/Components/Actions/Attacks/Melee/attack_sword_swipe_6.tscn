@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b46b2liuuq842"]
 
-[ext_resource type="PackedScene" uid="uid://b22mbah3esni7" path="res://Scenes/Components/Actions/Attacks/attack_sword_swipe_1.tscn" id="1_6jceo"]
+[ext_resource type="PackedScene" uid="uid://b22mbah3esni7" path="res://Scenes/Components/Actions/Attacks/Melee/attack_sword_swipe_1.tscn" id="1_6jceo"]
 
 [node name="SwordSwipe" instance=ExtResource("1_6jceo")]
 

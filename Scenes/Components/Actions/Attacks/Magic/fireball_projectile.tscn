@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dg7rq0kgosyeo"]
+
+[ext_resource type="Script" path="res://Scripts/fireball.gd" id="1_65jbo"]
+[ext_resource type="Texture2D" uid="uid://ccrwsig0bh7jn" path="res://Images/Attacks/projectile-weapon-sprites.png" id="2_chqay"]
+[ext_resource type="PackedScene" uid="uid://k1b2j8lj20o6" path="res://Scenes/Components/Actions/Attacks/Magic/fireball_explosion.tscn" id="2_fq61l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_60pv4"]
+radius = 8.06226
+
+[node name="Fireball Projectile" type="Node2D"]
+script = ExtResource("1_65jbo")
+damage_aoe_scene = ExtResource("2_fq61l")
+travel_speed = 5.0
+damage_type = 1
+impact_explosion = true
+
+[node name="FireballSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_chqay")
+region_enabled = true
+region_rect = Rect2(25, 216, 16, 28)
+
+[node name="FireballArea" type="Area2D" parent="."]
+collision_mask = 14
+
+[node name="FireballCollisionShape" type="CollisionShape2D" parent="FireballArea"]
+shape = SubResource("CircleShape2D_60pv4")
+
+[connection signal="body_entered" from="FireballArea" to="." method="_on_fireball_area_body_entered"]

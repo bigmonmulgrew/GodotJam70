@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmh3ob3430mdm"]
+
+[ext_resource type="Script" path="res://Scripts/Components/Actions/Attacks/fireball_attack.gd" id="1_geh3f"]
+[ext_resource type="PackedScene" uid="uid://ck3m1patijhbm" path="res://Scenes/Components/Actions/Attacks/Magic/acidball_projectile.tscn" id="2_3p6yu"]
+
+[node name="Acid Ball Attack" type="Node2D"]
+script = ExtResource("1_geh3f")
+projectile_scene = ExtResource("2_3p6yu")
