@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqhuk4xeuv3v4"]
+[gd_scene load_steps=9 format=3 uid="uid://cqhuk4xeuv3v4"]
 
 [ext_resource type="Texture2D" uid="uid://6wu34lx6lpeg" path="res://Images/Textures/GroundTiles-tile-sheet.png" id="1_0071s"]
 [ext_resource type="Script" path="res://Scripts/debug_level.gd" id="1_qy0mx"]
+[ext_resource type="AudioStream" uid="uid://0f04i31bx4jg" path="res://Audio/SFX/spooky_background.mp3" id="2_8gwph"]
 [ext_resource type="PackedScene" uid="uid://dktnlhjatfngg" path="res://Scenes/Healthbars.tscn" id="3_2xvx0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rctji"]
@@ -78,6 +79,7 @@ size = Vector2(41, 1164)
 [node name="TEMPTEST" type="Node2D"]
 position = Vector2(469, 325)
 script = ExtResource("1_qy0mx")
+sound_ref = ExtResource("2_8gwph")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_31uek")

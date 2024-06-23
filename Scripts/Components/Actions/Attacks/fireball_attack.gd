@@ -17,6 +17,10 @@ var fireball_container: Node
 ## A preload of the fireball scene so that it can be instanced.
 @export var projectile_scene = preload("res://Scenes/Components/Actions/Attacks/Magic/fireball_projectile.tscn")
 
+## Var that can be changed in editor for a sound file that can be played
+@export var sound_ref: AudioStream
+
+
 ## The ready method attaches the parent_component, the health_component, and the fireball_container to the appropriate nodes.
 func _ready():
 	parent_component = get_parent()
@@ -38,6 +42,10 @@ func fire():
 	can_use = false
 	start_cooldown_timer()
 	print("Creating fireball")
+
+	##Play the audio SFX
+	AudioManager.play_sfx(sound_ref,1,-30)
+	
 	var fireball_instance = projectile_scene.instantiate()
 	get_tree().get_root().add_child(fireball_instance)
 	var direction = Vector2(cos(parent_component.rotation), sin(parent_component.rotation))

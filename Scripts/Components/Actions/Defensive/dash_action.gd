@@ -12,6 +12,10 @@ class_name DashAction
 ## Dash cooldown time in seconds
 @export var dash_cooldown: float = 2
 #endregion
+## Var that can be changed in editor for a sound file that can be played
+@export var sound_ref: AudioStream
+
+
 
 #region Runtime Variables
 var health_component: Node
@@ -63,6 +67,9 @@ func _dash() -> void:
 	# No more dashing ;-;
 	can_use = false
 	start_cooldown_timer()
+	
+	##Play the audio SFX
+	AudioManager.play_sfx(sound_ref,1,-30)
 
 func _on_dash_timer_timeout():
 	is_dashing = false

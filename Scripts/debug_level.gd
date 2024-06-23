@@ -6,6 +6,10 @@ extends Node2D
 var game_manager
 var merlin
 
+## Var that can be changed in editor for a sound file that can be played
+@export var sound_ref: AudioStream
+
+
 func _ready():
 	game_manager = get_tree().get_root().get_node("GameManager")
 	spawn_player_start()
@@ -13,6 +17,9 @@ func _ready():
 	health_bar_ui.player_max_resource = player.get_node("ResourceComponent").resource_cap
 	merlin = $Merlin
 	health_bar_ui.boss_max_health = merlin.get_node("HealthComponent").max_health
+	
+	AudioManager.play_music(sound_ref)
+	
 func _process(delta):
 	delete_me1()
 	#delete_me2()

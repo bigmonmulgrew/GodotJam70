@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbfsf38esgiwf"]
+[gd_scene load_steps=10 format=3 uid="uid://dbfsf38esgiwf"]
 
 [ext_resource type="Script" path="res://Scripts/Character/Boss/merlin.gd" id="1_r10hk"]
-[ext_resource type="PackedScene" uid="uid://xhr1iffrbnc1" path="res://Scenes/fireball_attack.tscn" id="4_o4bp4"]
-[ext_resource type="PackedScene" uid="uid://b22mbah3esni7" path="res://Scenes/Components/Actions/Attacks/sword_swipe_attack.tscn" id="5_7qdw4"]
+[ext_resource type="AudioStream" uid="uid://bg5edk0abb8mc" path="res://Audio/SFX/body_hit.wav" id="3_shfub"]
+[ext_resource type="PackedScene" uid="uid://xhr1iffrbnc1" path="res://Scenes/Components/Actions/Attacks/Magic/fireball_attack.tscn" id="4_o4bp4"]
+[ext_resource type="PackedScene" uid="uid://b22mbah3esni7" path="res://Scenes/Components/Actions/Attacks/Melee/attack_sword_swipe_1.tscn" id="5_7qdw4"]
 [ext_resource type="PackedScene" uid="uid://cid0vv4el0hjd" path="res://Scenes/Components/health_component.tscn" id="6_n87pw"]
+[ext_resource type="AudioStream" uid="uid://rts4ebkdm77c" path="res://Audio/SFX/fireball_cast.wav" id="6_r3j3o"]
 [ext_resource type="PackedScene" uid="uid://bxrjko83xlhxa" path="res://Animations/Bosses/Merlin/Anims_Merlin_00.tscn" id="8_citex"]
+[ext_resource type="AudioStream" uid="uid://dibx1b0if04cw" path="res://Audio/SFX/sword_swing.wav" id="8_tvlnl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mh234"]
 radius = 18.0
@@ -17,6 +20,7 @@ script = ExtResource("1_r10hk")
 [node name="HealthComponent" parent="." instance=ExtResource("6_n87pw")]
 health = 50
 armour = 1
+sound_ref = ExtResource("3_shfub")
 
 [node name="MerlinAnims" parent="." instance=ExtResource("8_citex")]
 animation = &"WalkSE"
@@ -28,9 +32,11 @@ shape = SubResource("CircleShape2D_mh234")
 rotation = 1.5708
 
 [node name="fireball_attack" parent="RangedActions" instance=ExtResource("4_o4bp4")]
+sound_ref = ExtResource("6_r3j3o")
 
 [node name="SwordSwipe" parent="RangedActions" instance=ExtResource("5_7qdw4")]
 rotation = -1.5708
+sound_ref = ExtResource("8_tvlnl")
 
 [node name="MeleeActions" type="Node2D" parent="."]
 

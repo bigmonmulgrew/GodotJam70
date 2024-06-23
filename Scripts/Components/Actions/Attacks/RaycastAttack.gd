@@ -9,6 +9,8 @@ var is_firing: bool = false
 @export var force: float = 0
 @export var resource_usage: int = 2
 
+
+
 func use():
 	if resource_component.current_resource > 0:
 		fire()
@@ -19,11 +21,19 @@ func fire():
 	is_firing = true
 	raycast.enabled = true
 	raycast.line.visible = true
+	
+	if !$AudioStreamPlayer.playing:
+		$AudioStreamPlayer.play()
+		
+
+
 
 func stop_firing():
 	is_firing = false
 	raycast.enabled = false
 	raycast.line.visible = false
+	
+	$AudioStreamPlayer.stop()
 
 
 func _on_timer_timeout():
