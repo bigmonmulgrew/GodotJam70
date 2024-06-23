@@ -356,7 +356,7 @@ offset_top = 11.0
 offset_right = -438.0
 offset_bottom = -313.0
 text = "Select
-Character1"
+King Arthur"
 icon = ExtResource("2_rsse1")
 alignment = 0
 
@@ -370,7 +370,7 @@ offset_top = 161.0
 offset_right = -438.0
 offset_bottom = -163.0
 text = "Select
-Character2"
+Robin hood"
 icon = ExtResource("3_sdn5r")
 alignment = 0
 
@@ -432,7 +432,7 @@ offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Select
-Character6"
+MF Vroom"
 icon = ExtResource("5_y3g3i")
 alignment = 0
 
