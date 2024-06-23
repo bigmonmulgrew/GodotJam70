@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/Character/Player/Player.gd" id="1_j6s8s"]
 [ext_resource type="Texture2D" uid="uid://b8b3sno3rbbdi" path="res://Images/Boss Sprites/Merlin/Icon_Merlin_00.png" id="2_7nrl1"]
-[ext_resource type="PackedScene" path="res://Scenes/crossbow_attack.tscn" id="3_fw6hr"]
-[ext_resource type="PackedScene" uid="uid://b22mbah3esni7" path="res://Scenes/Components/Actions/Attacks/sword_swipe_attack.tscn" id="4_fed0a"]
+[ext_resource type="PackedScene" uid="uid://bxlxgk0bvt4x0" path="res://Scenes/Components/Actions/Attacks/crossbow_attack.tscn" id="3_fw6hr"]
+[ext_resource type="PackedScene" uid="uid://b22mbah3esni7" path="res://Scenes/Components/Actions/Attacks/Melee/attack_sword_swipe_1.tscn" id="4_fed0a"]
 [ext_resource type="PackedScene" uid="uid://cjafnq2r4f08n" path="res://Scenes/Components/Actions/Defensive/dash_action.tscn" id="5_p0ksg"]
 [ext_resource type="PackedScene" uid="uid://cid0vv4el0hjd" path="res://Scenes/Components/health_component.tscn" id="6_wx1re"]
 [ext_resource type="PackedScene" uid="uid://b1jwlvk5nun41" path="res://Scenes/Components/resource_component.tscn" id="7_db0tf"]

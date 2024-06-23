@@ -16,7 +16,7 @@ script = ExtResource("1_uthk2")
 target_Level = "res://Menus/main_menu.tscn"
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 0.5
 autostart = true
 
 [node name="70-folklore" type="Sprite2D" parent="."]

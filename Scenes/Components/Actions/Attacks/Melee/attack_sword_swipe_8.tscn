@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://docwkmdkmbp2p"]
+
+[ext_resource type="PackedScene" uid="uid://b22mbah3esni7" path="res://Scenes/Components/Actions/Attacks/Melee/attack_sword_swipe_1.tscn" id="1_yik6i"]
+
+[node name="SwordSwipe8" instance=ExtResource("1_yik6i")]
+
+[node name="Sprite2D" parent="Area2D" index="0"]
+position = Vector2(0.0190097, -17.1217)
+scale = Vector2(0.419408, 0.522868)
+region_rect = Rect2(88, 320, 16, 64)

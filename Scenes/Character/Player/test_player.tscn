@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Character/Player/Player.gd" id="1_ppxvn"]
 [ext_resource type="Texture2D" uid="uid://bsoah8gdmv5su" path="res://icon.svg" id="2_ohw3x"]
-[ext_resource type="PackedScene" uid="uid://b22mbah3esni7" path="res://Scenes/Components/Actions/Attacks/sword_swipe_attack.tscn" id="3_8egbs"]
+[ext_resource type="PackedScene" uid="uid://b22mbah3esni7" path="res://Scenes/Components/Actions/Attacks/Melee/attack_sword_swipe_1.tscn" id="3_ptn3t"]
 [ext_resource type="PackedScene" uid="uid://dx0yytejv6w7p" path="res://Scenes/Components/Actions/Attacks/tentacle_attack.tscn" id="4_as4wi"]
 [ext_resource type="PackedScene" uid="uid://cjafnq2r4f08n" path="res://Scenes/Components/Actions/Defensive/dash_action.tscn" id="5_rps1e"]
 [ext_resource type="PackedScene" uid="uid://cid0vv4el0hjd" path="res://Scenes/Components/health_component.tscn" id="6_rcxnr"]
@@ -27,7 +27,7 @@ shape = SubResource("CircleShape2D_d2mch")
 
 [node name="PrimaryAction" type="Node2D" parent="."]
 
-[node name="SwordSwipe" parent="PrimaryAction" instance=ExtResource("3_8egbs")]
+[node name="SwordSwipe" parent="PrimaryAction" instance=ExtResource("3_ptn3t")]
 
 [node name="SecondaryAction" type="Node2D" parent="."]
 

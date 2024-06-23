@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://k1b2j8lj20o6"]
+
+[ext_resource type="Script" path="res://Scripts/Components/damage_element.gd" id="1_yj64x"]
+[ext_resource type="Texture2D" uid="uid://b5scot74y7l6i" path="res://Images/Attacks/projectile-aoe.png" id="2_83w67"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xuboi"]
+radius = 64.0
+
+[node name="Fireball Explosiuon" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_yj64x")
+damage_amount = 6
+despawn_boolean = true
+despawn_time = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xuboi")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_83w67")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

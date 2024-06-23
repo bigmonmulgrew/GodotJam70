@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk41d240mf033"]
+
+[ext_resource type="Script" path="res://Scripts/Components/Actions/Attacks/fireball_attack.gd" id="1_lvrec"]
+[ext_resource type="PackedScene" uid="uid://cmi4ec33gsa41" path="res://Scenes/Components/Actions/Attacks/Magic/iceball_projectile.tscn" id="2_c6mk1"]
+
+[node name="Ice Ball Attack" type="Node2D"]
+script = ExtResource("1_lvrec")
+projectile_scene = ExtResource("2_c6mk1")

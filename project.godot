@@ -24,12 +24,21 @@ SaveSystem="*res://Scripts/SaveSystem/SaveSystem.gd"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 
 [dotnet]
 
 project/assembly_name="Godot Jam 70"
+
+[file_customization]
+
+folder_colors={
+"res://Images/": "pink",
+"res://Scenes/Character/": "red",
+"res://Scenes/Components/Actions/Attacks/": "green"
+}
 
 [input]
 

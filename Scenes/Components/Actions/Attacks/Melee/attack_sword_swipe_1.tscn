@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b22mbah3esni7"]
 
-[ext_resource type="Script" path="res://Scripts/Components/Actions/Attacks/sword_swipe.gd" id="1_quoe3"]
-[ext_resource type="Texture2D" uid="uid://bsoah8gdmv5su" path="res://icon.svg" id="2_ep7s6"]
+[ext_resource type="Script" path="res://Scripts/Components/Actions/Attacks/sword_swipe.gd" id="1_iaghu"]
+[ext_resource type="Texture2D" uid="uid://bq76qcm1qk0bg" path="res://Images/Attacks/melee-weapon-sprites.png" id="2_4apob"]
 
 [sub_resource type="Animation" id="Animation_eeofq"]
 length = 0.001
@@ -15,7 +15,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-9, 0)]
+"values": [Vector2(-5, -3)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -27,7 +27,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [-1.18206]
+"values": [0.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -65,10 +65,10 @@ tracks/0/path = NodePath("Area2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.01, 0.1, 0.19),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.01, 0.1, 0.19, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-9, 0), Vector2(0, -12), Vector2(14, -3)]
+"values": [Vector2(-5, -3), Vector2(-6, -3), Vector2(-3, -5), Vector2(6, -3), Vector2(14, -3)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -77,10 +77,10 @@ tracks/1/path = NodePath("Area2D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.01, 0.1, 0.19),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.01, 0.1, 0.19, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [-1.18206, -0.000213861, 1.46735]
+"values": [-0.436332, -1.18206, -0.000213861, 1.46735, 0.523599]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -117,7 +117,8 @@ _data = {
 size = Vector2(6, 33)
 
 [node name="SwordSwipe" type="Node2D"]
-script = ExtResource("1_quoe3")
+rotation = 1.5708
+script = ExtResource("1_iaghu")
 damage = null
 cooldown_time = null
 
@@ -127,19 +128,20 @@ libraries = {
 }
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-9, 0)
-rotation = -1.18206
+position = Vector2(-5, -3)
 collision_layer = 16
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 visible = false
-position = Vector2(0.00340104, -17.0018)
-scale = Vector2(0.0469901, 0.25829)
-texture = ExtResource("2_ep7s6")
+position = Vector2(0.034618, -17.1217)
+scale = Vector2(0.276991, 0.522868)
+texture = ExtResource("2_4apob")
+region_enabled = true
+region_rect = Rect2(21, 1, 22, 63)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -17)
+position = Vector2(-9.53674e-07, -17.5)
 shape = SubResource("RectangleShape2D_qnkku")
 disabled = true
 
