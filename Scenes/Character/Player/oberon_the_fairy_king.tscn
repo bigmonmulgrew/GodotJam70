@@ -27,12 +27,12 @@ shape = SubResource("CircleShape2D_5pih8")
 [node name="PrimaryAction" type="Node2D" parent="."]
 rotation = 1.5708
 
-[node name="fireball_attack" parent="PrimaryAction" instance=ExtResource("3_8weuw")]
+[node name="RaycastAttack" parent="PrimaryAction" instance=ExtResource("4_ji8yf")]
 
 [node name="SecondaryAction" type="Node2D" parent="."]
 rotation = 1.5708
 
-[node name="RaycastAttack" parent="SecondaryAction" instance=ExtResource("4_ji8yf")]
+[node name="fireball_attack" parent="SecondaryAction" instance=ExtResource("3_8weuw")]
 
 [node name="DefensiveAction" type="Node2D" parent="."]
 rotation = 1.5708
