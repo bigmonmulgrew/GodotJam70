@@ -37,11 +37,11 @@ var round_number: int = 0
 @export var robin_hood_scene = preload("res://Scenes/Character/Player/robin_hood.tscn")
 
 #UPDATE!!!!------------------------------------------
-@export var grandma_wolf_scene = preload("res://Scenes/Character/Player/king_arthur.tscn")
+@export var grandma_wolf_scene = preload("res://Scenes/Character/Player/test_player.tscn")
 ## A preload of the RobinHood test player character scene, which can be switched to if it is part of the selected_characters pool.
 @export var oberon_scene = preload("res://Scenes/Character/Player/oberon_the_fairy_king.tscn")
 
-@export var goose_scene = preload("res://Scenes/Character/Player/test_player.tscn")
+@export var goose_scene = preload("res://Scenes/Character/Player/test_player2.tscn")
 ## A preload of the RobinHood test player character scene, which can be switched to if it is part of the selected_characters pool.
 @export var sixth_character_scene = preload("res://Scenes/Character/Player/mf_broom.tscn")
 
