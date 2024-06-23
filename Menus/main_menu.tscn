@@ -13,9 +13,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vr068")
-target_Level_start_game = "res://Menus/character_select.tscn"
-target_Level_credits = "res://Menus/credits.tscn"
-target_Level_options = "res://Menus/options.tscn"
+target_Level_start_game = "Menus/character_select.tscn"
+target_Level_credits = "Menus/credits.tscn"
+target_Level_options = "Menus/options.tscn"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

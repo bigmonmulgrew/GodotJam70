@@ -13,7 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uthk2")
-target_Level = "res://Menus/main_menu.tscn"
+target_Level = "Menus/main_menu.tscn"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5

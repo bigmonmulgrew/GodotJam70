@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbuxmatavokk2"]
+
+[ext_resource type="Script" path="res://Scripts/Components/Car_movement_component.gd" id="1_ayycb"]
+[ext_resource type="Texture2D" uid="uid://tyytkfj6fvn6" path="res://Textures/Playable Character Sprites/mf_vroom/RCcar_sprite_sheet.png" id="2_h5s63"]
+
+[sub_resource type="Animation" id="Animation_mfsb7"]
+resource_name = "idleAnim"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.4, 2),
+"transitions": PackedFloat32Array(0.420448, 0.420448, 0.420448, 0.420448),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.8, 1.15), Vector2(1.1, 0.9), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7vaf4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0qtds"]
+_data = {
+"RESET": SubResource("Animation_7vaf4"),
+"idleAnim": SubResource("Animation_mfsb7")
+}
+
+[node name="Car_movement_component" type="Node2D"]
+script = ExtResource("1_ayycb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.705882)
+position = Vector2(0, -48)
+texture = ExtResource("2_h5s63")
+hframes = 8
+vframes = 2
+frame = 8
+
+[node name="ArrowAnim" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_0qtds")
+}
+autoplay = "idleAnim"

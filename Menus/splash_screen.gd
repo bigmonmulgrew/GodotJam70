@@ -17,4 +17,5 @@ func _on_timer_timeout() -> void:
 	_load_level()
 
 func _load_level() -> void:
-	get_tree().change_scene_to_file(target_Level)
+	LevelMaster.load_level(target_Level)
+	#get_tree().change_scene_to_file(target_Level)

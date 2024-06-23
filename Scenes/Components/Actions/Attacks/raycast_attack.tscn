@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0vdyg8ghc3pw"]
+[gd_scene load_steps=4 format=3 uid="uid://ca6cjartx4dw2"]
 
 [ext_resource type="Script" path="res://Scripts/Components/Actions/Attacks/RaycastAttack.gd" id="1_rpc4h"]
 [ext_resource type="Script" path="res://Scripts/Raycast.gd" id="2_844jg"]
