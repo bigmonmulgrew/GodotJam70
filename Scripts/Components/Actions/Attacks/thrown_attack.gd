@@ -43,5 +43,5 @@ func fire():
 	var direction = Vector2(cos(parent_component.rotation), sin(parent_component.rotation))
 	thrown_attack_instance.projectile_direction = direction
 	thrown_attack_instance.global_position = get_parent().global_position
-	
+	thrown_attack_instance.global_rotation = parent_component.global_rotation
 	
