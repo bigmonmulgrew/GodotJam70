@@ -23,21 +23,28 @@ func _update_state():
 	var norm_velocity = velocity.normalized()
 	print(norm_velocity)
 	# Check walk north east
-	if norm_velocity.x > anim_move_tolerance and norm_velocity.y < anim_move_tolerance:
+	if norm_velocity.x > anim_move_tolerance and norm_velocity.y < -anim_move_tolerance:
 		current_state = State.WALK_NE
 	# Check walk south east
-	elif norm_velocity.x > anim_move_tolerance and norm_velocity.y > -anim_move_tolerance:
+	elif norm_velocity.x > anim_move_tolerance and norm_velocity.y > anim_move_tolerance:
 		current_state = State.WALK_SE
-	elif (norm_velocity.x < anim_move_tolerance or norm_velocity.x > -anim_move_tolerance) and norm_velocity.y < 0: 
+	# Check walk south west
+	elif norm_velocity.x < -anim_move_tolerance and norm_velocity.y > anim_move_tolerance:
+		current_state = State.WALK_SW
+	# Check walk north west
+	elif norm_velocity.x < -anim_move_tolerance and norm_velocity.y < -anim_move_tolerance:
+		current_state = State.WALK_NW
+	# Check walk north
+	elif abs(norm_velocity.x) < anim_move_tolerance and norm_velocity.y < -anim_move_tolerance: 
 		current_state = State.WALK_N
 	# Check walk east
-	elif norm_velocity.x > 0 and (norm_velocity.y < anim_move_tolerance or norm_velocity.y > -anim_move_tolerance): 
+	elif norm_velocity.x > anim_move_tolerance and abs(norm_velocity.y) < anim_move_tolerance: 
 		current_state = State.WALK_E
 	# Check walk south
-	elif (norm_velocity.x < anim_move_tolerance or norm_velocity.x > -anim_move_tolerance) and norm_velocity.y > 0: 
+	elif abs(norm_velocity.x) < anim_move_tolerance and norm_velocity.y > anim_move_tolerance: 
 		current_state = State.WALK_S
 	# Check walk west
-	elif norm_velocity.x < 0 and (norm_velocity.y < anim_move_tolerance or norm_velocity.y > -anim_move_tolerance): 
+	elif norm_velocity.x < -anim_move_tolerance and abs(norm_velocity.y) < anim_move_tolerance: 
 		current_state = State.WALK_W
 
 func _process_state():
