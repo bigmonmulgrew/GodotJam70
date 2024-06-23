@@ -3,6 +3,7 @@ class_name LevelManager
 
 var Loading:bool = false
 var CurrentLevelPath = ""
+const GAME_OVER = preload("res://Menus/game_over.tscn")
 
 func _ready():
 	#set default reload address to the current scene
@@ -23,6 +24,10 @@ func load_level(Path:String):
 		CurrentLevelPath = Path
 		Loading = false
 
+func load_game_over():
+	var game_over_path = GAME_OVER.resource_path.replace("res://","")
+	load_level(game_over_path)
+	
 ##reloads current level
 func reload_level():
 	CurrentLevelPath = (get_tree().current_scene.scene_file_path.replace("res://",""))
