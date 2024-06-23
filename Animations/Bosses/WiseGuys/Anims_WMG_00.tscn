@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://dhbo1n4afo4c4"]
+
+[ext_resource type="Texture2D" uid="uid://dwpco4l8kfs1g" path="res://Textures/Boss Sprites/Wise Men Of Gotham/SpriteSheet_WMG_00.png" id="1_ehj55"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k21yp"]
+atlas = ExtResource("1_ehj55")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mmhu"]
+atlas = ExtResource("1_ehj55")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evs42"]
+atlas = ExtResource("1_ehj55")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrch4"]
+atlas = ExtResource("1_ehj55")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbcbi"]
+atlas = ExtResource("1_ehj55")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkbfv"]
+atlas = ExtResource("1_ehj55")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wg02c"]
+atlas = ExtResource("1_ehj55")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cljv3"]
+atlas = ExtResource("1_ehj55")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ai7d"]
+atlas = ExtResource("1_ehj55")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k2kk6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k21yp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mmhu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evs42")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_xrch4")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_bbcbi")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_fkbfv")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wg02c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cljv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ai7d")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 10.0
+}]
+
+[node name="AnimsWmg00" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_k2kk6")
+animation = &"Death"
+frame_progress = 0.785137
