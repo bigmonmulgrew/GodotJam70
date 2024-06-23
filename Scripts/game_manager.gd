@@ -30,20 +30,20 @@ var round_number: int = 0
 ##character section
 
 ## A dictionary of all characters in the game, paired with boolean values for whether they are unlocked or not.
-var character_dict = {"char_1": true, "char_2": true, "char_3": true, "char_4": false, "char_5": false}
+@export var character_dict = {"char_1": true, "char_2": true, "char_3": true, "char_4": false, "char_5": false}
 ## A preload of the KingArthur character scene, which can be switched to if it is part of the selected_characters pool.
-var king_arthur_scene = preload("res://Scenes/Character/Player/king_arthur.tscn")
+@export var king_arthur_scene = preload("res://Scenes/Character/Player/king_arthur.tscn")
 ## A preload of the RobinHood test player character scene, which can be switched to if it is part of the selected_characters pool.
-var robin_hood_scene = preload("res://Scenes/Character/Player/test_player.tscn")
+@export var robin_hood_scene = preload("res://Scenes/Character/Player/robin_hood.tscn")
 
 #UPDATE!!!!------------------------------------------
-var grandma_wolf_scene = preload("res://Scenes/Character/Player/king_arthur.tscn")
+@export var grandma_wolf_scene = preload("res://Scenes/Character/Player/king_arthur.tscn")
 ## A preload of the RobinHood test player character scene, which can be switched to if it is part of the selected_characters pool.
-var oberon_scene = preload("res://Scenes/Character/Player/test_player.tscn")
+@export var oberon_scene = preload("res://Scenes/Character/Player/oberon_the_fairy_king.tscn")
 
-var goose_scene = preload("res://Scenes/Character/Player/king_arthur.tscn")
+@export var goose_scene = preload("res://Scenes/Character/Player/test_player.tscn")
 ## A preload of the RobinHood test player character scene, which can be switched to if it is part of the selected_characters pool.
-var sixth_character_scene = preload("res://Scenes/Character/Player/mf_broom.tscn")
+@export var sixth_character_scene = preload("res://Scenes/Character/Player/mf_broom.tscn")
 
 
 const max_player_select = 3
