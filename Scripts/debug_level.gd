@@ -34,10 +34,10 @@ func delete_me1():
 	health_bar_ui.player_current_health = player.get_node("HealthComponent").health
 	health_bar_ui.boss_current_health = merlin.get_node("HealthComponent").health
 	if Input.is_action_just_pressed("primary_action"):
-		player.get_node("HealthComponent").add_health(10)
+		player.get_node("HealthComponent").add_health(0)
 		
 	if Input.is_action_just_pressed("secondary_action"):
-		player.get_node("HealthComponent").remove_health(10)
+		player.get_node("HealthComponent").remove_health(0)
 	
 func delete_me2():
 	# Use this to place code to not interfear with other debug code
@@ -48,7 +48,7 @@ func delete_me2():
 		#player.get_node("HealthComponent").add_health(10)
 		
 	if Input.is_action_just_pressed("secondary_action"):
-		player.get_node("HealthComponent").remove_health(10)
+		player.get_node("HealthComponent").remove_health(0)
 	
 func delete_me3():
 	# Use this to place code to not interfear with other debug code

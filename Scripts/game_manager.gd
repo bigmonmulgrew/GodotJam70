@@ -47,6 +47,10 @@ var queued_stages: Array[String] = []
 ## A preload of the RobinHood test player character scene, which can be switched to if it is part of the selected_characters pool.
 @export var sixth_character_scene = preload("res://Scenes/Character/Player/mf_broom.tscn")
 
+
+#Health Bars
+var packed_health_bars = preload("res://Scenes/Healthbars.tscn")
+var player_health_bar = packed_health_bars.instantiate()
 const leveloptionsaves:Array[String] = ["WoodlandHouse", "RiverCascade", "MerlinsTower"]
 var levellocations:Array[String] = ["Levels/DebugLevel.tscn", "Levels/River/river_level.tscn", "Scenes/tower_area.tscn"]
 
@@ -55,6 +59,7 @@ const max_player_select = 3
 func _ready():
 	display_unlocked_characters()
 	call_deferred("_find_characters")
+	get_tree().get_root().add_child(player_health_bar)
 
 ## Updates currently active character. It is called whenever you swap character.
 ##[br]
@@ -221,3 +226,8 @@ func load_level_from_collection():
 	LevelMaster.load_level(levellocations[rool])
 	
 
+func on_health_changed(health_value: int):
+	player_health_bar._set_player_health(health_value)
+	
+func on_resource_changed(resrouce_value: int):
+	player_health_bar._set_current_resource(resrouce_value)

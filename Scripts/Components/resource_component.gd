@@ -15,6 +15,7 @@ extends Node
 
 func add_resource(amount: int) -> void:
 	current_resource += amount
+	GameManager.on_resource_changed(current_resource)
 	# Stops going over cap
 	if current_resource > resource_cap: current_resource = resource_cap
 	
@@ -22,9 +23,11 @@ func add_resource(amount: int) -> void:
 # returns true if the amount can be spent
 func spend_resource(amount: int) -> bool:
 	if current_resource - amount < 0:
+		GameManager.on_resource_changed(current_resource)
 		return false
 	else:
 		current_resource -= amount
+		GameManager.on_resource_changed(current_resource)
 		return true
 
 
