@@ -1,13 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjgkjhe7k58s"]
+[gd_scene load_steps=14 format=3 uid="uid://cjgkjhe7k58s"]
 
 [ext_resource type="Script" path="res://Scripts/Character/Player/Player.gd" id="1_goc7c"]
 [ext_resource type="PackedScene" uid="uid://cxn66yxnlj23e" path="res://Scenes/Components/Actions/Attacks/Melee/attack_sword_swipe_2.tscn" id="2_koy14"]
 [ext_resource type="Texture2D" uid="uid://dj33hp54ba015" path="res://Textures/Playable Character Sprites/KingArthur/Icon_KingArthur_00.png" id="2_ms7sr"]
+[ext_resource type="AudioStream" uid="uid://dibx1b0if04cw" path="res://Audio/SFX/sword_swing.wav" id="4_6hkpe"]
 [ext_resource type="PackedScene" uid="uid://cid0vv4el0hjd" path="res://Scenes/Components/health_component.tscn" id="4_kq5tx"]
 [ext_resource type="PackedScene" uid="uid://xhr1iffrbnc1" path="res://Scenes/Components/Actions/Attacks/Magic/fireball_attack.tscn" id="4_xai7k"]
 [ext_resource type="PackedScene" uid="uid://ok0kh73rhexf" path="res://Scenes/Components/Actions/Defensive/parry_action.tscn" id="5_03ona"]
 [ext_resource type="PackedScene" uid="uid://c74bwndkx5s18" path="res://Scenes/Components/user_movement_component.tscn" id="5_4oels"]
+[ext_resource type="AudioStream" uid="uid://rts4ebkdm77c" path="res://Audio/SFX/fireball_cast.wav" id="6_7j8g1"]
 [ext_resource type="PackedScene" uid="uid://b1jwlvk5nun41" path="res://Scenes/Components/resource_component.tscn" id="6_7mpsh"]
+[ext_resource type="AudioStream" uid="uid://bg5edk0abb8mc" path="res://Audio/SFX/body_hit.wav" id="6_bcl3o"]
+[ext_resource type="AudioStream" uid="uid://dxft1hkl7b1vs" path="res://Audio/SFX/metallic_hit.wav" id="7_vole7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5pih8"]
 
@@ -27,20 +31,26 @@ shape = SubResource("CircleShape2D_5pih8")
 rotation = 1.5708
 
 [node name="SwordSwipe2" parent="PrimaryAction" instance=ExtResource("2_koy14")]
+sound_ref = ExtResource("4_6hkpe")
+damage = 10
+cooldown_time = 1.0
 
 [node name="SecondaryAction" type="Node2D" parent="."]
 rotation = 1.5708
 
 [node name="fireball_attack" parent="SecondaryAction" instance=ExtResource("4_xai7k")]
+sound_ref = ExtResource("6_7j8g1")
 
 [node name="DefensiveAction" type="Node2D" parent="."]
 rotation = 1.5708
 
 [node name="Parry" parent="DefensiveAction" instance=ExtResource("5_03ona")]
+sound_ref = ExtResource("6_bcl3o")
 
 [node name="HealthComponent" parent="." instance=ExtResource("4_kq5tx")]
 health = 50
 armour = 1
+sound_ref = ExtResource("7_vole7")
 
 [node name="UserMovementComponent" parent="." instance=ExtResource("5_4oels")]
 

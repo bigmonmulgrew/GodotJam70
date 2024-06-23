@@ -13,6 +13,11 @@ class_name IncreaseResist
 @export var damage_type: DamageType.Type = DamageType.Type.PHYSICAL
 #endregion
 
+## Var that can be changed in editor for a sound file that can be played
+@export var sound_ref: AudioStream
+
+
+
 #region Object References
 ## Timer for how long the parry will last
 @onready var resist_timer: Timer = $ResistTimer
@@ -43,6 +48,10 @@ func use():
 	# Play the animation
 	if animation_player: animation_player.play("resist_active")
 	else: print("Animation player not found on resist increase")
+
+
+	##Play the audio SFX
+	AudioManager.play_sfx(sound_ref,1,-30)
 
 	print("Magic resist: " + str(health_component.magic_resist))
 	print("Armour: " + str(health_component.armour))

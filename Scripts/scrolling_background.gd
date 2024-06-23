@@ -1,5 +1,9 @@
 extends ParallaxBackground
 
+## Var that can be changed in editor for a sound file that can be played
+@export var sound_ref: AudioStream
+
+
 @export_group("Texture")
 ## Background texture for scrolling as a CompressedTexture2D
 @export var bg_texture: CompressedTexture2D = preload("res://icon.svg")
@@ -15,6 +19,7 @@ extends ParallaxBackground
 @onready var sprite = $ParallaxLayer/Sprite2D
 @onready var parallax_layer = $ParallaxLayer
 
+
 ## Height of the sprite in pixels as an int
 var bg_height: int = 0
 var bg_width: int = 0
@@ -24,6 +29,11 @@ func _ready():
 	bg_height = bg_texture.get_height()
 	bg_width = bg_texture.get_width()
 	parallax_layer.motion_mirroring = Vector2(bg_width, bg_height)
+	
+	
+	
+	AudioManager.play_music(sound_ref)
+	
 	
 func _process(delta):
 	debug()

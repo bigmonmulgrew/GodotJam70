@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://rd8ibqy4hei4"]
+[gd_scene load_steps=13 format=3 uid="uid://rd8ibqy4hei4"]
 
 [ext_resource type="Script" path="res://Scripts/Character/Player/Player.gd" id="1_dbac0"]
 [ext_resource type="Texture2D" uid="uid://cf15m74r5a55s" path="res://Textures/Playable Character Sprites/Oberon/Icon_Oberon_00.png" id="2_orwws"]
@@ -6,8 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://bmbffq7l4h1xg" path="res://Scenes/Components/Actions/Defensive/bubble_shield.tscn" id="4_7xwnr"]
 [ext_resource type="PackedScene" uid="uid://ca6cjartx4dw2" path="res://Scenes/Components/Actions/Attacks/raycast_attack.tscn" id="4_ji8yf"]
 [ext_resource type="PackedScene" uid="uid://cid0vv4el0hjd" path="res://Scenes/Components/health_component.tscn" id="5_xa446"]
+[ext_resource type="AudioStream" uid="uid://rts4ebkdm77c" path="res://Audio/SFX/fireball_cast.wav" id="6_0l6l2"]
 [ext_resource type="PackedScene" uid="uid://c74bwndkx5s18" path="res://Scenes/Components/user_movement_component.tscn" id="6_q7v6n"]
+[ext_resource type="AudioStream" uid="uid://bg5edk0abb8mc" path="res://Audio/SFX/body_hit.wav" id="7_2v08o"]
 [ext_resource type="PackedScene" uid="uid://b1jwlvk5nun41" path="res://Scenes/Components/resource_component.tscn" id="7_ened4"]
+[ext_resource type="AudioStream" uid="uid://dxft1hkl7b1vs" path="res://Audio/SFX/metallic_hit.wav" id="8_h1pff"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5pih8"]
 radius = 8.0
@@ -33,17 +36,20 @@ rotation = 1.5708
 rotation = 1.5708
 
 [node name="fireball_attack" parent="SecondaryAction" instance=ExtResource("3_8weuw")]
+sound_ref = ExtResource("6_0l6l2")
 
 [node name="DefensiveAction" type="Node2D" parent="."]
 rotation = 1.5708
 
 [node name="BubbleShield" parent="DefensiveAction" instance=ExtResource("4_7xwnr")]
 resist_time = 0.5
+sound_ref = ExtResource("8_h1pff")
 cooldown_time = 5.0
 
 [node name="HealthComponent" parent="." instance=ExtResource("5_xa446")]
 health = 50
 armour = 1
+sound_ref = ExtResource("7_2v08o")
 
 [node name="UserMovementComponent" parent="." instance=ExtResource("6_q7v6n")]
 

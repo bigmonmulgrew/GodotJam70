@@ -6,6 +6,10 @@ class_name ThrownAttack
 ##
 ## Thrown attack is a component that can be attached to a player or an enemy to allow them to use a ThrownAttack.
 
+## Var that can be changed in editor for a sound file that can be played
+@export var sound_ref: AudioStream
+
+
 ## The cooldown of the ThrownAttack
 @export var thrown_attack_cooldown: float = 2
 ## A variable used to store the parent node
@@ -38,6 +42,11 @@ func fire():
 	can_use = false
 	start_cooldown_timer()
 	print("Creating fireball")
+	
+
+	##Play the audio SFX
+	AudioManager.play_sfx(sound_ref,1,-30)
+	
 	var thrown_attack_instance = thrown_attack_scene.instantiate()
 	get_tree().get_root().add_child(thrown_attack_instance)
 	var direction = Vector2(cos(parent_component.rotation), sin(parent_component.rotation))

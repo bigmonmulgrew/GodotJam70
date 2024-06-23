@@ -19,6 +19,10 @@ signal died_signal
 ## Value for reducing magic damage.
 @export var magic_resist: int = 1
 
+## Var that can be changed in editor for a sound file that can be played
+@export var sound_ref: AudioStream
+
+
 # Object References
 @onready var _i_frame_timer: Timer = $IFramesTimer
 
@@ -43,7 +47,12 @@ func add_health(amount: int) -> void:
 func remove_health(amount: int, damage_type: DamageType.Type = DamageType.Type.PHYSICAL) -> void:
 	# If immune, exit
 	if _is_immune: return
-	
+
+	##Play the audio SFX
+	AudioManager.play_sfx(sound_ref,1,-30)
+
+
+
 	# Check damage type and apply relevant resists
 	match damage_type:
 		DamageType.Type.PHYSICAL:
