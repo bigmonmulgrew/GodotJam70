@@ -46,5 +46,8 @@ position = Vector2(570, 338)
 [node name="Merlin" parent="." instance=ExtResource("5_2vg64")]
 position = Vector2(723, 522)
 
+[node name="PlayerSpawnMarker" type="Marker2D" parent="."]
+position = Vector2(521, 266)
+
 [connection signal="body_exited" from="TowerArea" to="TowerArea" method="_on_body_exited"]
 [connection signal="body_exited" from="TowerArea2" to="TowerArea2" method="_on_body_exited"]
