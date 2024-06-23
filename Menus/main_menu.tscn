@@ -38,15 +38,30 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 525.0
+offset_left = 435.0
 offset_top = 323.0
-offset_right = -467.0
+offset_right = -557.0
 offset_bottom = -265.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_niwh5")
 theme_override_font_sizes/font_size = 24
-text = "Start Game"
+text = "Start new"
+
+[node name="StartButton2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 615.0
+offset_top = 323.0
+offset_right = -377.0
+offset_bottom = -265.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_niwh5")
+theme_override_font_sizes/font_size = 24
+text = "Contiune"
 
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 1
@@ -110,7 +125,8 @@ position = Vector2(75.5, 542.3)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("4_6n0rk")
 
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_new_button_pressed"]
+[connection signal="pressed" from="StartButton2" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]

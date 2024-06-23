@@ -94,21 +94,17 @@ func update_active_character(index: int):
 ## The active character index variable is then changed accordingly to match the currently-played character.
 func swap_character(index: int):
 	if index != active_character_index:
+		active_character_index = index
 		print("This worked, current char index: " + str(active_character_index))
 		#reworked dodge system
 		var level = get_tree().current_scene
 		var temp_player_ref:CharacterBody2D = null
 		for i in get_tree().get_nodes_in_group("Player"):
-			print(i)
-			print(get_tree().current_scene.name)
-			print(i.find_parent(get_tree().current_scene.name))
-			print("rty ",i.find_parent(get_tree().current_scene.name) )
-			if i.get_parent() != null:
+			if i.get_parent() != null && is_instance_valid(i) :
 				print("This worked4")
 				temp_player_ref = i as CharacterBody2D
 		#level.player = selected_characters[index]
 		var pl_temp:CharacterBody2D = selected_characters[index] as CharacterBody2D
-		print("This worked 2")
 				
 		if temp_player_ref != null:
 			print("This worked3")
@@ -203,6 +199,9 @@ func character_select_option(name:String):
 		var object_temp_instance = pass_object.instantiate()
 		object_temp_instance.name = name
 		
+		if selected_characters.size() <= 0:
+			active_character_index = 0
+			
 		selected_characters.append(object_temp_instance)
 		#excessive checks useful for when function is called outside select screen
 		if selected_characters.size() > max_player_select:
@@ -231,3 +230,22 @@ func on_health_changed(health_value: int):
 	
 func on_resource_changed(resrouce_value: int):
 	player_health_bar._set_current_resource(resrouce_value)
+	
+func kill_current_player():
+	print("ht rt game" )
+	
+	if selected_characters.size() > 0:
+		var to_delete = selected_characters[active_character_index]
+		var tempList:Array[Node] = selected_characters.duplicate(true)
+		tempList.remove_at(active_character_index)
+		var tm = clamp(active_character_index,0,tempList.size()-1)
+		swap_character(tm)
+		
+		selected_characters.assign(tempList)
+		print(selected_characters, " I ", active_character_index)
+		
+		to_delete.queue_free()
+	
+	if selected_characters.size() <= 0:
+		LevelMaster.load_game_over()
+		active_character_index = -1

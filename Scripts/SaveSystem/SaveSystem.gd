@@ -43,8 +43,9 @@ func get_dict_data(savefile:int=0):
 func load_data(savefile:int=0,key:String="Key"):
 	var Dict = get_dict_data(savefile)
 	var data = null
-	if Dict.has(key):
-		data = Dict[key]
+	if(Dict != null):
+		if Dict.has(key):
+			data = Dict[key]
 	return data
 
 ##Saves data in a savefile dictionary for each object.
@@ -59,3 +60,6 @@ func load_data_from_object(NodeRef:Node,savefile:int=0,key:String="Key"):
 	if savefile_exists(0):
 		data = load_data(savefile,ObjectKey)
 	return data
+
+func wipe_data(savefile:int = 0):
+	DirAccess.remove_absolute("user://"+DefaultSaveFileName+str(savefile))

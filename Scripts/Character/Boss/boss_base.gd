@@ -39,7 +39,10 @@ func _physics_process(delta):
 
 ## Gets the active character from the gameplay manager
 func get_player_location() -> Vector2:
-	return GameManager.selected_characters[GameManager.active_character_index].global_position
+	if GameManager.active_character_index >= 0:
+		return GameManager.selected_characters[GameManager.active_character_index].global_position
+	else:
+		return global_position
 
 # Inform the user that a health component needs to be added.
 func _get_configuration_warnings() -> PackedStringArray:
