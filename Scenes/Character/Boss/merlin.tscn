@@ -17,7 +17,7 @@ health = 50
 armour = 1
 
 [node name="MerlinAnims" parent="." instance=ExtResource("8_citex")]
-animation = &"WalkN"
+animation = &"WalkSE"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_mh234")
