@@ -21,9 +21,6 @@ var fireball_container: Node
 ## A preload of the fireball scene so that it can be instanced.
 @export var projectile_scene = preload("res://Scenes/Components/Actions/Attacks/Magic/fireball_projectile.tscn")
 
-## Var that can be changed in editor for a sound file that can be played
-@export var sound_ref: AudioStream
-
 
 ## The ready method attaches the parent_component, the health_component, and the fireball_container to the appropriate nodes.
 func _ready():
