@@ -46,11 +46,16 @@ var goose_scene = preload("res://Scenes/Character/Player/king_arthur.tscn")
 var sixth_character_scene = preload("res://Scenes/Character/Player/mf_broom.tscn")
 
 
+#Health Bars
+var packed_health_bars = preload("res://Scenes/Healthbars.tscn")
+var player_health_bar = packed_health_bars.instantiate()
+
 const max_player_select = 3
 
 func _ready():
 	display_unlocked_characters()
 	call_deferred("_find_characters")
+	get_tree().get_root().add_child(player_health_bar)
 
 ## Updates currently active character. It is called whenever you swap character.
 ##[br]
@@ -92,6 +97,7 @@ func swap_character(index: int):
 		level.player.global_position = temp_player.global_position
 		temp_player.get_parent().remove_child(temp_player)
 		update_active_character(index)
+		player_health_bar._set_player_name(index)
 
 ## Respawn character takes the position of the player, removes them from the tree, and then adds them back onto the tower after a few seconds.
 ##[br]
@@ -178,3 +184,8 @@ func character_select_option(name:String):
 		return true
 	return null
 	
+func on_health_changed(health_value: int):
+	player_health_bar._set_player_health(health_value)
+	
+func on_resource_changed(resrouce_value: int):
+	player_health_bar._set_current_resource(resrouce_value)

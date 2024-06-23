@@ -35,6 +35,7 @@ func add_health(amount: int) -> void:
 	# Check and reset health if it goes over max
 	if health > max_health:
 		health = max_health
+	GameManager.on_health_changed(health)
 
 ## Function to remove health.
 ## [br]Takes an integer and a DamageType enum as a parameter.
@@ -55,6 +56,7 @@ func remove_health(amount: int, damage_type: DamageType.Type = DamageType.Type.P
 	if amount < 0: amount = 0
 	
 	health -= amount
+	GameManager.on_health_changed(health)
 	_i_frame_timer.start(immunity_timer_value)
 	_is_immune = true
 	if health <= 0:

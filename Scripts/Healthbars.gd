@@ -13,7 +13,7 @@ var player_bar_rate: float = 0.02
 ## Once player_image and player_texture is set do this: player_icon.texture = player_texture
 @onready var player_icon = $PlayerHealthBar/PlayerIcon
 ## The displayed name for the player
-@onready var player_name = $PlayerHealthBar/PlayerName
+@onready var player_name = $PlayerName
 
 ## The players maximum resource
 var player_max_resource: int
@@ -41,28 +41,23 @@ var boss_bar_rate: float = 0.02
 ## Once the boss_image and boss_texture is set do this: boss_icon.texture = boss_texture
 @onready var boss_icon = $BossHealthBar/BossIcon
 ## The displayed name for the boss
-@onready var boss_name = $BossHealthBar/BossName
+@onready var boss_name = $BossName
 #endregion
 
 #region ally variables
-## first ally's max health
-var ally_one_max_health: int
-## first ally's current health
-var ally_one_current_health: int
-## The texture for the first ally's health bar
-@onready var ally_health_bar_1 = $PlayerHealthBar/AllyHealthBar1
 ## Once the ally_one_image and ally_one_texture is set do this: ally_icon_1 = ally_one_texture
 @onready var ally_icon_1 = $PlayerHealthBar/AllyHealthBar1/AllyIcon1
-
-## second ally's max health
-var ally_two_max_health: int
-## second ally's current health
-var ally_two_current_health: int
-## The texture for the second ally's health bar
-@onready var ally_health_bar_2 = $PlayerHealthBar/AllyHealthBar2
 ## Once the ally_two_image and ally_two_texture is set do this: ally_icon_2 = ally_two_texture
 @onready var ally_icon_2 = $PlayerHealthBar/AllyHealthBar2/AllyIcon2
 #endregion
+
+var name_array = [
+	"King Athur",
+	"Robin Hood",
+	"Goose",
+	"Big Bad Wolf",
+	"Oboron",
+	"Vroom Vroom"]
 
 #region _move_bar
 func _move_bar(current_value: int, max_value: int, current_pos: float, rate: float, bar: TextureProgressBar) -> float:
@@ -86,6 +81,7 @@ func _set_player_health_pos(health_pos: float):
 	#region player resource functions
 func _set_current_resource(current_resource: int):
 	player_current_resource = current_resource
+	print("Resrouce Trigger")
 func _set_max_resource(max_resrouce: int):
 	player_max_resource = max_resrouce
 func _set_resource_pos(resource_pos: float):
@@ -98,18 +94,6 @@ func _set_boss_max_health(max_health: int):
 	boss_max_health = max_health
 func _set_boss_health_pos(health_pos: float):
 	boss_current_health_pos = boss_current_health_pos
-#endregion
-	#region ally 1 functions
-func _set_ally_one_health(current_health: int):
-	ally_one_current_health = current_health
-func _set_ally_one_max_health(max_health: int):
-	ally_one_max_health = max_health
-#endregion
-	#region ally 2 functions
-func _set_ally_two_health(current_health: int):
-	ally_two_current_health = current_health
-func _set_ally_two_max_health(max_health: int):
-	ally_two_max_health = max_health
 #endregion
 #endregion
 
@@ -143,10 +127,6 @@ func _process(delta):
 	player_bar.texture_progress.speed_scale = player_max_health - player_current_health_pos
 	boss_bar.texture_progress.speed_scale = boss_max_health - boss_current_health_pos
 	resource_bar.texture_progress.speed_scale = player_max_health - player_current_health_pos
-	
-	#updating bars
-	ally_health_bar_1.value = ally_one_current_health
-	ally_health_bar_2.value = ally_two_current_health
 #endregion
 	
 #region image setting methods
@@ -186,10 +166,10 @@ func _set_ally_two_icon(image_path: String) -> void:
 
 #region name setting methods
 ## function for setting the player's name. input: String
-func _set_player_name(name: String):
-	player_name.text = name
+func _set_player_name(index: int):
+	$PlayerName.text = name_array[index]
 	
 ## function for setting the player's name. input: String
 func _set_boss_name(name: String):
-	boss_name.text = name
+	$BossName.text = name
 #endregion
