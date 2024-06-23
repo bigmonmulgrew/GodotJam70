@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My Godot Game</title>
+    <script>
+        // Necessary to enable cross-origin isolation
+        document.addEventListener('DOMContentLoaded', (event) => {
+            if (window.crossOriginIsolated !== true) {
+                console.error("Cross-Origin Isolation is not enabled. Check your server settings.");
+            }
+        });
+    </script>
+    <style>
+        body { margin: 0; overflow: hidden; }
+    </style>
+</head>
+<body>
+    <script src="godot.js"></script>
+    <script>
+        const engine = new Engine();
+        engine.start();
+    </script>
+</body>
+</html>
