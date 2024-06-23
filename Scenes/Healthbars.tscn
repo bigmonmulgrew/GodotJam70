@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dktnlhjatfngg"]
+[gd_scene load_steps=21 format=3 uid="uid://dktnlhjatfngg"]
 
 [ext_resource type="Script" path="res://Scripts/Healthbars.gd" id="1_dol2k"]
 [ext_resource type="Texture2D" uid="uid://dn768scv8xtwj" path="res://Images/UI/Healthbar.png" id="2_q37to"]
@@ -18,8 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://cvefttmk1j5f7" path="res://Images/UI/Animated Bar/Healthbar7.png" id="12_dy677"]
 [ext_resource type="Texture2D" uid="uid://dehli57okxcki" path="res://Images/UI/Animated Bar/Healthbar8.png" id="13_5oxna"]
 [ext_resource type="Texture2D" uid="uid://b3thi8lqxeppb" path="res://Images/UI/Animated Bar/Healthbar9.png" id="14_akt3t"]
-[ext_resource type="Texture2D" uid="uid://dxie4sb4w374k" path="res://Images/UI/SmallHealthBar.png" id="18_p00bc"]
-[ext_resource type="Texture2D" uid="uid://cvrnj7htpun3y" path="res://Images/UI/SmallHealthBarBorder.png" id="19_ahpvm"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_yl1c2"]
 frames = 12
@@ -62,9 +60,9 @@ script = ExtResource("1_dol2k")
 
 [node name="BossHealthBar" type="TextureProgressBar" parent="."]
 offset_left = 104.0
-offset_top = 33.0
+offset_top = 25.0
 offset_right = 492.0
-offset_bottom = 64.0
+offset_bottom = 56.0
 value = 50.0
 texture_under = ExtResource("2_q37to")
 texture_over = ExtResource("3_vyaxa")
@@ -75,25 +73,29 @@ tint_progress = Color(1, 0, 0, 1)
 position = Vector2(-53, 16)
 texture = ExtResource("4_fe3t6")
 
-[node name="BossName" type="Label" parent="BossHealthBar"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 32.0
-offset_right = 387.0
-offset_bottom = 63.0
-text = "The Three Wise Men Of Gotham"
-label_settings = SubResource("LabelSettings_rqjmi")
-horizontal_alignment = 1
-
 [node name="VSIcon" type="Sprite2D" parent="."]
-position = Vector2(571, 52)
+position = Vector2(571, 48)
 texture = ExtResource("5_knct6")
+
+[node name="PlayerResourceBar" type="TextureProgressBar" parent="."]
+show_behind_parent = true
+offset_left = 644.0
+offset_top = 10.0
+offset_right = 1032.0
+offset_bottom = 41.0
+step = 0.01
+value = 100.0
+fill_mode = 1
+texture_under = ExtResource("2_q37to")
+texture_over = ExtResource("3_vyaxa")
+texture_progress = SubResource("AnimatedTexture_yl1c2")
+tint_progress = Color(1, 0, 1, 1)
 
 [node name="PlayerHealthBar" type="TextureProgressBar" parent="."]
 offset_left = 644.0
-offset_top = 35.0
+offset_top = 27.0
 offset_right = 1032.0
-offset_bottom = 66.0
+offset_bottom = 58.0
 step = 0.01
 value = 50.0
 fill_mode = 1
@@ -102,67 +104,32 @@ texture_over = ExtResource("3_vyaxa")
 texture_progress = SubResource("AnimatedTexture_yl1c2")
 tint_progress = Color(0, 1, 0, 1)
 
-[node name="AllyHealthBar1" type="TextureProgressBar" parent="PlayerHealthBar"]
-layout_mode = 0
-offset_left = 230.0
-offset_top = 50.0
-offset_right = 357.0
-offset_bottom = 63.0
-value = 100.0
-fill_mode = 1
-texture_under = ExtResource("18_p00bc")
-texture_over = ExtResource("19_ahpvm")
-texture_progress = ExtResource("18_p00bc")
-tint_under = Color(0, 0, 0, 1)
-tint_progress = Color(0, 1, 1, 1)
-
-[node name="AllyIcon1" type="Sprite2D" parent="PlayerHealthBar/AllyHealthBar1"]
-position = Vector2(162, 6)
-texture = ExtResource("3_vmncw")
-
-[node name="AllyHealthBar2" type="TextureProgressBar" parent="PlayerHealthBar"]
-layout_mode = 0
-offset_left = 183.0
-offset_top = 83.0
-offset_right = 310.0
-offset_bottom = 96.0
-value = 100.0
-fill_mode = 1
-texture_under = ExtResource("18_p00bc")
-texture_over = ExtResource("19_ahpvm")
-texture_progress = ExtResource("18_p00bc")
-tint_under = Color(0, 0, 0, 1)
-tint_progress = Color(0, 1, 1, 1)
-
-[node name="AllyIcon2" type="Sprite2D" parent="PlayerHealthBar/AllyHealthBar2"]
-position = Vector2(162, 6)
-texture = ExtResource("3_vmncw")
-
 [node name="PlayerIcon" type="Sprite2D" parent="PlayerHealthBar"]
 position = Vector2(454, 17)
 texture = ExtResource("4_fe3t6")
 
-[node name="PlayerName" type="Label" parent="PlayerHealthBar"]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 33.0
-offset_right = 226.0
-offset_bottom = 64.0
+[node name="AllyIcon1" type="Sprite2D" parent="PlayerHealthBar"]
+position = Vector2(366, 56)
+texture = ExtResource("3_vmncw")
+
+[node name="AllyIcon2" type="Sprite2D" parent="PlayerHealthBar"]
+position = Vector2(315, 56)
+texture = ExtResource("3_vmncw")
+
+[node name="PlayerName" type="Label" parent="."]
+offset_left = 647.0
+offset_top = 60.0
+offset_right = 936.0
+offset_bottom = 94.0
 text = "Robin Hood"
 label_settings = SubResource("LabelSettings_rqjmi")
 horizontal_alignment = 1
 
-[node name="PlayerResourceBar" type="TextureProgressBar" parent="PlayerHealthBar"]
-show_behind_parent = true
-layout_mode = 0
-offset_top = -17.0
-offset_right = 388.0
-offset_bottom = 14.0
-step = 0.01
-value = 100.0
-fill_mode = 1
-texture_under = ExtResource("2_q37to")
-texture_over = ExtResource("3_vyaxa")
-texture_progress = SubResource("AnimatedTexture_yl1c2")
-tint_under = Color(0, 0, 0, 1)
-tint_progress = Color(1, 0, 1, 1)
+[node name="BossName" type="Label" parent="."]
+offset_left = 106.0
+offset_top = 57.0
+offset_right = 491.0
+offset_bottom = 91.0
+text = "The Three Wise Men Of Gotham"
+label_settings = SubResource("LabelSettings_rqjmi")
+horizontal_alignment = 1

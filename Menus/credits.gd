@@ -5,13 +5,23 @@ var credit_title_array = [
 	"Credits",
 	"Credits",
 	"Credits",
+	"Credits",
 	"Cridets",
+	"Meet The Team",
 	"Meet The Team",
 	"Meet The Team",
 	"Meet The Team",
 	"Meat The Team",
 	"Hall Of Idiots",
-	"The Guys Who Did The Thing"
+	"The Guys Who Did The Thing",
+	"Game Makers",
+	"Game Makers",
+	"Game Makers",
+	"Maker Game",
+	"The Guys",
+	"The Guys",
+	"The Guys",
+	"The Gus"
 	]
 	
 var array_number: int
