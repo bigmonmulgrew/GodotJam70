@@ -3,23 +3,23 @@ extends Control
 @export_file("*.tscn") var target_Level_level_1
 @export_file("*.tscn") var target_Level_main_menu
 
-@export var color_button_select:Color = Color(0,0,0.8,0.75)
-@export var color_button_default:Color = Color(0,0,0,0.75)
+@export var button_style_default:StyleBoxFlat
+@export var button_style_select:StyleBoxFlat
 
 #dodgey but checker array
 var selected_but_list:Array[Button]
 
 var game_manager:Game_Manager
 
+var selected_character:bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	game_manager = get_tree().get_root().get_node("GameManager")
-	var stylebox = StyleBoxFlat.new()
-	stylebox.bg_color = color_button_default
 	for but in $ButtonControl.get_children():
 		var is_but = but as Button
 		if is_but != null && but.name.begins_with("Select"):
-			is_but.add_theme_stylebox_override("normal", stylebox)
+			is_but.add_theme_stylebox_override("normal", button_style_default)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -27,11 +27,17 @@ func _process(delta: float) -> void:
 
 func _on_play_button_pressed() -> void:
 	var character_counter = 0
-	if game_manager.selected_characters.size() >= 1:
-		LevelMaster.load_level(target_Level_level_1)
-		#get_tree().change_scene_to_file(target_Level_level_1) # Will only load the level if there are two characters selected. Bump to three in final game!
+	if !selected_character:
+		if game_manager.selected_characters.size() >= 1:
+			$AnimationPlayer.play("levelOptions")
+			update_level_buttons()
+			selected_character = true
+			#get_tree().change_scene_to_file(target_Level_level_1) # Will only load the level if there are two characters selected. Bump to three in final game!
+		else:
+			print("You need to select a character!")
 	else:
-		print("You need to select a character!")
+		GameManager.load_level_from_collection()
+		#LevelMaster.load_level(target_Level_level_1)
 
 func _on_back_button_pressed() -> void:
 	LevelMaster.load_level(target_Level_main_menu)
@@ -39,21 +45,17 @@ func _on_back_button_pressed() -> void:
 
 ## Deactivates and reactivates all active and not active buttons
 func _unhighlight_selected_buttons():
-	var stylebox_def = StyleBoxFlat.new()
-	var stylebox_sel = StyleBoxFlat.new()
-	stylebox_def.bg_color = color_button_default
-	stylebox_sel.bg_color = color_button_select
 	for but in $ButtonControl.get_children():
 		var is_but = but as Button
 		if is_but != null && but.name.begins_with("Select"):
 			if selected_but_list.find(is_but)!=-1:
-				is_but.add_theme_stylebox_override("normal", stylebox_sel)
-				is_but.add_theme_stylebox_override("hover", stylebox_sel)
-				is_but.add_theme_stylebox_override("pressed", stylebox_sel)
+				is_but.add_theme_stylebox_override("normal", button_style_select)
+				is_but.add_theme_stylebox_override("hover", button_style_select)
+				is_but.add_theme_stylebox_override("pressed", button_style_select)
 			else:
-				is_but.add_theme_stylebox_override("normal", stylebox_def)
-				is_but.add_theme_stylebox_override("hover", stylebox_def)
-				is_but.add_theme_stylebox_override("pressed", stylebox_def)
+				is_but.add_theme_stylebox_override("normal", button_style_default)
+				is_but.add_theme_stylebox_override("hover", button_style_default)
+				is_but.add_theme_stylebox_override("pressed", button_style_default)
 
 func _character_pass(name: String, ButtonRef: Button):
 	var active: bool = game_manager.character_select_option(name)
@@ -81,3 +83,12 @@ func _on_select_character_5_button_pressed() -> void:
 	_character_pass("Goose", $ButtonControl/Select_Character5_Button)
 func _on_select_character_6_button_pressed() -> void:
 	_character_pass("Sixth", $ButtonControl/Select_Character6_Button)
+
+func update_level_buttons():
+	for i in $Panel.get_children():
+		var cr:Panel = i as Panel
+		if cr != null:
+			if (SaveSystem.load_data(0,cr.name)!=null):
+				cr.add_theme_stylebox_override("panel", button_style_default)
+			else:
+				cr.add_theme_stylebox_override("panel", button_style_select)

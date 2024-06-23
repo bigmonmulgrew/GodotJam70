@@ -15,6 +15,7 @@ class_name Player
 var is_mnk: bool = true
 
 func _ready():
+	add_to_group("Player")
 	primary_action = get_node_or_null("PrimaryAction")
 	if primary_action!=null: primary_action = primary_action.get_child(0)
 	secondary_action = get_node_or_null("SecondaryAction")

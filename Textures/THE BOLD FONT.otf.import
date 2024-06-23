@@ -1,0 +1,33 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://ocm07clnjlfe"
+path="res://.godot/imported/THE BOLD FONT.otf-c5712ae0e9412614e604c1ccd222e5fd.fontdata"
+
+[deps]
+
+source_file="res://Textures/THE BOLD FONT.otf"
+dest_files=["res://.godot/imported/THE BOLD FONT.otf-c5712ae0e9412614e604c1ccd222e5fd.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

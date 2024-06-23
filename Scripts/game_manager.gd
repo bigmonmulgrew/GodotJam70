@@ -27,6 +27,8 @@ var character_health_values: Array[int]
 ## An int counter used to track the current round of the current run.
 var round_number: int = 0
 
+var queued_stages: Array[String] = []
+
 ##character section
 
 ## A dictionary of all characters in the game, paired with boolean values for whether they are unlocked or not.
@@ -45,6 +47,8 @@ var goose_scene = preload("res://Scenes/Character/Player/king_arthur.tscn")
 ## A preload of the RobinHood test player character scene, which can be switched to if it is part of the selected_characters pool.
 var sixth_character_scene = preload("res://Scenes/Character/Player/mf_broom.tscn")
 
+const leveloptionsaves:Array[String] = ["WoodlandHouse", "RiverCascade", "MerlinsTower"]
+var levellocations:Array[String] = ["Levels/River/river_level.tscn", "Levels/River/river_level.tscn", "Levels/River/river_level.tscn"]
 
 const max_player_select = 3
 
@@ -85,13 +89,21 @@ func update_active_character(index: int):
 ## The active character index variable is then changed accordingly to match the currently-played character.
 func swap_character(index: int):
 	if index != active_character_index:
-		var level = get_tree().get_root().get_node("TEMPTEST")
-		var temp_player = level.player
-		level.player = selected_characters[index]
-		get_tree().get_root().add_child(level.player)
-		level.player.global_position = temp_player.global_position
-		temp_player.get_parent().remove_child(temp_player)
-		update_active_character(index)
+		#reworked dodge system
+		var level = get_tree().current_scene
+		var temp_player_ref:CharacterBody2D = null
+		for i in get_tree().get_nodes_in_group("Player"):
+			print("rty ",i.find_parent(get_tree().current_scene.name) )
+			if i.find_parent(get_tree().current_scene.name) != null:
+				temp_player_ref = i as CharacterBody2D
+		#level.player = selected_characters[index]
+		var pl_temp:CharacterBody2D = selected_characters[index] as CharacterBody2D
+		if temp_player_ref != null:
+			temp_player_ref.get_parent().add_child(pl_temp)
+			pl_temp.global_position = temp_player_ref.global_position
+			pl_temp.velocity = temp_player_ref.velocity
+			temp_player_ref.get_parent().remove_child(temp_player_ref)
+			update_active_character(index)
 
 ## Respawn character takes the position of the player, removes them from the tree, and then adds them back onto the tower after a few seconds.
 ##[br]
@@ -120,7 +132,7 @@ func display_unlocked_characters():
 
 ## Populates the selected_chatacters array with all characters in the "players" group. This call is deffered in _ready(), so that it is called after the main scene has been instanced. This was necessary as autoloads are technically loaded before the main scene, which would cause issues as the players wouldn't have been spawned yet.
 func _find_characters():
-	for player in get_tree().get_nodes_in_group("players"):
+	for player in get_tree().get_nodes_in_group("Players"):
 		player = player as CharacterBody2D
 		selected_characters.append(player)
 	for character in selected_characters:
@@ -178,3 +190,15 @@ func character_select_option(name:String):
 		return true
 	return null
 	
+
+func load_level_from_collection():
+	var list_to_ref:Array[int]
+	for i in leveloptionsaves.size():
+		if SaveSystem.load_data(0,leveloptionsaves[i])!= null:
+			list_to_ref.push_back(i)
+	#pick uplayed level
+	var rool = randi_range(0,list_to_ref.size()-1)
+	#if it cant find any unbeaten level play all
+	if list_to_ref.size() <= 0:
+		rool = randi_range(0,leveloptionsaves.size()-1)
+	LevelMaster.load_level(levellocations[rool])
