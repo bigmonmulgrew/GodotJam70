@@ -11,5 +11,5 @@ func _ready():
 	children = get_children()
 
 func _physics_process(delta):
-	for object in children:
+	for object in get_children():
 		object.global_position.y += gravity * delta
