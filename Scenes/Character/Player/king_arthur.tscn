@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjgkjhe7k58s"]
+[gd_scene load_steps=9 format=3 uid="uid://cjgkjhe7k58s"]
 
 [ext_resource type="Script" path="res://Scripts/Character/Player/Player.gd" id="1_goc7c"]
-[ext_resource type="Texture2D" uid="uid://dj33hp54ba015" path="res://Textures/Playable Character Sprites/KingArthur/Icon_KingArthur_00.png" id="2_gjdpi"]
-[ext_resource type="PackedScene" uid="uid://bj6hnoidynu0t" path="res://Scenes/Components/Actions/Attacks/Melee/attack_unarmed_1.tscn" id="3_f1mrb"]
+[ext_resource type="PackedScene" uid="uid://cxn66yxnlj23e" path="res://Scenes/Components/Actions/Attacks/Melee/attack_sword_swipe_2.tscn" id="2_koy14"]
 [ext_resource type="PackedScene" uid="uid://cid0vv4el0hjd" path="res://Scenes/Components/health_component.tscn" id="4_kq5tx"]
 [ext_resource type="PackedScene" uid="uid://xhr1iffrbnc1" path="res://Scenes/Components/Actions/Attacks/Magic/fireball_attack.tscn" id="4_xai7k"]
 [ext_resource type="PackedScene" uid="uid://ok0kh73rhexf" path="res://Scenes/Components/Actions/Defensive/parry_action.tscn" id="5_03ona"]
@@ -18,7 +17,6 @@ script = ExtResource("1_goc7c")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_gjdpi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5pih8")
@@ -26,7 +24,7 @@ shape = SubResource("CircleShape2D_5pih8")
 [node name="PrimaryAction" type="Node2D" parent="."]
 rotation = 1.5708
 
-[node name="Unarmed1" parent="PrimaryAction" instance=ExtResource("3_f1mrb")]
+[node name="SwordSwipe2" parent="PrimaryAction" instance=ExtResource("2_koy14")]
 
 [node name="SecondaryAction" type="Node2D" parent="."]
 rotation = 1.5708

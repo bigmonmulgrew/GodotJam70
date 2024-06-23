@@ -1,24 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://dr5dx66kb1s0"]
+[gd_scene load_steps=9 format=3 uid="uid://bgsqac7ybig18"]
 
 [ext_resource type="Script" path="res://Scripts/Character/Player/Player.gd" id="1_tljr6"]
-[ext_resource type="Texture2D" uid="uid://bsoah8gdmv5su" path="res://icon.svg" id="2_oosob"]
-[ext_resource type="PackedScene" uid="uid://bdtapx7e0lrnm" path="res://Scenes/Components/Actions/Attacks/Ranged/crossbow_attack.tscn" id="3_lyviy"]
-[ext_resource type="PackedScene" uid="uid://b22mbah3esni7" path="res://Scenes/Components/Actions/Attacks/Melee/attack_sword_swipe_1.tscn" id="4_vgwie"]
-[ext_resource type="PackedScene" uid="uid://bmbffq7l4h1xg" path="res://Scenes/Components/Actions/Defensive/bubble_shield.tscn" id="4_wtv5u"]
+[ext_resource type="PackedScene" uid="uid://bj6hnoidynu0t" path="res://Scenes/Components/Actions/Attacks/Melee/attack_unarmed_1.tscn" id="2_g8opq"]
+[ext_resource type="PackedScene" uid="uid://xhr1iffrbnc1" path="res://Scenes/Components/Actions/Attacks/Magic/fireball_attack.tscn" id="3_yjo4x"]
+[ext_resource type="PackedScene" uid="uid://ok0kh73rhexf" path="res://Scenes/Components/Actions/Defensive/parry_action.tscn" id="4_bsvv4"]
 [ext_resource type="PackedScene" uid="uid://cid0vv4el0hjd" path="res://Scenes/Components/health_component.tscn" id="5_t3rec"]
 [ext_resource type="PackedScene" uid="uid://c74bwndkx5s18" path="res://Scenes/Components/user_movement_component.tscn" id="6_euf28"]
 [ext_resource type="PackedScene" uid="uid://b1jwlvk5nun41" path="res://Scenes/Components/resource_component.tscn" id="7_jmbss"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5pih8"]
 
-[node name="RobinHood" type="CharacterBody2D"]
+[node name="KingArthur" type="CharacterBody2D"]
 z_index = 5
 collision_mask = 14
 script = ExtResource("1_tljr6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_oosob")
+texture = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5pih8")
@@ -26,19 +25,17 @@ shape = SubResource("CircleShape2D_5pih8")
 [node name="PrimaryAction" type="Node2D" parent="."]
 rotation = 1.5708
 
-[node name="crossbow_attack" parent="PrimaryAction" instance=ExtResource("3_lyviy")]
+[node name="Unarmed1" parent="PrimaryAction" instance=ExtResource("2_g8opq")]
 
 [node name="SecondaryAction" type="Node2D" parent="."]
 rotation = 1.5708
 
-[node name="SwordSwipe" parent="SecondaryAction" instance=ExtResource("4_vgwie")]
+[node name="fireball_attack" parent="SecondaryAction" instance=ExtResource("3_yjo4x")]
 
 [node name="DefensiveAction" type="Node2D" parent="."]
 rotation = 1.5708
 
-[node name="BubbleShield" parent="DefensiveAction" instance=ExtResource("4_wtv5u")]
-resist_time = 0.5
-cooldown_time = 5.0
+[node name="Parry" parent="DefensiveAction" instance=ExtResource("4_bsvv4")]
 
 [node name="HealthComponent" parent="." instance=ExtResource("5_t3rec")]
 health = 50

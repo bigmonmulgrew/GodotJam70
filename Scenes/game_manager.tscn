@@ -1,8 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://sr30636x7q63"]
+[gd_scene load_steps=5 format=3 uid="uid://sr30636x7q63"]
 
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="1_vqrmj"]
+[ext_resource type="PackedScene" uid="uid://bgsqac7ybig18" path="res://Scenes/Character/Player/robin_hood.tscn" id="2_2n6jp"]
 [ext_resource type="PackedScene" uid="uid://b28euga60pw4r" path="res://Scenes/Character/Player/test_player.tscn" id="2_7crjy"]
+[ext_resource type="PackedScene" uid="uid://cfpdkarbgnd5w" path="res://Scenes/Character/Player/test_player2.tscn" id="4_t7h37"]
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_vqrmj")
-sixth_character_scene = ExtResource("2_7crjy")
+robin_hood_scene = ExtResource("2_2n6jp")
+grandma_wolf_scene = ExtResource("2_7crjy")
+goose_scene = ExtResource("4_t7h37")
