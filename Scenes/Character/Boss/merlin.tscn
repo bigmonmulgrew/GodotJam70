@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbfsf38esgiwf"]
+[gd_scene load_steps=7 format=3 uid="uid://dbfsf38esgiwf"]
 
 [ext_resource type="Script" path="res://Scripts/Character/Boss/merlin.gd" id="1_r10hk"]
+[ext_resource type="PackedScene" uid="uid://xhr1iffrbnc1" path="res://Scenes/fireball_attack.tscn" id="4_o4bp4"]
+[ext_resource type="PackedScene" uid="uid://b22mbah3esni7" path="res://Scenes/Components/Actions/Attacks/sword_swipe_attack.tscn" id="5_7qdw4"]
 [ext_resource type="PackedScene" uid="uid://cid0vv4el0hjd" path="res://Scenes/Components/health_component.tscn" id="6_n87pw"]
 [ext_resource type="PackedScene" uid="uid://bxrjko83xlhxa" path="res://Animations/Bosses/Merlin/Anims_Merlin_00.tscn" id="8_citex"]
 
@@ -23,5 +25,18 @@ animation = &"WalkSE"
 shape = SubResource("CircleShape2D_mh234")
 
 [node name="RangedActions" type="Node2D" parent="."]
+rotation = 1.5708
+
+[node name="fireball_attack" parent="RangedActions" instance=ExtResource("4_o4bp4")]
+
+[node name="SwordSwipe" parent="RangedActions" instance=ExtResource("5_7qdw4")]
+rotation = -1.5708
 
 [node name="MeleeActions" type="Node2D" parent="."]
+
+[node name="RangedAttackTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="RangedAttackTimer" to="." method="_on_ranged_attack_timer_timeout"]
+
+[editable path="RangedActions/fireball_attack"]

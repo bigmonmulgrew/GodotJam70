@@ -18,10 +18,9 @@ func _physics_process(delta):
 	_process_state()
 	_test_movement()
 	move_and_slide()
-	
+
 func _update_state():
 	var norm_velocity = velocity.normalized()
-	print(norm_velocity)
 	# Check walk north east
 	if norm_velocity.x > anim_move_tolerance and norm_velocity.y < -anim_move_tolerance:
 		current_state = State.WALK_NE
@@ -65,8 +64,13 @@ func _process_state():
 			animated_sprite.play("WalkSW")
 		State.WALK_NW:
 			animated_sprite.play("WalkNW")
-			
-	print(current_state)
 
 func _test_movement():
-	velocity = global_position.direction_to(get_player_location()) * speed
+	var direction = global_position.direction_to(get_player_location())
+	velocity = direction * speed
+	ranged_actions.rotation = atan2(direction.y, direction.x)
+
+func _on_ranged_attack_timer_timeout():
+	var attacks_to_use: Array = ranged_actions.get_children()
+	
+	attacks_to_use.pick_random().use()
