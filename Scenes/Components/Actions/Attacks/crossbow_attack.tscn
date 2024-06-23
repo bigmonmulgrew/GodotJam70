@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdtapx7e0lrnm"]
-
-[ext_resource type="Script" path="res://Scripts/Components/Actions/Attacks/crossbow_attack.gd" id="1_adnby"]
-
-[node name="crossbow_attack" type="Node2D"]
-script = ExtResource("1_adnby")
-crossbowbolt_cooldown = 0.3

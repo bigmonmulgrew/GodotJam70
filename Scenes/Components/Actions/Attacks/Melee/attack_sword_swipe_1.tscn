@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b22mbah3esni7"]
 
 [ext_resource type="Script" path="res://Scripts/Components/Actions/Attacks/sword_swipe.gd" id="1_iaghu"]
-[ext_resource type="Texture2D" uid="uid://bq76qcm1qk0bg" path="res://Images/Attacks/melee-weapon-sprites.png" id="2_4apob"]
+[ext_resource type="Texture2D" uid="uid://bq76qcm1qk0bg" path="res://Images/Attacks/melee-weapon-sprites.png" id="2_xbypr"]
 
 [sub_resource type="Animation" id="Animation_eeofq"]
 length = 0.001
@@ -136,7 +136,7 @@ collision_mask = 2
 visible = false
 position = Vector2(0.034618, -17.1217)
 scale = Vector2(0.276991, 0.522868)
-texture = ExtResource("2_4apob")
+texture = ExtResource("2_xbypr")
 region_enabled = true
 region_rect = Rect2(21, 1, 22, 63)
 

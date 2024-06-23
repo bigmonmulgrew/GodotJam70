@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cf15m74r5a55s" path="res://Textures/Playable Character Sprites/Oberon/Icon_Oberon_00.png" id="2_orwws"]
 [ext_resource type="PackedScene" uid="uid://xhr1iffrbnc1" path="res://Scenes/Components/Actions/Attacks/Magic/fireball_attack.tscn" id="3_8weuw"]
 [ext_resource type="PackedScene" uid="uid://bmbffq7l4h1xg" path="res://Scenes/Components/Actions/Defensive/bubble_shield.tscn" id="4_7xwnr"]
-[ext_resource type="PackedScene" uid="uid://b0vdyg8ghc3pw" path="res://Scenes/Components/Actions/Attacks/raycast_attack.tscn" id="4_ji8yf"]
+[ext_resource type="PackedScene" uid="uid://ca6cjartx4dw2" path="res://Scenes/Components/Actions/Attacks/raycast_attack.tscn" id="4_ji8yf"]
 [ext_resource type="PackedScene" uid="uid://cid0vv4el0hjd" path="res://Scenes/Components/health_component.tscn" id="5_xa446"]
 [ext_resource type="PackedScene" uid="uid://c74bwndkx5s18" path="res://Scenes/Components/user_movement_component.tscn" id="6_q7v6n"]
 [ext_resource type="PackedScene" uid="uid://b1jwlvk5nun41" path="res://Scenes/Components/resource_component.tscn" id="7_ened4"]
@@ -27,12 +27,12 @@ shape = SubResource("CircleShape2D_5pih8")
 [node name="PrimaryAction" type="Node2D" parent="."]
 rotation = 1.5708
 
-[node name="fireball_attack" parent="PrimaryAction" instance=ExtResource("3_8weuw")]
+[node name="RaycastAttack" parent="PrimaryAction" instance=ExtResource("4_ji8yf")]
 
 [node name="SecondaryAction" type="Node2D" parent="."]
 rotation = 1.5708
 
-[node name="RaycastAttack" parent="SecondaryAction" instance=ExtResource("4_ji8yf")]
+[node name="fireball_attack" parent="SecondaryAction" instance=ExtResource("3_8weuw")]
 
 [node name="DefensiveAction" type="Node2D" parent="."]
 rotation = 1.5708

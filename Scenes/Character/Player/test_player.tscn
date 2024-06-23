@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://b28euga60pw4r"]
 
 [ext_resource type="Script" path="res://Scripts/Character/Player/Player.gd" id="1_ppxvn"]
-[ext_resource type="Texture2D" uid="uid://bsoah8gdmv5su" path="res://icon.svg" id="2_ohw3x"]
-[ext_resource type="PackedScene" uid="uid://b22mbah3esni7" path="res://Scenes/Components/Actions/Attacks/Melee/attack_sword_swipe_1.tscn" id="3_ptn3t"]
+[ext_resource type="Texture2D" uid="uid://pkyaa7nnsvel" path="res://Images/Textures/goose.png" id="2_x2yyl"]
+[ext_resource type="PackedScene" uid="uid://ca6cjartx4dw2" path="res://Scenes/Components/Actions/Attacks/raycast_attack.tscn" id="3_xm6qs"]
 [ext_resource type="PackedScene" uid="uid://dx0yytejv6w7p" path="res://Scenes/Components/Actions/Attacks/tentacle_attack.tscn" id="4_as4wi"]
 [ext_resource type="PackedScene" uid="uid://cjafnq2r4f08n" path="res://Scenes/Components/Actions/Defensive/dash_action.tscn" id="5_rps1e"]
 [ext_resource type="PackedScene" uid="uid://cid0vv4el0hjd" path="res://Scenes/Components/health_component.tscn" id="6_rcxnr"]
@@ -11,7 +11,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d2mch"]
 
-[node name="RobinHood" type="CharacterBody2D"]
+[node name="Test Player" type="CharacterBody2D"]
 z_index = 5
 collision_mask = 14
 script = ExtResource("1_ppxvn")
@@ -20,14 +20,14 @@ script = ExtResource("1_ppxvn")
 modulate = Color(1, 0, 0, 1)
 rotation = 1.5708
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_ohw3x")
+texture = ExtResource("2_x2yyl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_d2mch")
 
 [node name="PrimaryAction" type="Node2D" parent="."]
 
-[node name="SwordSwipe" parent="PrimaryAction" instance=ExtResource("3_ptn3t")]
+[node name="RaycastAttack" parent="PrimaryAction" instance=ExtResource("3_xm6qs")]
 
 [node name="SecondaryAction" type="Node2D" parent="."]
 

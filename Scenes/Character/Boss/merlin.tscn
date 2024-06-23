@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Character/Player/Player.gd" id="1_kcris"]
 [ext_resource type="Texture2D" uid="uid://b8b3sno3rbbdi" path="res://Images/Boss Sprites/Merlin/Icon_Merlin_00.png" id="2_ldetk"]
 [ext_resource type="PackedScene" uid="uid://xhr1iffrbnc1" path="res://Scenes/Components/Actions/Attacks/Magic/fireball_attack.tscn" id="3_13wdr"]
-[ext_resource type="PackedScene" uid="uid://c5av2qpeghxuh" path="res://Scenes/Components/Actions/Attacks/thrown_attack.tscn" id="4_w4s5s"]
+[ext_resource type="PackedScene" uid="uid://c5av2qpeghxuh" path="res://Scenes/Components/Actions/Attacks/Ranged/thrown_attack.tscn" id="4_w4s5s"]
 [ext_resource type="PackedScene" uid="uid://bmbffq7l4h1xg" path="res://Scenes/Components/Actions/Defensive/bubble_shield.tscn" id="5_uv1op"]
 [ext_resource type="PackedScene" uid="uid://cid0vv4el0hjd" path="res://Scenes/Components/health_component.tscn" id="6_n87pw"]
 [ext_resource type="PackedScene" uid="uid://b1jwlvk5nun41" path="res://Scenes/Components/resource_component.tscn" id="7_pbnkb"]

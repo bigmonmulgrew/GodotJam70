@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://n0o2rvigeecw"]
+
+[ext_resource type="Script" path="res://crossbowbolt.gd" id="1_delf0"]
+[ext_resource type="Texture2D" uid="uid://ccrwsig0bh7jn" path="res://Images/Attacks/projectile-weapon-sprites.png" id="2_vaj17"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imv6l"]
+size = Vector2(2, 6)
+
+[node name="longbowbolt" type="Node2D"]
+script = ExtResource("1_delf0")
+travel_speed = 8.0
+damage_value = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_vaj17")
+region_enabled = true
+region_rect = Rect2(28.5648, 79.9712, 7.02679, 30.5395)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 14
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_imv6l")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_crossbow_area_body_entered"]

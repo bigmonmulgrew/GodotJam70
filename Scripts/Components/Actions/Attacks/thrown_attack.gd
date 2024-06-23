@@ -15,7 +15,7 @@ var health_component: Node
 ## A variable used to store a reference to an empty node container, under which Thrown attacks are instanced.
 var thrown_attack_container: Node
 ## A preload of the fireball scene so that it can be instanced.
-var thrown_attack_scene = preload("res://Scenes/thrown.tscn")
+@export var thrown_attack_scene = preload("res://Scenes/thrown.tscn")
 
 ## The ready method attaches the parent_component, the health_component, and the thrown_attack_container to the appropriate nodes.
 func _ready():

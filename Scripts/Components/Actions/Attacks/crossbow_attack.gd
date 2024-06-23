@@ -15,7 +15,7 @@ var health_component: Node
 ## A variable used to store a reference to an empty node container, under which Crossbow bolts are instanced.
 var crossbowbolt_container: Node
 ## A preload of the Crossbow bolt scene so that it can be instanced.
-var crossbowbolt_scene = preload("res://Scenes/crossbow_bolt.tscn")
+@export var crossbowbolt_scene = preload("res://Scenes/Components/Actions/Attacks/Ranged/crossbow_bolt.tscn")
 
 ## The ready method attaches the parent_component, the health_component, and the crossbowbolt_container to the appropriate nodes.
 func _ready():
