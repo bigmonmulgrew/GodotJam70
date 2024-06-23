@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bgsqac7ybig18"]
+[gd_scene load_steps=11 format=3 uid="uid://bgsqac7ybig18"]
 
 [ext_resource type="Script" path="res://Scripts/Character/Player/Player.gd" id="1_tljr6"]
 [ext_resource type="Texture2D" uid="uid://uxe3m7drqvnj" path="res://Textures/Playable Character Sprites/RobinHood/SpriteSheet_RobinHood_00.png" id="2_jbkug"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://wtvmsjv3ejvg" path="res://Scenes/Components/Actions/Attacks/Ranged/longbow_fire_attack.tscn" id="4_6po24"]
 [ext_resource type="PackedScene" uid="uid://cjafnq2r4f08n" path="res://Scenes/Components/Actions/Defensive/dash_action.tscn" id="5_hddjw"]
 [ext_resource type="PackedScene" uid="uid://cid0vv4el0hjd" path="res://Scenes/Components/health_component.tscn" id="5_t3rec"]
+[ext_resource type="AudioStream" uid="uid://hi3ok35bp644" path="res://Audio/SFX/fired_arrow.wav" id="5_tggdm"]
 [ext_resource type="PackedScene" uid="uid://c74bwndkx5s18" path="res://Scenes/Components/user_movement_component.tscn" id="6_euf28"]
 [ext_resource type="PackedScene" uid="uid://b1jwlvk5nun41" path="res://Scenes/Components/resource_component.tscn" id="7_jmbss"]
 
@@ -30,11 +31,13 @@ shape = SubResource("CircleShape2D_5pih8")
 rotation = 1.5708
 
 [node name="longbow_attack" parent="PrimaryAction" instance=ExtResource("3_l7dq3")]
+sound_ref = ExtResource("5_tggdm")
 
 [node name="SecondaryAction" type="Node2D" parent="."]
 rotation = 1.5708
 
 [node name="longbow_fire_attack" parent="SecondaryAction" instance=ExtResource("4_6po24")]
+sound_ref = ExtResource("5_tggdm")
 
 [node name="DefensiveAction" type="Node2D" parent="."]
 rotation = 1.5708
