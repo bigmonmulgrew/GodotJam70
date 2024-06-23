@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3cwsnw1ge4rw"]
+
+[ext_resource type="PackedScene" uid="uid://cid0vv4el0hjd" path="res://Scenes/Components/health_component.tscn" id="1_qah6y"]
+[ext_resource type="Script" path="res://Scripts/Character/Player/Player.gd" id="1_qgg02"]
+[ext_resource type="PackedScene" uid="uid://dig0avpj0f28t" path="res://Scenes/Components/car_turn_spr_component.tscn" id="2_167fr"]
+[ext_resource type="PackedScene" uid="uid://dbuxmatavokk2" path="res://Scenes/Components/car_movement_component.tscn" id="2_bw1ed"]
+[ext_resource type="PackedScene" uid="uid://b1jwlvk5nun41" path="res://Scenes/Components/resource_component.tscn" id="4_7ydbx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8vdlw"]
+
+[node name="mf_broom" type="CharacterBody2D"]
+collision_mask = 14
+floor_max_angle = 1.55334
+script = ExtResource("1_qgg02")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8vdlw")
+
+[node name="Sprite2D" parent="." instance=ExtResource("2_167fr")]
+
+[node name="PrimaryAction" type="Node2D" parent="."]
+rotation = -3.14159
+
+[node name="HealthComponent" parent="." instance=ExtResource("1_qah6y")]
+
+[node name="Car_movement_component" parent="." instance=ExtResource("2_bw1ed")]
+
+[node name="ResourceComponent" parent="." instance=ExtResource("4_7ydbx")]

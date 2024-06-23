@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dig0avpj0f28t"]
+
+[ext_resource type="Texture2D" uid="uid://tyytkfj6fvn6" path="res://Textures/Playable Character Sprites/mf_vroom/RCcar_sprite_sheet.png" id="1_6736y"]
+[ext_resource type="Script" path="res://Scripts/Components/Car_turn_spr_component.gd" id="2_7juql"]
+
+[node name="Car_spr_comp" type="Sprite2D"]
+texture = ExtResource("1_6736y")
+hframes = 8
+vframes = 2
+script = ExtResource("2_7juql")

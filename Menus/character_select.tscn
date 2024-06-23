@@ -81,6 +81,78 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector2(1064, 311), Vector2(438, 311)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ButtonControl/Select_Character1_Button:size")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(400, 140)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ButtonControl/Select_Character2_Button:size")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(400, 140)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ButtonControl/Select_Character3_Button:size")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(400, 140)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ButtonControl/Select_Character4_Button:size")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(400, 140)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("ButtonControl/Select_Character5_Button:size")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(400, 140)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("ButtonControl/Select_Character6_Button:size")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(400, 140)]
+}
 
 [sub_resource type="Animation" id="Animation_tivga"]
 length = 0.001
@@ -156,6 +228,78 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector2(438, 311)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ButtonControl/Select_Character1_Button:size")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(400, 140)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ButtonControl/Select_Character2_Button:size")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(400, 140)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ButtonControl/Select_Character3_Button:size")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(400, 140)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ButtonControl/Select_Character4_Button:size")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(400, 140)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("ButtonControl/Select_Character5_Button:size")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(400, 140)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("ButtonControl/Select_Character6_Button:size")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(400, 140)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cl4ps"]
 _data = {
@@ -209,7 +353,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 26.0
 offset_top = 11.0
-offset_right = -438.001
+offset_right = -438.0
 offset_bottom = -313.0
 text = "Select
 Character1"
@@ -223,7 +367,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 26.0
 offset_top = 161.0
-offset_right = -437.999
+offset_right = -438.0
 offset_bottom = -163.0
 text = "Select
 Character2"
@@ -251,7 +395,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 438.0
 offset_top = 11.0
-offset_right = -25.9985
+offset_right = -26.0
 offset_bottom = -313.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -267,7 +411,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 438.0
 offset_top = 161.0
-offset_right = -25.9998
+offset_right = -26.0
 offset_bottom = -163.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -283,7 +427,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 438.0
 offset_top = 311.0
-offset_right = -26.0004
+offset_right = -26.0
 offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 2

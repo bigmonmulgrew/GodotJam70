@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bmbffq7l4h1xg" path="res://Scenes/Components/Actions/Defensive/bubble_shield.tscn" id="3_5jpqi"]
 [ext_resource type="PackedScene" uid="uid://xhr1iffrbnc1" path="res://Scenes/fireball_attack.tscn" id="3_53g7t"]
 [ext_resource type="PackedScene" uid="uid://cid0vv4el0hjd" path="res://Scenes/Components/health_component.tscn" id="4_kq5tx"]
-[ext_resource type="PackedScene" uid="uid://bxlxgk0bvt4x0" path="res://Scenes/crossbow_attack.tscn" id="4_yyddj"]
+[ext_resource type="PackedScene" uid="uid://bdtapx7e0lrnm" path="res://Scenes/crossbow_attack.tscn" id="4_yyddj"]
 [ext_resource type="PackedScene" uid="uid://c74bwndkx5s18" path="res://Scenes/Components/user_movement_component.tscn" id="5_4oels"]
 [ext_resource type="PackedScene" uid="uid://b1jwlvk5nun41" path="res://Scenes/Components/resource_component.tscn" id="6_7mpsh"]
 

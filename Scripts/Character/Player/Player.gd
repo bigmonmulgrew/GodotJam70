@@ -2,17 +2,25 @@ extends CharacterBody2D
 class_name Player
 
 ## Gets the child of PrimaryAction node with index 0
-@onready var primary_action: Node = $PrimaryAction.get_child(0)
+@onready var primary_action: Node = null
 ## Gets the child of SecondaryAction node with index 0
-@onready var secondary_action: Node = $SecondaryAction.get_child(0)
+@onready var secondary_action: Node = null
 ## Gets the child of DefensiveAction node with index 0
-@onready var defensive_action: Node = $DefensiveAction.get_child(0)
+@onready var defensive_action: Node = null
 
 @export var controller_look_deadzone: float = 0.3
 @onready var game_manager = $"/root/GameManager"
 
 ## Runtime variable to denote if the last input was controller or MNK
 var is_mnk: bool = true
+
+func _ready():
+	primary_action = get_node_or_null("PrimaryAction")
+	if primary_action!=null: primary_action = primary_action.get_child(0)
+	secondary_action = get_node_or_null("SecondaryAction")
+	if secondary_action!=null: secondary_action = secondary_action.get_child(0)
+	defensive_action = get_node_or_null("DefensiveAction")
+	if defensive_action!=null: defensive_action = defensive_action.get_child(0)
 
 # Check if the latest input event is mnk or controller
 func _input(event):

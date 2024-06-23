@@ -43,7 +43,7 @@ var oberon_scene = preload("res://Scenes/Character/Player/test_player.tscn")
 
 var goose_scene = preload("res://Scenes/Character/Player/king_arthur.tscn")
 ## A preload of the RobinHood test player character scene, which can be switched to if it is part of the selected_characters pool.
-var sixth_character_scene = preload("res://Scenes/Character/Player/test_player.tscn")
+var sixth_character_scene = preload("res://Scenes/Character/Player/mf_broom.tscn")
 
 
 const max_player_select = 3
@@ -157,11 +157,11 @@ func character_select_option(name:String):
 		"grandma wolf":
 			pass_object = oberon_scene
 		"oberon":
-			pass_object = robin_hood_scene
+			pass_object = oberon_scene
 		"goose":
-			pass_object = robin_hood_scene
+			pass_object = goose_scene
 		"sixth":
-			pass_object = robin_hood_scene
+			pass_object = sixth_character_scene
 	if pass_object != null:
 		for character in selected_characters:
 			if character.name == name: # If King Arthur is already on your team, remove him.
