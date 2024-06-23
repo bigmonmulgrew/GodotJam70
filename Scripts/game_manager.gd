@@ -52,7 +52,7 @@ var queued_stages: Array[String] = []
 var packed_health_bars = preload("res://Scenes/Healthbars.tscn")
 var player_health_bar = packed_health_bars.instantiate()
 const leveloptionsaves:Array[String] = ["WoodlandHouse", "RiverCascade", "MerlinsTower"]
-var levellocations:Array[String] = ["Levels/cottage_level.tscn", "Levels/River/river_level.tscn", "Scenes/tower_area.tscn"]
+var levellocations:Array[String] = ["Levels/River/river_level.tscn", "Levels/River/river_level.tscn", "Scenes/tower_area.tscn"]
 
 const max_player_select = 3
 

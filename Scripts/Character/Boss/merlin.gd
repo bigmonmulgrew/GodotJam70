@@ -74,3 +74,8 @@ func _on_ranged_attack_timer_timeout():
 	var attacks_to_use: Array = ranged_actions.get_children()
 	
 	attacks_to_use.pick_random().use()
+
+
+func _on_health_component_died_signal() -> void:
+	SaveSystem.save_data(0, "MerlinsTower", true)
+	GameManager.load_level_from_collection()

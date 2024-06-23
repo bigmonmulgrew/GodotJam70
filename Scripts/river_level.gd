@@ -15,7 +15,7 @@ func _ready():
 	spawn_player_start()
 	health_bar_ui.player_max_health = player.get_node("HealthComponent").max_health
 	health_bar_ui.player_max_resource = player.get_node("ResourceComponent").resource_cap
-	merlin = $Merlin
+	merlin = $Path2D/PathFollow2D/ThreeWiseMenBoss
 	health_bar_ui.boss_max_health = merlin.get_node("HealthComponent").max_health
 	
 	AudioManager.play_music(sound_ref)

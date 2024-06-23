@@ -43,6 +43,7 @@ sound_ref = ExtResource("8_tvlnl")
 [node name="RangedAttackTimer" type="Timer" parent="."]
 autostart = true
 
+[connection signal="died_signal" from="HealthComponent" to="." method="_on_health_component_died_signal"]
 [connection signal="timeout" from="RangedAttackTimer" to="." method="_on_ranged_attack_timer_timeout"]
 
 [editable path="RangedActions/fireball_attack"]

@@ -1,14 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://bcp08ef822d37"]
+[gd_scene load_steps=13 format=3 uid="uid://bcp08ef822d37"]
 
 [ext_resource type="PackedScene" uid="uid://bk3ae6a5v0fon" path="res://Scenes/scrolling_background.tscn" id="1_k13x5"]
+[ext_resource type="Script" path="res://Scripts/river_level.gd" id="1_q3aup"]
 [ext_resource type="AudioStream" uid="uid://dd82c2rs3fmm7" path="res://Audio/SFX/river_background.wav" id="2_3mhc6"]
 [ext_resource type="Texture2D" uid="uid://b3qhide1flnmq" path="res://Images/Background/River Test Background.png" id="2_mtju2"]
-[ext_resource type="PackedScene" uid="uid://cjgkjhe7k58s" path="res://Scenes/Character/Player/king_arthur.tscn" id="3_01rjq"]
 [ext_resource type="Script" path="res://Scripts/Level/River/DownwardsForcePool.gd" id="3_8c3ya"]
 [ext_resource type="PackedScene" uid="uid://d22mivc3fy6ts" path="res://Scenes/Components/damage_element.tscn" id="5_ma85h"]
 [ext_resource type="PackedScene" uid="uid://0vb83wfs1stj" path="res://Scenes/Components/static_damage_element.tscn" id="5_ok5tw"]
 [ext_resource type="PackedScene" uid="uid://db5mujv3yhta3" path="res://Scenes/offscreen_respawner.tscn" id="7_fun08"]
 [ext_resource type="PackedScene" uid="uid://c3k1kxm3bc1bm" path="res://Scenes/Character/Boss/three_wise_men.tscn" id="9_4v5j6"]
+[ext_resource type="PackedScene" uid="uid://dktnlhjatfngg" path="res://Scenes/Healthbars.tscn" id="9_hopqk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ikfqc"]
 size = Vector2(206, 1372)
@@ -20,6 +21,7 @@ _data = {
 point_count = 12
 
 [node name="RiverLevel" type="Node2D"]
+script = ExtResource("1_q3aup")
 
 [node name="ScrollingBackground" parent="." instance=ExtResource("1_k13x5")]
 sound_ref = ExtResource("2_3mhc6")
@@ -34,9 +36,6 @@ position = Vector2(804, 329)
 [node name="DownwardsForcePool" type="Node2D" parent="."]
 script = ExtResource("3_8c3ya")
 gravity = 100.0
-
-[node name="KingArthur" parent="DownwardsForcePool" instance=ExtResource("3_01rjq")]
-position = Vector2(890, 396)
 
 [node name="DamageElement" parent="DownwardsForcePool" instance=ExtResource("5_ma85h")]
 position = Vector2(675, 257)
@@ -87,6 +86,8 @@ position = Vector2(311, 81)
 rotates = false
 
 [node name="ThreeWiseMenBoss" parent="Path2D/PathFollow2D" instance=ExtResource("9_4v5j6")]
+
+[node name="HealthBarUI" parent="." instance=ExtResource("9_hopqk")]
 
 [editable path="ScrollingBackground"]
 [editable path="OffscreenRespawner"]

@@ -81,6 +81,7 @@ animations = [{
 
 [node name="ThreeWiseMenBoss" type="CharacterBody2D"]
 z_index = 5
+collision_layer = 65535
 collision_mask = 14
 script = ExtResource("1_fjkar")
 
