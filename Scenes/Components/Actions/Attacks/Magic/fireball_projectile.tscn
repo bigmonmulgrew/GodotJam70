@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dg7rq0kgosyeo"]
 
-[ext_resource type="Script" path="res://Scripts/fireball.gd" id="1_65jbo"]
+[ext_resource type="Script" path="res://Scripts/Components/Actions/Attacks/fireball.gd" id="1_65jbo"]
 [ext_resource type="Texture2D" uid="uid://ccrwsig0bh7jn" path="res://Images/Attacks/projectile-weapon-sprites.png" id="2_chqay"]
 [ext_resource type="PackedScene" uid="uid://k1b2j8lj20o6" path="res://Scenes/Components/Actions/Attacks/Magic/fireball_explosion.tscn" id="2_fq61l"]
 
