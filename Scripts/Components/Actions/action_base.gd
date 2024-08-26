@@ -1,8 +1,10 @@
-extends Node
-class_name Action
+class_name Action extends Node
 
+@export_category("Player Settings")
 ## Cooldown on the ability in seconds
 @export var cooldown_time: float = 1
+## The sound that will be played when the attack is used.
+@export var use_sound: AudioStream
 
 # Runtime variables
 ## Use this to denote when you can take the action
@@ -14,9 +16,10 @@ func _ready():
 	# Sometimes created befor ready is called so check for null firsst
 	if cooldown_timer == null: create_timer()
 	
-## Template function for children
+## Call Super to activate common functions for use.
 func use():
-	print("Use not yet implemented in this attack")
+	##Play the audio SFX
+	AudioManager.play_sfx(use_sound,1,-30)
 
 ## Function to start the cooldown timer.
 ## [br]Optional parameter to overide the cooldown time
